@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cnlqiy1t1tlfa"]
+[gd_scene load_steps=17 format=3 uid="uid://cnlqiy1t1tlfa"]
 
 [ext_resource type="Script" uid="uid://uxtklgw6afd8" path="res://Scripts/camera_collider.gd" id="1_a2ia3"]
 [ext_resource type="Material" uid="uid://6hyaudq2jro0" path="res://Assets/Materials/M_Window.tres" id="1_q2fht"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://b1kqadvicdqaf" path="res://Scripts/swinging.gd" id="3_5erdv"]
 [ext_resource type="PackedScene" uid="uid://8q5t0t2rflcq" path="res://Scenes/playfabs/cop.tscn" id="4_qbrl8"]
 [ext_resource type="Shader" uid="uid://d2xcewttt2h0r" path="res://Assets/Materials/Shaders/crt-effect.gdshader" id="6_236hc"]
+[ext_resource type="Script" uid="uid://c0emh3p8iwj30" path="res://Scripts/moving_trigger.gd" id="6_tqiex"]
 [ext_resource type="Texture2D" uid="uid://bmgi4b7e8bjta" path="res://Assets/Textures/noise.png" id="7_lwkuy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5erdv"]
@@ -33,6 +34,9 @@ polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 [sub_resource type="PlaneMesh" id="PlaneMesh_5erdv"]
 size = Vector2(10, 10)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_tqiex"]
+size = Vector3(3.83359, 2.25256, 3.35216)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lwkuy"]
 shader = ExtResource("6_236hc")
 shader_parameter/noise_texture = ExtResource("7_lwkuy")
@@ -54,7 +58,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42819, 1.14895, 0.260505)
 shape = SubResource("BoxShape3D_5erdv")
 
 [node name="WorkCamera" type="Camera3D" parent="CameraSystem/CAM1/TriggerArea"]
-transform = Transform3D(-0.767277, -0.495502, 0.40714, 1.49012e-08, 0.634852, 0.772634, -0.641316, 0.592824, -0.487107, 2.46252, 2.72536, -1.75529)
+transform = Transform3D(-0.767277, -0.495502, 0.407141, 1.49012e-08, 0.634852, 0.772634, -0.641316, 0.592824, -0.487107, 2.46252, 3.37822, -1.75529)
 fov = 65.4
 
 [node name="CAM2" type="Node3D" parent="CameraSystem"]
@@ -70,7 +74,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.797435, 1.14895, 0.311523)
 shape = SubResource("BoxShape3D_5erdv")
 
 [node name="WorkCamera" type="Camera3D" parent="CameraSystem/CAM2/TriggerArea"]
-transform = Transform3D(-0.681896, 0.515413, -0.519006, 0, 0.709558, 0.704647, 0.731449, 0.480496, -0.483845, -0.958215, 3.10555, -1.29712)
+transform = Transform3D(-0.681896, 0.515413, -0.519006, 0, 0.709558, 0.704647, 0.731449, 0.480496, -0.483845, -0.958215, 3.75841, -1.29712)
 fov = 65.0
 
 [node name="CAM3" type="Node3D" parent="CameraSystem"]
@@ -86,7 +90,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.797435, 1.14895, 0.311523)
 shape = SubResource("BoxShape3D_qbrl8")
 
 [node name="WorkCamera" type="Camera3D" parent="CameraSystem/CAM3/TriggerArea"]
-transform = Transform3D(0.518833, 0.548131, -0.656022, 5.24445e-08, 0.767389, 0.641182, 0.854876, -0.332666, 0.398147, -3.83238, 2.58503, 2.34321)
+transform = Transform3D(0.518833, 0.548131, -0.656022, 5.24445e-08, 0.767389, 0.641182, 0.854876, -0.332666, 0.398147, -3.83238, 3.23789, 2.34321)
 fov = 65.0
 
 [node name="Lighting" type="Node3D" parent="."]
@@ -193,8 +197,8 @@ operation = 2
 use_collision = true
 
 [node name="Wall" type="CSGBox3D" parent="Level/InteriorWall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
-size = Vector3(10, 2.5, 0.25)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.65778, 0)
+size = Vector3(10, 3.31555, 0.25)
 
 [node name="Door" type="CSGBox3D" parent="Level/InteriorWall"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.94346, 1.08273, 0)
@@ -218,30 +222,42 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.65192, 1.27406, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.09844, -0.17195, 0)
 size = Vector3(0.981216, 1.91936, 0.065)
 material = ExtResource("2_ikcpc")
+script = ExtResource("6_tqiex")
+offset = Vector3(-1, 0, 0)
 
 [node name="Door2" type="CSGBox3D" parent="Level/Doors"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.08813, -0.173335, 0)
 size = Vector3(0.975723, 1.91659, 0.065)
 material = ExtResource("2_ikcpc")
+script = ExtResource("6_tqiex")
+offset = Vector3(1, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="Level/Doors"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Doors/Area3D"]
+transform = Transform3D(0.999691, 0, 0.0248684, 0, 1, 0, -0.0248684, 0, 0.999691, -4.43982, -0.0158081, 0.00105505)
+shape = SubResource("BoxShape3D_tqiex")
 
 [node name="ExteriorWalls" type="CSGCombiner3D" parent="Level"]
 use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Level/ExteriorWalls"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.24185, 4.86735)
-size = Vector3(10, 2.5, 0.25)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.72647, 4.86735)
+size = Vector3(10, 3.46924, 0.25)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Level/ExteriorWalls"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.24185, -4.87601)
-size = Vector3(10, 2.5, 0.25)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.64609, -4.87601)
+size = Vector3(10, 3.30847, 0.25)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="Level/ExteriorWalls"]
-transform = Transform3D(-0.000139638, 0, -1, 0, 1, 0, 1, 0, -0.000139638, -4.87168, 1.24185, -0.00500924)
-size = Vector3(10, 2.5, 0.25)
+transform = Transform3D(-0.000139638, 0, -1, 0, 1, 0, 1, 0, -0.000139638, -4.87168, 1.65396, -0.00500924)
+size = Vector3(10, 3.32422, 0.25)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="Level/ExteriorWalls"]
-transform = Transform3D(-0.000139638, 0, -1, 0, 1, 0, 1, 0, -0.000139638, 4.87168, 1.24185, -0.0036487)
-size = Vector3(10, 2.5, 0.25)
+transform = Transform3D(-0.000139638, 0, -1, 0, 1, 0, 1, 0, -0.000139638, 4.87168, 1.64688, -0.0036487)
+size = Vector3(10, 3.31006, 0.25)
 
 [node name="Post-Processing" type="Node" parent="."]
 
@@ -261,3 +277,7 @@ grow_vertical = 2
 [connection signal="body_exited" from="CameraSystem/CAM2/TriggerArea" to="CameraSystem/CAM2/TriggerArea" method="_on_body_exited"]
 [connection signal="body_entered" from="CameraSystem/CAM3/TriggerArea" to="CameraSystem/CAM3/TriggerArea" method="_on_body_entered"]
 [connection signal="body_exited" from="CameraSystem/CAM3/TriggerArea" to="CameraSystem/CAM3/TriggerArea" method="_on_body_exited"]
+[connection signal="body_entered" from="Level/Doors/Area3D" to="Level/Doors/Door" method="on_collision_entered"]
+[connection signal="body_entered" from="Level/Doors/Area3D" to="Level/Doors/Door2" method="on_collision_entered"]
+[connection signal="body_exited" from="Level/Doors/Area3D" to="Level/Doors/Door" method="on_collision_exited"]
+[connection signal="body_exited" from="Level/Doors/Area3D" to="Level/Doors/Door2" method="on_collision_exited"]
