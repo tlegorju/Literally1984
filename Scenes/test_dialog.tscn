@@ -1,10 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://o2wwrspgry8k"]
+[gd_scene load_steps=10 format=3 uid="uid://o2wwrspgry8k"]
 
 [ext_resource type="Script" uid="uid://b4yf8adl2pnx4" path="res://Scripts/detenu_control.gd" id="1_132v8"]
 [ext_resource type="Script" uid="uid://ypp8m7378wvl" path="res://Scripts/cop_control.gd" id="1_ku55n"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_qmtr8"]
 size = Vector2(20, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_132v8"]
+size = Vector3(19.9994, 1.52649, 20.0332)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_132v8"]
 albedo_color = Color(0.720302, 0.650415, 3.85046e-07, 1)
@@ -23,12 +26,24 @@ material = SubResource("StandardMaterial3D_p2nmu")
 [node name="Node3D" type="Node3D"]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.779797, 0.626032, 0, -0.626032, 0.779797, 0, 6.7596, 12.3796)
+transform = Transform3D(0.788494, -0.385036, 0.479608, 0, 0.779797, 0.626032, -0.615042, -0.493623, 0.614865, 4.19764, 4.03164, 6.11946)
 
-[node name="Floor" type="MeshInstance3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.219799, 0.775022, -0.592478, 0.269568, 0.631935, 0.726631, 0.937562, 2.79415e-08, -0.347819, -17.8764, 8.49303, -6.29104)
+shadow_enabled = true
+
+[node name="Floor" type="StaticBody3D" parent="."]
+
+[node name="Mesh" type="MeshInstance3D" parent="Floor"]
 mesh = SubResource("PlaneMesh_qmtr8")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.217468, -0.967712, -0.0722656)
+shape = SubResource("BoxShape3D_132v8")
 
 [node name="Detenu" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, -0.000203749, 0.000161346, 0.000203783, 1, -0.000176474, -0.000161302, 0.000176514, 1, 0, 0, 0)
 script = ExtResource("1_132v8")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Detenu"]
@@ -42,6 +57,7 @@ shape = SubResource("CapsuleShape3D_132v8")
 [node name="Cop" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.91762, 0, 0)
 script = ExtResource("1_ku55n")
+speed = 5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cop"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
