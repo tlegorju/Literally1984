@@ -9,20 +9,27 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+func initPickup(newPickup):
+	pickup=newPickup
+
 func interact():
-	var fpsChar = get_parent().get_node("FPSChar")
+	var fpsChar = get_tree().get_root().get_node("/root/Root_FPS/FPSChar")
 	if not fpsChar:
 		return
-	if fpsChar.hasPickup():
-		if not canPickup:
-			print("impossible bruh")
-			return
-		pickup = fpsChar.getPickup()
-		fpsChar.setPickup(null)
-		pickup.set_position($PickupPlacement.get_global_position())
-		pickup.visible=true
-		get_tree().get_root().get_node("Root_FPS").IdeaPlaced()
-	else:
+	if fpsChar.hasPickup() and pickup==null:
+		var tmpPickup = fpsChar.getPickup()
+		var wordType = get_parent().wordType
+		var parentPair = get_parent().wordPair
+		
+		if wordType == GameManager.WordType.NEW_WORD and parentPair["newWord"] == tmpPickup.GetWordPair()["newWord"]:
+			pickup = tmpPickup
+			fpsChar.setPickup(null)
+			pickup.set_position($PickupPlacement.get_global_position())
+			pickup.visible=true
+			get_tree().get_root().get_node("Root_FPS").IdeaPlaced()
+			canPickup=false
+			
+	elif not fpsChar.hasPickup() and canPickup:
 		fpsChar.setPickup(pickup)
 		pickup.visible=false
 		pickup=null

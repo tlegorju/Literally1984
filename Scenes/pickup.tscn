@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://dn7ist6x615jk"]
+
+[ext_resource type="Script" uid="uid://cvqoag67pt0vw" path="res://Scripts/idea_pickup_control.gd" id="1_v7u4w"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_27wqy"]
+albedo_color = Color(0.748066, 0.508245, 0.945888, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_20jko"]
+material = SubResource("StandardMaterial3D_27wqy")
+radius = 0.1
+height = 0.2
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_qs4p1"]
+radius = 0.1
+
+[node name="Idea_Pickup" type="Node3D"]
+script = ExtResource("1_v7u4w")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("SphereMesh_20jko")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("SphereShape3D_qs4p1")
