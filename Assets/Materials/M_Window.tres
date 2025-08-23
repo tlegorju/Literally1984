@@ -2,7 +2,7 @@
 
 [resource]
 transparency = 1
-albedo_color = Color(0.286275, 0.435294, 1, 0.282353)
+albedo_color = Color(0.286275, 0.435294, 1, 0.627451)
 metallic_specular = 0.62
 roughness = 0.1
 rim_enabled = true
