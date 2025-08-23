@@ -20,10 +20,15 @@ config/icon="res://icon.svg"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 TestDialogScript="*res://Scripts/dialog_globals.gd"
 CursorControl="*res://Scripts/cursor_control.gd"
+WordsGlobal="*res://Scripts/GameManager.gd"
 
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
+
+[global_group]
+
+interactable="interactable object"
 
 [input]
 
