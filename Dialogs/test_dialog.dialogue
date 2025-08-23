@@ -1,0 +1,17 @@
+~ test_dialog
+
+~ start
+if TestDialogScript.has_met_robot==false
+	Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
+	set TestDialogScript.has_met_robot = true
+else
+	Nathan: Hello again.
+Nathan: Here are some choices.
+- First one
+	Nathan: You picked the first one.
+- Second one
+	Nathan: You picked the second one.
+- Start again [if TestDialogScript.some_value > 10] => start
+- End the conversation => END
+Nathan: For more information see the online documentation.
+=> END
