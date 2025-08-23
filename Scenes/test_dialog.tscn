@@ -55,7 +55,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_132v8")
 
 [node name="Cop" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.91762, 0, 0)
+transform = Transform3D(0.999984, -0.00444894, 0.00341213, 0.00444372, 0.999989, 0.00153817, -0.00341893, -0.001523, 0.999993, 1.91762, 0, 0)
 script = ExtResource("1_ku55n")
 speed = 5
 
