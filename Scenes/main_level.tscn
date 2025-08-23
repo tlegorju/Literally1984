@@ -1,0 +1,155 @@
+[gd_scene load_steps=7 format=3 uid="uid://cnlqiy1t1tlfa"]
+
+[ext_resource type="Material" uid="uid://6hyaudq2jro0" path="res://Assets/Materials/M_Window.tres" id="1_q2fht"]
+[ext_resource type="Material" uid="uid://3alykgpghls1" path="res://Assets/Materials/M_Door.tres" id="2_ikcpc"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_tv1p5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qbrl8"]
+
+[sub_resource type="Sky" id="Sky_tv1p5"]
+
+[sub_resource type="Environment" id="Environment_q2fht"]
+background_mode = 1
+sky = SubResource("Sky_tv1p5")
+ambient_light_source = 1
+ssr_enabled = true
+ssao_enabled = true
+sdfgi_enabled = true
+sdfgi_use_occlusion = true
+sdfgi_bounce_feedback = 1.21
+sdfgi_cascades = 8
+sdfgi_min_cell_size = 0.663153
+sdfgi_energy = 2.46
+glow_enabled = true
+
+[node name="MainLevel" type="Node3D"]
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 0.25, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("BoxMesh_tv1p5")
+surface_material_override/0 = SubResource("StandardMaterial3D_qbrl8")
+
+[node name="InteriorWall" type="CSGCombiner3D" parent="."]
+operation = 2
+
+[node name="Wall" type="CSGBox3D" parent="InteriorWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+size = Vector3(10, 2.5, 0.25)
+
+[node name="Door" type="CSGBox3D" parent="InteriorWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.94346, 1.08273, 0)
+operation = 2
+size = Vector3(2, 2, 1)
+
+[node name="WindowHole" type="CSGBox3D" parent="InteriorWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.65192, 1.27406, 0)
+operation = 2
+size = Vector3(5.02492, 1.31369, 1)
+
+[node name="Window" type="CSGBox3D" parent="InteriorWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.65192, 1.27406, 0)
+size = Vector3(5.025, 1.314, 0.05)
+material = ExtResource("1_q2fht")
+
+[node name="Doors" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.65192, 1.27406, 0)
+
+[node name="Door" type="CSGBox3D" parent="Doors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.09844, -0.17195, 0)
+size = Vector3(0.981216, 1.91936, 0.065)
+material = ExtResource("2_ikcpc")
+
+[node name="Door2" type="CSGBox3D" parent="Doors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.08813, -0.173335, 0)
+size = Vector3(0.975723, 1.91659, 0.065)
+material = ExtResource("2_ikcpc")
+
+[node name="ExteriorWalls" type="CSGCombiner3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="ExteriorWalls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.24185, 4.86735)
+size = Vector3(10, 2.5, 0.25)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="ExteriorWalls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.24185, -4.87601)
+size = Vector3(10, 2.5, 0.25)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="ExteriorWalls"]
+transform = Transform3D(-0.000139638, 0, -1, 0, 1, 0, 1, 0, -0.000139638, -4.87168, 1.24185, -0.00500924)
+size = Vector3(10, 2.5, 0.25)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="ExteriorWalls"]
+transform = Transform3D(-0.000139638, 0, -1, 0, 1, 0, 1, 0, -0.000139638, 4.87168, 1.24185, -0.0036487)
+size = Vector3(10, 2.5, 0.25)
+
+[node name="MainCamera" type="Camera3D" parent="."]
+transform = Transform3D(-0.999843, 2.05973e-08, -0.0177316, -0.0149996, 0.533304, 0.845791, 0.00945635, 0.845924, -0.53322, 0, 4.11383, -4.01003)
+
+[node name="Lighting" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Lighting"]
+environment = SubResource("Environment_q2fht")
+
+[node name="Reflection" type="Node3D" parent="Lighting"]
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="Lighting/Reflection"]
+transform = Transform3D(1, 0, 0, 0, -0.0126883, 0.99992, 0, -0.99992, -0.0126883, 1.64422, 2.68196, -2.49291)
+
+[node name="GI" type="Node3D" parent="Lighting"]
+
+[node name="Lights" type="Node3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.44054, -1.41145, -0.342801)
+
+[node name="RoomSpot" type="SpotLight3D" parent="Lighting/Lights"]
+transform = Transform3D(1, 0, 0, 0, -0.0126883, 0.99992, 0, -0.99992, -0.0126883, 0.77087, 4.57577, -2.31704)
+light_color = Color(0.968627, 0.913725, 0.592157, 1)
+shadow_enabled = true
+distance_fade_enabled = true
+distance_fade_begin = 0.0
+distance_fade_shadow = 0.0
+distance_fade_length = 15.0
+spot_range = 5.025
+spot_attenuation = 0.04
+spot_angle = 80.91
+spot_angle_attenuation = 3.249
+
+[node name="RoomSpot2" type="SpotLight3D" parent="Lighting/Lights"]
+transform = Transform3D(1, 0, 0, 0, -0.0126883, 0.99992, 0, -0.99992, -0.0126883, -3.70381, 4.57029, -2.31704)
+light_color = Color(0.968627, 0.913725, 0.592157, 1)
+shadow_enabled = true
+distance_fade_enabled = true
+distance_fade_begin = 0.0
+distance_fade_shadow = 0.0
+distance_fade_length = 15.0
+spot_range = 5.025
+spot_attenuation = 0.04
+spot_angle = 80.91
+spot_angle_attenuation = 3.249
+
+[node name="RoomSpot4" type="SpotLight3D" parent="Lighting/Lights"]
+transform = Transform3D(1, 0, 0, 0, -0.0126883, 0.99992, 0, -0.99992, -0.0126883, -1.40421, 4.24644, 2.75159)
+light_color = Color(0.968627, 0.913725, 0.592157, 1)
+shadow_enabled = true
+distance_fade_enabled = true
+distance_fade_begin = 0.0
+distance_fade_shadow = 0.0
+distance_fade_length = 15.0
+spot_range = 9.471
+spot_attenuation = 0.42
+spot_angle = 86.05
+spot_angle_attenuation = 2.46228
+
+[node name="RoomSpot3" type="SpotLight3D" parent="Lighting/Lights"]
+transform = Transform3D(1, 0, 0, 0, -0.0126883, 0.99992, 0, -0.99992, -0.0126883, 3.28756, 4.68365, -2.31704)
+visible = false
+light_color = Color(0.968627, 0.913725, 0.592157, 1)
+shadow_enabled = true
+distance_fade_enabled = true
+distance_fade_begin = 0.0
+distance_fade_shadow = 0.0
+distance_fade_length = 15.0
+spot_range = 5.025
+spot_attenuation = 0.04
+spot_angle = 80.91
+spot_angle_attenuation = 3.249
