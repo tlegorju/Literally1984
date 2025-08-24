@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=3 uid="uid://cilmqphwo3w6i"]
+
+[ext_resource type="Script" uid="uid://cmjs4mt084rdk" path="res://Scripts/exit_door_control.gd" id="1_elbft"]
+[ext_resource type="Material" uid="uid://c21ctb8ihv1ay" path="res://Assets/Materials/FPS_Wall_Material.tres" id="2_b4nh8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ojsxo"]
+albedo_color = Color(0.940594, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_r41h3"]
+material = SubResource("StandardMaterial3D_ojsxo")
+size = Vector3(0.1, 2.2, 1.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_87rv1"]
+size = Vector3(0.1, 2.2, 1.5)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="ExitDoor" type="Node3D" parent="." groups=["interactable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.75)
+script = ExtResource("1_elbft")
+
+[node name="Pivot" type="RigidBody3D" parent="ExitDoor"]
+freeze = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ExitDoor/Pivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0.75)
+mesh = SubResource("BoxMesh_r41h3")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ExitDoor/Pivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0.75)
+shape = SubResource("BoxShape3D_87rv1")
+
+[node name="Label3D" type="Label3D" parent="ExitDoor/Pivot"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.076, 1.6, 0.75)
+text = "EXIT"
+outline_size = 0
+
+[node name="Walls" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+size = Vector3(0.1, 3, 4.2)
+material = ExtResource("2_b4nh8")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
+operation = 2
+size = Vector3(0.1, 2.2, 1.5)
+material = ExtResource("2_b4nh8")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.5, 1.95)
+size = Vector3(2, 3, 0.1)
+material = ExtResource("2_b4nh8")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.5, -1.95)
+size = Vector3(2, 3, 0.1)
+material = ExtResource("2_b4nh8")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.347628, 2.61313, 0)
+light_color = Color(0.841905, 0.195842, 0.13333, 1)
+light_energy = 0.5
+light_bake_mode = 1

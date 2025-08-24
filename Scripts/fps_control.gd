@@ -14,8 +14,8 @@ var rotation_helper
 
 var MOUSE_SENSITIVITY = 0.05
 
-
 var pickup: Node3D = null
+@export var handRef : Node3D
 
 func _ready():
 	camera = $RotationHelper/Camera3D
@@ -112,6 +112,10 @@ func hasPickup() -> bool:
 	
 func setPickup(newPickup):
 	pickup = newPickup
+	if pickup!=null:
+		pickup.reparent(handRef)
+		#handRef.add_child(pickup)
+		pickup.set_position(Vector3.ZERO)
 
 func getPickup() -> Node3D:
 	return pickup

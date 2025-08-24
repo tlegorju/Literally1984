@@ -1,11 +1,12 @@
 [gd_scene load_steps=24 format=3 uid="uid://cnlqiy1t1tlfa"]
 
-[ext_resource type="Script" uid="uid://uxtklgw6afd8" path="res://Scripts/camera_collider.gd" id="1_a2ia3"]
+[ext_resource type="Script" path="res://Scripts/camera_collider.gd" id="1_a2ia3"]
 [ext_resource type="Material" uid="uid://6hyaudq2jro0" path="res://Assets/Materials/M_Window.tres" id="1_q2fht"]
 [ext_resource type="Material" uid="uid://3alykgpghls1" path="res://Assets/Materials/M_Door.tres" id="2_ikcpc"]
-[ext_resource type="Script" uid="uid://b1kqadvicdqaf" path="res://Scripts/swinging.gd" id="3_5erdv"]
+[ext_resource type="Script" path="res://Scripts/swinging.gd" id="3_5erdv"]
 [ext_resource type="PackedScene" uid="uid://8q5t0t2rflcq" path="res://Scenes/playfabs/cop.tscn" id="4_qbrl8"]
 [ext_resource type="Shader" uid="uid://d2xcewttt2h0r" path="res://Assets/Materials/Shaders/crt-effect.gdshader" id="6_236hc"]
+
 [ext_resource type="Script" uid="uid://c0emh3p8iwj30" path="res://Scripts/moving_trigger.gd" id="6_tqiex"]
 [ext_resource type="PackedScene" uid="uid://vbwitd2cgk71" path="res://Scenes/interactible.tscn" id="7_2jcip"]
 [ext_resource type="Shader" uid="uid://b6mdgtm4n033d" path="res://Assets/Materials/Shaders/blinking_screen.gdshader" id="7_ha3dl"]

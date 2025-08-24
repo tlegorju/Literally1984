@@ -4,7 +4,7 @@ extends Node
 enum WordType {OLD_WORD, NEW_WORD, NEUTRAL_WORD}
 
 var words = []
-var curStep : int = 0
+var curStep : int = 2
 var maxStep : int = 3
 
 func _ready() -> void:
