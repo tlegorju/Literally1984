@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c5tjgs7jw2eef" path="res://Scripts/interactable.gd" id="1_1uhsb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o05pk"]
+size = Vector3(0.104187, 0.244563, 0.102112)
 
 [node name="Interactible" type="Area3D"]
 script = ExtResource("1_1uhsb")
