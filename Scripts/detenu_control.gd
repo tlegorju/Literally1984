@@ -3,7 +3,7 @@ extends CharacterBody3D
 
 func _on_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
 	#eliminate intruder
-	if event.is_action("select"):
+	if event.is_action_pressed("select"):
 		var dialogResource = preload("res://Dialogs/test_dialog.dialogue")
 		DialogueManager.show_dialogue_balloon(dialogResource, "test_dialog") 
 
