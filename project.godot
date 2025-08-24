@@ -61,4 +61,4 @@ select={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://Dialogs/test_dialog.dialogue", "res://Dialogs/minigame_tips.dialogue")
+locale/translations_pot_files=PackedStringArray("res://Dialogs/test_dialog.dialogue", "res://Dialogs/minigame_tips.dialogue", "res://Dialogs/main_dialogs.dialogue")

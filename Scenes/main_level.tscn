@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://cnlqiy1t1tlfa"]
+[gd_scene load_steps=45 format=3 uid="uid://cnlqiy1t1tlfa"]
 
 [ext_resource type="Script" uid="uid://uxtklgw6afd8" path="res://Scripts/camera_collider.gd" id="1_a2ia3"]
 [ext_resource type="Material" uid="uid://6hyaudq2jro0" path="res://Assets/Materials/M_Window.tres" id="1_q2fht"]
@@ -8,22 +8,24 @@
 [ext_resource type="Shader" uid="uid://d2xcewttt2h0r" path="res://Assets/Materials/Shaders/crt-effect.gdshader" id="6_236hc"]
 [ext_resource type="Script" uid="uid://c0emh3p8iwj30" path="res://Scripts/moving_trigger.gd" id="6_tqiex"]
 [ext_resource type="PackedScene" uid="uid://vbwitd2cgk71" path="res://Scenes/interactible.tscn" id="7_2jcip"]
-[ext_resource type="PackedScene" uid="uid://chh17rqgjhnvv" path="res://Assets/Desk.fbx" id="7_5vthg"]
+[ext_resource type="PackedScene" uid="uid://coh67gspbn5o6" path="res://Assets/Desk.fbx" id="7_5vthg"]
 [ext_resource type="Shader" uid="uid://b6mdgtm4n033d" path="res://Assets/Materials/Shaders/blinking_screen.gdshader" id="7_ha3dl"]
-[ext_resource type="PackedScene" uid="uid://dr6vr6xjj1sqp" path="res://Assets/Picture.fbx" id="7_jf8f8"]
+[ext_resource type="PackedScene" uid="uid://cerf6trlqr0th" path="res://Assets/Picture.fbx" id="7_jf8f8"]
 [ext_resource type="Texture2D" uid="uid://bmgi4b7e8bjta" path="res://Assets/Textures/noise.png" id="7_lwkuy"]
-[ext_resource type="PackedScene" uid="uid://cbvqcklcl7ias" path="res://Assets/Chair.fbx" id="7_qx7ya"]
+[ext_resource type="PackedScene" uid="uid://b1qcwk330jacc" path="res://Assets/Chair.fbx" id="7_qx7ya"]
 [ext_resource type="Resource" uid="uid://drt3prdxpswbc" path="res://Dialogs/test_dialog.dialogue" id="8_6l6h0"]
 [ext_resource type="Script" uid="uid://b74ixv82ftmj3" path="res://Scripts/spinning.gd" id="8_f3gli"]
 [ext_resource type="Material" uid="uid://da2tja3b55tqh" path="res://Assets/Materials/M_Wood.tres" id="8_unus1"]
-[ext_resource type="PackedScene" uid="uid://3s6luucgi8fr" path="res://Assets/Plant.fbx" id="9_vgie2"]
+[ext_resource type="PackedScene" uid="uid://cvi6gqwgkb5tl" path="res://Assets/Plant.fbx" id="9_vgie2"]
 [ext_resource type="Material" uid="uid://cv3vy6coiaj80" path="res://Assets/Materials/M_Grass.tres" id="10_and0o"]
-[ext_resource type="PackedScene" uid="uid://xxn4icqmx50y" path="res://Assets/Computer.fbx" id="11_hd7sb"]
+[ext_resource type="PackedScene" uid="uid://cyif1ncq4ck3" path="res://Assets/Computer.fbx" id="11_hd7sb"]
 [ext_resource type="Script" uid="uid://c5tjgs7jw2eef" path="res://Scripts/interactable.gd" id="11_o0i6v"]
-[ext_resource type="PackedScene" uid="uid://bif7maju4a1g5" path="res://Assets/Trashcan.fbx" id="11_o18aq"]
-[ext_resource type="PackedScene" uid="uid://dx3766poffe56" path="res://Assets/Radio.fbx" id="19_8ce4n"]
-[ext_resource type="PackedScene" uid="uid://b0okfqg1u41mi" path="res://Assets/Metaldoor.fbx" id="19_d4dc6"]
+[ext_resource type="PackedScene" uid="uid://dxfhepo34c2xx" path="res://Assets/Trashcan.fbx" id="11_o18aq"]
+[ext_resource type="PackedScene" uid="uid://cjrrf6r0kw0v2" path="res://Assets/Radio.fbx" id="19_8ce4n"]
+[ext_resource type="PackedScene" uid="uid://dk54tqm0t0ig8" path="res://Assets/Metaldoor.fbx" id="19_d4dc6"]
 [ext_resource type="Material" uid="uid://bam2qhaki3pnr" path="res://Assets/Materials/M_DirtyMetal.tres" id="20_7wxy1"]
+[ext_resource type="PackedScene" uid="uid://srv25nsamf0l" path="res://Assets/Clock.fbx" id="23_1ubp3"]
+[ext_resource type="PackedScene" uid="uid://5m82uxdy0llk" path="res://Scenes/talker.tscn" id="24_oi0bv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5erdv"]
 size = Vector3(4.75, 3, 4.617)
@@ -70,6 +72,11 @@ roughness = 0.59
 [sub_resource type="BoxShape3D" id="BoxShape3D_o05pk"]
 size = Vector3(0.104187, 0.244563, 0.102112)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o0i6v"]
+albedo_color = Color(0.366595, 0.366595, 0.366595, 1)
+metallic = 0.75
+roughness = 0.73
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o18aq"]
 albedo_color = Color(0.126575, 2.15385e-06, 0.0942286, 1)
 metallic = 0.8
@@ -93,6 +100,9 @@ albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8ce4n"]
 size = Vector3(0.177124, 0.777466, 0.14624)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oi0bv"]
+albedo_color = Color(1, 0, 1, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lwkuy"]
 shader = ExtResource("6_236hc")
@@ -161,7 +171,19 @@ environment = SubResource("Environment_q2fht")
 [node name="Reflection" type="Node3D" parent="Lighting"]
 
 [node name="ReflectionProbe" type="ReflectionProbe" parent="Lighting/Reflection"]
-transform = Transform3D(1, 0, 0, 0, -0.0126883, 0.99992, 0, -0.99992, -0.0126883, 1.64422, 2.68196, -2.49291)
+transform = Transform3D(1, 0, 0, 0, -0.0126883, 0.99992, 0, -0.99992, -0.0126883, 2.94004, 1.23708, -2.24534)
+update_mode = 1
+size = Vector3(5.775, 5.69, 3.965)
+
+[node name="ReflectionProbe2" type="ReflectionProbe" parent="Lighting/Reflection"]
+transform = Transform3D(1, 0, 0, 0, -0.0126883, 0.99992, 0, -0.99992, -0.0126883, -2.10989, 1.23708, -2.24534)
+update_mode = 1
+size = Vector3(5.775, 5.69, 3.965)
+
+[node name="ReflectionProbe3" type="ReflectionProbe" parent="Lighting/Reflection"]
+transform = Transform3D(1, 0, 0, 0, -0.0126883, 0.99992, 0, -0.99992, -0.0126883, 0.100263, 1.23708, 2.39609)
+update_mode = 1
+size = Vector3(9.36489, 5.69, 3.965)
 
 [node name="Lights" type="Node3D" parent="Lighting"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.44054, -1.41145, -0.342801)
@@ -474,6 +496,14 @@ spot_angle_attenuation = 3.13834
 [node name="Trashcan2" parent="Props" instance=ExtResource("11_o18aq")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 4.05453, 0.279508, -3.9118)
 
+[node name="polySurface2" parent="Props/Trashcan2/Trashcan" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_o0i6v")
+
+[node name="polySurface1" parent="Props/Trashcan2/Trashcan" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_o0i6v")
+
+[node name="Interactible" parent="Props/Trashcan2" instance=ExtResource("7_2jcip")]
+
 [node name="Computer" parent="Props" instance=ExtResource("11_hd7sb")]
 transform = Transform3D(-0.0692511, 1.91498e-09, 3.9994, -1.24478, 3.80133, -0.0215537, -3.80075, -1.24496, -0.0658115, 2.76725, 0.932588, -4.24377)
 
@@ -689,6 +719,18 @@ surface_material_override/0 = ExtResource("20_7wxy1")
 [node name="pCylinder13" parent="Props/Metaldoor/MetalDoor" index="5"]
 surface_material_override/0 = ExtResource("20_7wxy1")
 
+[node name="Interactible" parent="Props/Metaldoor" instance=ExtResource("7_2jcip")]
+transform = Transform3D(4.815, 0, 0, 0, 4.815, 0, 0, 0, 4.815, -0.00609219, 0.0736309, -0.214027)
+
+[node name="Clock" parent="Props" instance=ExtResource("23_1ubp3")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 2.31757, 1.29753, 1.19621)
+
+[node name="Talker" parent="." instance=ExtResource("24_oi0bv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.31865, 0.610167, 2.42823)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Talker"]
+material = SubResource("StandardMaterial3D_oi0bv")
+
 [node name="Post-Processing" type="Node" parent="."]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Post-Processing"]
@@ -722,6 +764,7 @@ grow_vertical = 2
 [editable path="Props/Desk3"]
 [editable path="Props/Desk4"]
 [editable path="Props/Plant2"]
+[editable path="Props/Trashcan2"]
 [editable path="Props/Computer"]
 [editable path="Props/Computer/Interactible"]
 [editable path="Props/Computer2"]
