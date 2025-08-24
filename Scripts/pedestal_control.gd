@@ -24,6 +24,7 @@ func interact():
 		if wordType == GameManager.WordType.NEW_WORD and parentPair["newWord"] == tmpPickup.GetWordPair()["newWord"]:
 			pickup = tmpPickup
 			fpsChar.setPickup(null)
+			pickup.reparent(get_tree().get_root().get_node("/root/Root_FPS"))
 			pickup.set_position($PickupPlacement.get_global_position())
 			pickup.visible=true
 			get_tree().get_root().get_node("Root_FPS").IdeaPlaced()
@@ -31,6 +32,6 @@ func interact():
 			
 	elif not fpsChar.hasPickup() and canPickup:
 		fpsChar.setPickup(pickup)
-		pickup.visible=false
+		#pickup.visible=false
 		pickup=null
 		

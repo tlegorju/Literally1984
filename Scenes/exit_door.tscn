@@ -59,3 +59,9 @@ material = ExtResource("2_b4nh8")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.5, -1.95)
 size = Vector3(2, 3, 0.1)
 material = ExtResource("2_b4nh8")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.347628, 2.61313, 0)
+light_color = Color(0.841905, 0.195842, 0.13333, 1)
+light_energy = 0.5
+light_bake_mode = 1

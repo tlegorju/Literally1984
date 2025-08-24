@@ -1,13 +1,13 @@
 extends Node3D
 
-var startY : float
+var start : Vector3
 var wordPair
 
 func _ready() -> void:
-	startY = $StaticBody3D/MeshInstance3D.get_position().y
+	start = $StaticBody3D/MeshInstance3D.get_position()
 
 func _process(delta: float) -> void:
-	$StaticBody3D/MeshInstance3D.get_position().y = startY + sin(Time.get_ticks_usec()/100000)*0.05;
+	$StaticBody3D/MeshInstance3D.set_position(start + Vector3(0,sin(Time.get_ticks_usec()/100000)*0.05,0))
 
 func SetWordPair(pair):
 	wordPair=pair

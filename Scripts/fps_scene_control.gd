@@ -76,4 +76,4 @@ func IdeaPlaced():
 	if ideaToPlace == ideaPlaced:
 		print("all idea found, leave level")
 		for d in exitDoors:
-			d.unlock()
+			d.get_node("ExitDoor").unlock()
