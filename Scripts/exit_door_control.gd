@@ -6,7 +6,7 @@ func interact():
 	if isLocked:
 		print("can't open")
 	else:
-		GameManager.nextStep()
+		GameManager.corrected_word=true
 		GameManager.goToMainScene()
 		
 func unlock():

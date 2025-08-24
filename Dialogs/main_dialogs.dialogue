@@ -1,11 +1,20 @@
 ~ step_1
-
+Why am I still here ? You have been keeping me for days now !
+- It doesn't matter why
+- Are you not enjoying your stay with us ?
+Listen I just want to go back {{GameManager.dialog_word1}}
+- it won't take much longer don't worry
+if GameManager.corrected_word==true
+	do GameManager.nextStep()
 => END
 ~ step_2
+Step2
 => END
 ~ step_3
+Step3
 => END
 ~ step_4
+Step4
 => END
 ~ step_5
 => END
@@ -15,7 +24,8 @@
 => END
 ~ step_8
 => END
-
+if GameManager.corrected_word==true
+	Nathan: That property is greater than or equal to 10
 {{GameManager.dialog_word1}}
 {{GameManager.dialog_word2}}
 {{GameManager.dialog_word3}}
