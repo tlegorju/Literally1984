@@ -17,6 +17,9 @@ var MOUSE_SENSITIVITY = 0.05
 var pickup: Node3D = null
 @export var handRef : Node3D
 
+@export var reticule : TextureRect
+@export var handTexture : Resource
+
 func _ready():
 	camera = $RotationHelper/Camera3D
 	rotation_helper = $RotationHelper
@@ -24,8 +27,11 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _physics_process(delta):
+	if DialogGlobals.is_in_dialog:
+		return
 	process_input(delta)
 	process_movement(delta)
+	checkInteractable()
 
 func process_input(delta):
 
@@ -86,6 +92,9 @@ func process_movement(delta):
 	#vel = move_and_slide(vel, Vector3(0, 1, 0), 0.05, 4, deg_to_rad(MAX_SLOPE_ANGLE))
 
 func _input(event):
+	if DialogGlobals.is_in_dialog:
+		return
+		
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		rotation_helper.rotate_x(deg_to_rad(-event.relative.y * MOUSE_SENSITIVITY))
 		self.rotate_y(deg_to_rad(event.relative.x * MOUSE_SENSITIVITY * -1))
@@ -106,7 +115,22 @@ func _input(event):
 		var result = space_state.intersect_ray(query)
 		if result and result.collider.get_parent().is_in_group("interactable"):
 			result.collider.get_parent().interact()
-			
+
+func checkInteractable():
+	var space_state = get_world_3d().direct_space_state
+	var mousepos = get_viewport().get_mouse_position()
+
+	var origin = camera.project_ray_origin(mousepos)
+	var end = origin + camera.project_ray_normal(mousepos) * 2
+	var query = PhysicsRayQueryParameters3D.create(origin, end)
+	query.collide_with_areas = true
+
+	var result = space_state.intersect_ray(query)
+	if result and result.collider.get_parent().is_in_group("interactable"):
+		reticule.texture = handTexture
+	else:
+		reticule.texture = null
+	
 func hasPickup() -> bool:
 	return pickup!=null
 	
