@@ -7,7 +7,7 @@ func interact():
 		print("can't open")
 	else:
 		GameManager.nextStep()
-		get_tree().change_scene_to_file("res://Scenes/inception_scene.tscn")
+		GameManager.goToMainScene()
 		
 func unlock():
 	isLocked=false

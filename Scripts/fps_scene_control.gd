@@ -20,6 +20,7 @@ var initState=0
 func _ready() -> void:
 	words = GameManager.getCurWords()
 	ideaToPlace = words.size()
+	DialogGlobals.show_tutorial = GameManager.curStep==0
 
 func _process(delta: float) -> void:
 	if initState==0:
@@ -27,7 +28,11 @@ func _process(delta: float) -> void:
 		initState+=1
 	elif initState==1:
 		SetupWordsRoom()
-		initState+=1		
+		initState+=1
+	elif initState==2 and DialogGlobals.show_tutorial:
+		var dial = load("res://Dialogs/minigame_tips.dialogue")
+		DialogueManager.show_dialogue_balloon(dial, "start")
+		initState+=1	
 
 func InstantiateRooms():
 	var roomCount = words.size()
@@ -71,9 +76,9 @@ func SetupWordsRoom():
 
 func IdeaPlaced():
 	ideaPlaced=ideaPlaced+1
-	print("idea placed")
 	
 	if ideaToPlace == ideaPlaced:
-		print("all idea found, leave level")
+		var dial = load("res://Dialogs/minigame_tips.dialogue")
+		DialogueManager.show_dialogue_balloon(dial, "exit")		
 		for d in exitDoors:
 			d.get_node("ExitDoor").unlock()

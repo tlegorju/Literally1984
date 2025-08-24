@@ -1,10 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://c4l1xbib40snd"]
+[gd_scene load_steps=14 format=3 uid="uid://c4l1xbib40snd"]
 
 [ext_resource type="Script" uid="uid://bcwcnit7dhv05" path="res://Scripts/fps_scene_control.gd" id="1_20jko"]
 [ext_resource type="Script" uid="uid://drey6hsglvnos" path="res://Scripts/fps_control.gd" id="1_38687"]
 [ext_resource type="PackedScene" uid="uid://cayug6s15dq1f" path="res://Scenes/word_room_scene.tscn" id="2_55t8s"]
 [ext_resource type="Material" uid="uid://c21ctb8ihv1ay" path="res://Assets/Materials/FPS_Wall_Material.tres" id="4_20jko"]
 [ext_resource type="PackedScene" uid="uid://cilmqphwo3w6i" path="res://Scenes/exit_door.tscn" id="4_27wqy"]
+[ext_resource type="Texture2D" uid="uid://c4ny0rxflcdrs" path="res://tmp_art/pickup.png" id="6_55t8s"]
+[ext_resource type="Texture2D" uid="uid://beivm1l7puaba" path="res://tmp_art/select.png" id="6_qs4p1"]
+[ext_resource type="Script" uid="uid://bqfxxsgkqjv58" path="res://Scripts/reticule_control.gd" id="8_ojsxo"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_87rv1"]
 material = ExtResource("4_20jko")
@@ -42,10 +45,12 @@ transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 3, 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ceiling"]
 mesh = SubResource("PlaneMesh_qs4p1")
 
-[node name="FPSChar" type="CharacterBody3D" parent="." node_paths=PackedStringArray("handRef")]
+[node name="FPSChar" type="CharacterBody3D" parent="." node_paths=PackedStringArray("handRef", "reticule")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 script = ExtResource("1_38687")
 handRef = NodePath("RotationHelper/HandRef")
+reticule = NodePath("../CenterContainer/Panel/TextureRect")
+handTexture = ExtResource("6_55t8s")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="FPSChar"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -65,3 +70,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.212836, -0.124609, -0.1866
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_20jko")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/Panel"]
+layout_mode = 2
+offset_right = 24.0
+offset_bottom = 24.0
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("6_qs4p1")
+script = ExtResource("8_ojsxo")
