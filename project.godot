@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Literally 1984"
-run/main_scene="uid://o2wwrspgry8k"
+run/main_scene="uid://cnlqiy1t1tlfa"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -20,7 +20,7 @@ config/icon="res://icon.svg"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 TestDialogScript="*res://Scripts/dialog_globals.gd"
 CursorControl="*res://Scripts/cursor_control.gd"
-WordsGlobal="*res://Scripts/GameManager.gd"
+GameManager="*res://Scripts/GameManager.gd"
 
 [editor_plugins]
 
