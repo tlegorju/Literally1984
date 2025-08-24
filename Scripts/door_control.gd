@@ -5,6 +5,8 @@ var target_rotation : float = 0
 var rotation_speed : float = 20
 var pivot
 
+@export var timer : Timer
+
 func _ready():
 	pivot = $Pivot
 
@@ -16,18 +18,25 @@ func _process(delta: float) -> void:
 
 func interact():
 	if isOpen:
-		isOpen=false
 		close_door()
 	else:
-		isOpen=true
 		open_door()
+		timer.start()
 
 func open_door():
 	target_rotation = 90
 	$Pivot/CollisionShape3D.disabled=true
+	isOpen=true
 	pass
 	
 func close_door():
 	target_rotation = 0
 	$Pivot/CollisionShape3D.disabled=true
+	isOpen=false
+	timer.stop()
 	pass
+
+
+func _on_timer_timeout() -> void:
+	if isOpen:
+		close_door()

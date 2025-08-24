@@ -3,14 +3,16 @@ extends Node3D
 var ideaPlaced=0
 var ideaToPlace=1
 
-@export var exitDoor : Node3D
+@export var fpsChar : Node3D
 
-@export var roomSpacing = 8.0
+@export var roomSpacing = 6.0
 @export var corridorWidth = 4.0
 
 @export var RoomScene : PackedScene
+@export var ExitDoorScene : PackedScene
 
 var rooms = []
+var exitDoors = []
 var words = []
 
 var initState=0
@@ -31,7 +33,14 @@ func InstantiateRooms():
 	var roomCount = words.size()
 	rooms.clear()
 	
-	var curPos = Vector3(roomSpacing,0,0)
+	#place first exit door
+	var curPos = fpsChar.get_position() - Vector3(2.0,0,0)
+	exitDoors.append(ExitDoorScene.instantiate())
+	add_child.call_deferred(exitDoors[0])
+	exitDoors[0].set_position(curPos)
+	
+	#place rooms with words
+	curPos = fpsChar.get_position() + Vector3(roomSpacing/2.0,0,0)
 	for i in roomCount:
 		var newRoom = RoomScene.instantiate()
 		add_child.call_deferred(newRoom)
@@ -45,6 +54,13 @@ func InstantiateRooms():
 		rooms.append(newRoom)
 		
 		curPos += Vector3(roomSpacing,0,0)
+	
+	#place second exit door
+	curPos = curPos - Vector3(roomSpacing/2,0,0) + Vector3(2.0,0,0)
+	exitDoors.append(ExitDoorScene.instantiate())
+	add_child.call_deferred(exitDoors[1])
+	exitDoors[1].set_position(curPos)
+	exitDoors[1].rotate_y(deg_to_rad(180))
 
 func SetupWordsRoom():
 	rooms.shuffle()
@@ -59,4 +75,5 @@ func IdeaPlaced():
 	
 	if ideaToPlace == ideaPlaced:
 		print("all idea found, leave level")
-		exitDoor.unlock()
+		for d in exitDoors:
+			d.unlock()

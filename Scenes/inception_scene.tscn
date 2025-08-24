@@ -1,35 +1,28 @@
-[gd_scene load_steps=12 format=3 uid="uid://c4l1xbib40snd"]
+[gd_scene load_steps=10 format=3 uid="uid://c4l1xbib40snd"]
 
 [ext_resource type="Script" uid="uid://bcwcnit7dhv05" path="res://Scripts/fps_scene_control.gd" id="1_20jko"]
 [ext_resource type="Script" uid="uid://drey6hsglvnos" path="res://Scripts/fps_control.gd" id="1_38687"]
 [ext_resource type="PackedScene" uid="uid://cayug6s15dq1f" path="res://Scenes/word_room_scene.tscn" id="2_55t8s"]
-[ext_resource type="Script" uid="uid://cmjs4mt084rdk" path="res://Scripts/exit_door_control.gd" id="6_qs4p1"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_27wqy"]
-albedo_color = Color(0.585062, 0.585062, 0.585062, 1)
+[ext_resource type="Material" uid="uid://c21ctb8ihv1ay" path="res://Assets/Materials/FPS_Wall_Material.tres" id="4_20jko"]
+[ext_resource type="PackedScene" uid="uid://cilmqphwo3w6i" path="res://Scenes/exit_door.tscn" id="4_27wqy"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_87rv1"]
-material = SubResource("StandardMaterial3D_27wqy")
+material = ExtResource("4_20jko")
+size = Vector2(200, 200)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_qs4p1"]
+material = ExtResource("4_20jko")
 size = Vector2(200, 200)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_inod8"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_27wqy"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ojsxo"]
-albedo_color = Color(0.940594, 0, 0, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_r41h3"]
-material = SubResource("StandardMaterial3D_ojsxo")
-size = Vector3(0.1, 2.2, 1.5)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_87rv1"]
-size = Vector3(0.1, 2.2, 1.5)
-
-[node name="Root_FPS" type="Node3D" node_paths=PackedStringArray("exitDoor")]
+[node name="Root_FPS" type="Node3D" node_paths=PackedStringArray("fpsChar")]
 script = ExtResource("1_20jko")
-exitDoor = NodePath("ExitDoor")
+fpsChar = NodePath("FPSChar")
 RoomScene = ExtResource("2_55t8s")
+ExitDoorScene = ExtResource("4_27wqy")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.411449, 0.804614, -0.428142, -0.557526, 0.593798, 0.580145, 0.721023, 0, 0.692911, -17.1141, 6.15474, 0)
@@ -39,7 +32,14 @@ transform = Transform3D(0.411449, 0.804614, -0.428142, -0.557526, 0.593798, 0.58
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
 mesh = SubResource("PlaneMesh_87rv1")
 
+[node name="Ceiling" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 2.5, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ceiling"]
+mesh = SubResource("PlaneMesh_qs4p1")
+
 [node name="FPSChar" type="CharacterBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 script = ExtResource("1_38687")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="FPSChar"]
@@ -54,24 +54,3 @@ shape = SubResource("CapsuleShape3D_27wqy")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="Camera3D" type="Camera3D" parent="FPSChar/RotationHelper"]
-
-[node name="ExitDoor" type="Node3D" parent="." groups=["interactable"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.68407, 0, -2.67499)
-script = ExtResource("6_qs4p1")
-
-[node name="Pivot" type="RigidBody3D" parent="ExitDoor"]
-freeze = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ExitDoor/Pivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0.75)
-mesh = SubResource("BoxMesh_r41h3")
-skeleton = NodePath("../..")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ExitDoor/Pivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0.75)
-shape = SubResource("BoxShape3D_87rv1")
-
-[node name="Label3D" type="Label3D" parent="ExitDoor/Pivot"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.076, 1.6, 0.75)
-text = "EXIT"
-outline_size = 0
