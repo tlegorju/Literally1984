@@ -1,0 +1,22 @@
+~ step_1
+
+=> END
+~ step_2
+=> END
+~ step_3
+=> END
+~ step_4
+=> END
+~ step_5
+=> END
+~ step_6
+=> END
+~ step_7
+=> END
+~ step_8
+=> END
+
+{{GameManager.dialog_word1}}
+{{GameManager.dialog_word2}}
+{{GameManager.dialog_word3}}
+=> END
