@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cayug6s15dq1f"]
+[gd_scene load_steps=16 format=3 uid="uid://cayug6s15dq1f"]
 
 [ext_resource type="Script" uid="uid://d1en8cypc2207" path="res://Scripts/word_room_control.gd" id="1_lk2ee"]
 [ext_resource type="PackedScene" uid="uid://dn7ist6x615jk" path="res://Scenes/pickup.tscn" id="2_evwxb"]
@@ -17,7 +17,7 @@ size = Vector3(0.1, 2.2, 1.5)
 size = Vector3(0.1, 2.2, 1.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iid7f"]
-albedo_color = Color(0.554541, 0.531197, 0.431612, 1)
+albedo_color = Color(0.224768, 0.149891, 0.02069, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_knc3h"]
 material = SubResource("StandardMaterial3D_iid7f")
@@ -31,14 +31,17 @@ radius = 0.2
 
 [sub_resource type="BoxMesh" id="BoxMesh_4upgl"]
 material = ExtResource("5_evwxb")
-size = Vector3(6, 2.5, 0.2)
+size = Vector3(6, 3, 0.2)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_nq1ny"]
-size = Vector3(6, 2.5, 0.2)
+[sub_resource type="BoxShape3D" id="BoxShape3D_evwxb"]
+size = Vector3(6, 3, 0.2)
 
 [sub_resource type="BoxMesh" id="BoxMesh_sitgv"]
 material = ExtResource("5_evwxb")
-size = Vector3(7.5, 2.5, 0.2)
+size = Vector3(7.5, 3, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nq1ny"]
+size = Vector3(7.602, 3, 0.2)
 
 [node name="WordRoom" type="Node3D" node_paths=PackedStringArray("door", "doorText", "pedestal", "pickupPivot")]
 script = ExtResource("1_lk2ee")
@@ -98,36 +101,36 @@ transform = Transform3D(1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, 0, 1.267
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.5)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/Wall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 mesh = SubResource("BoxMesh_4upgl")
 skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Wall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
-shape = SubResource("BoxShape3D_nq1ny")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003, 1.5, 0)
+shape = SubResource("BoxShape3D_evwxb")
 
 [node name="Wall2" type="StaticBody3D" parent="Walls"]
 transform = Transform3D(-0.0012217, 0, 0.999999, 0, 1, 0, -0.999999, 0, -0.0012217, -3, 0, -3.7)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/Wall2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0.1)
 mesh = SubResource("BoxMesh_sitgv")
 skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Wall2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+transform = Transform3D(1, 0, 2.21189e-08, 0, 1, 0, -2.21189e-08, 0, 1, 0.012, 1.5, 0.1)
 shape = SubResource("BoxShape3D_nq1ny")
 
 [node name="Wall3" type="StaticBody3D" parent="Walls"]
 transform = Transform3D(-0.0012217, 0, 0.999999, 0, 1, 0, -0.999999, 0, -0.0012217, 3, 0, -3.7)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/Wall3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -0.1)
 mesh = SubResource("BoxMesh_sitgv")
 skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Wall3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+transform = Transform3D(1, 0, 2.56114e-09, 0, 1, 0, -2.56114e-09, 0, 1, 0.009, 1.5, -0.1)
 shape = SubResource("BoxShape3D_nq1ny")
 
 [node name="Wall4" type="CSGCombiner3D" parent="Walls"]
@@ -135,8 +138,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.38419e-07)
 use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Walls/Wall4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
-size = Vector3(6, 2.5, 0.2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+size = Vector3(6, 3, 0.2)
 material = ExtResource("5_evwxb")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Walls/Wall4"]
@@ -144,5 +147,20 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 1.1
 operation = 2
 size = Vector3(0.5, 2.2, 1.5)
 material = ExtResource("5_evwxb")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.035982, 2.30881, -3.8424)
+light_color = Color(0.990427, 0.605932, 0.397478, 1)
+light_bake_mode = 1
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.0422941, 0.999105, 0, -0.999105, 0.0422941, 2, 2.5, 2)
+light_color = Color(0.620082, 0.752678, 0.960737, 1)
+light_energy = 1.927
+light_bake_mode = 1
+spot_range = 4.623
+spot_attenuation = 0.24
+spot_angle = 78.3
+spot_angle_attenuation = 3.13834
 
 [connection signal="timeout" from="Door/Timer" to="Door" method="_on_timer_timeout"]

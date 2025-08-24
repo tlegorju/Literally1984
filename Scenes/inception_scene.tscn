@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c4l1xbib40snd"]
+[gd_scene load_steps=11 format=3 uid="uid://c4l1xbib40snd"]
 
 [ext_resource type="Script" uid="uid://bcwcnit7dhv05" path="res://Scripts/fps_scene_control.gd" id="1_20jko"]
 [ext_resource type="Script" uid="uid://drey6hsglvnos" path="res://Scripts/fps_control.gd" id="1_38687"]
@@ -18,14 +18,18 @@ size = Vector2(200, 200)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_27wqy"]
 
+[sub_resource type="Environment" id="Environment_20jko"]
+sdfgi_read_sky_light = false
+sdfgi_cascades = 2
+sdfgi_max_distance = 51.2
+glow_enabled = true
+volumetric_fog_enabled = true
+
 [node name="Root_FPS" type="Node3D" node_paths=PackedStringArray("fpsChar")]
 script = ExtResource("1_20jko")
 fpsChar = NodePath("FPSChar")
 RoomScene = ExtResource("2_55t8s")
 ExitDoorScene = ExtResource("4_27wqy")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.411449, 0.804614, -0.428142, -0.557526, 0.593798, 0.580145, 0.721023, 0, 0.692911, -17.1141, 6.15474, 0)
 
 [node name="Floor" type="StaticBody3D" parent="."]
 
@@ -33,14 +37,15 @@ transform = Transform3D(0.411449, 0.804614, -0.428142, -0.557526, 0.593798, 0.58
 mesh = SubResource("PlaneMesh_87rv1")
 
 [node name="Ceiling" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 2.5, 0)
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 3, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ceiling"]
 mesh = SubResource("PlaneMesh_qs4p1")
 
-[node name="FPSChar" type="CharacterBody3D" parent="."]
+[node name="FPSChar" type="CharacterBody3D" parent="." node_paths=PackedStringArray("handRef")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 script = ExtResource("1_38687")
+handRef = NodePath("RotationHelper/HandRef")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="FPSChar"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -54,3 +59,9 @@ shape = SubResource("CapsuleShape3D_27wqy")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="Camera3D" type="Camera3D" parent="FPSChar/RotationHelper"]
+
+[node name="HandRef" type="Node3D" parent="FPSChar/RotationHelper"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.212836, -0.124609, -0.186658)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_20jko")
