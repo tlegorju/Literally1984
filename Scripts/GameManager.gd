@@ -4,7 +4,7 @@ extends Node
 enum WordType {OLD_WORD, NEW_WORD, NEUTRAL_WORD}
 
 var words = []
-var curStep : int = 2
+var curStep : int = 0
 var maxStep : int = 3
 
 func _ready() -> void:
@@ -49,3 +49,11 @@ func nextStep():
 	
 func isFinished():
 	return curStep == maxStep
+	
+func goToMinigameScene():
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	get_tree().change_scene_to_file("res://Scenes/inception_scene.tscn")
+	
+func goToMainScene():
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	get_tree().change_scene_to_file("res://Scenes/main_level.tscn")
