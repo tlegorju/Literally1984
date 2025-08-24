@@ -1,27 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://8q5t0t2rflcq"]
+[gd_scene load_steps=4 format=3 uid="uid://8q5t0t2rflcq"]
 
 [ext_resource type="Script" uid="uid://ypp8m7378wvl" path="res://Scripts/cop_control.gd" id="1_eyr17"]
+[ext_resource type="PackedScene" uid="uid://dbk4cit17bgpl" path="res://Assets/Character_VF.fbx" id="2_s54t4"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_132v8"]
-height = 1.71951
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p2nmu"]
-albedo_color = Color(0.0942883, 0.709762, 0.73838, 1)
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_0yq5w"]
-material = SubResource("StandardMaterial3D_p2nmu")
-height = 1.7
+radius = 0.22061
+height = 1.28341
 
 [node name="Cop" type="CharacterBody3D"]
 collision_layer = 3
 script = ExtResource("1_eyr17")
+movement_speed = 1.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.859649, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.655103, 0)
 shape = SubResource("CapsuleShape3D_132v8")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.853656, 0)
-mesh = SubResource("CapsuleMesh_0yq5w")
+[node name="Character_VF" parent="." instance=ExtResource("2_s54t4")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, -0.0459289, 0)
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]

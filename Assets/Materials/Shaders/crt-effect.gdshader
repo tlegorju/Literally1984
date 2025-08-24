@@ -12,7 +12,7 @@ void fragment() {
 	float distortion = .006;
 	float noisestrength = .025;
 	float bendscale = 1.5;
-	float stripes_mult = .15;
+	float stripes_mult = .1;
 
 	vec2 uv = FRAGCOORD.xy / (1.0 / SCREEN_PIXEL_SIZE);
 	vec4 screen_col = texture(screen_texture, uv);

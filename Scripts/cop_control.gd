@@ -2,6 +2,7 @@ extends CharacterBody3D
 
 @onready var navigation_agent: NavigationAgent3D = $NavigationAgent3D
 @export var movement_speed: float = 2.0
+@export var turn_speed = 0.2;
 
 func _ready():
 	# These values need to be adjusted for the actor's speed
@@ -18,6 +19,12 @@ func actor_setup():
 
 func set_movement_target(movement_target: Vector3):
 	navigation_agent.set_target_position(movement_target)
+	
+func set_character_rotation():
+	var target: Basis = Basis.looking_at(velocity.normalized());
+	basis = basis.slerp(target, 0.2);
+	#var look_at_pos = get_global_position() + velocity.normalized();
+	#look_at(look_at_pos);
 
 func _physics_process(delta):
 	if navigation_agent.is_navigation_finished():
@@ -27,6 +34,7 @@ func _physics_process(delta):
 	var next_path_position: Vector3 = navigation_agent.get_next_path_position()
 
 	velocity = current_agent_position.direction_to(next_path_position) * movement_speed
+	set_character_rotation();
 	move_and_slide()
 	
 func _input(event: InputEvent) -> void:
