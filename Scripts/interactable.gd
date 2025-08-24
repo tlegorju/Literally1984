@@ -7,17 +7,15 @@ extends Node3D
 signal on_interact;
 
 func _on_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
-	print("helppp")
 	var bActivated = event.is_action("select") && event.is_pressed();
 	if(!bActivated): return;
+	print(dialogue_resource, dialogue_name)
 	GameManager.try_show_dialog(dialogue_resource, dialogue_name, get_global_position(), max_dist, on_interact);
 
 func on_hover():
-	print("helppp")
 	CursorControl.set_cursor_hover(true)
 	
 func on_unhover():
-	print("no hover")
 	CursorControl.set_cursor_hover(false)
 	
 	
