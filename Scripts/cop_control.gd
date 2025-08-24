@@ -4,18 +4,32 @@ extends CharacterBody3D
 @export var movement_speed: float = 2.0
 @export var turn_speed = 0.2;
 
+var is_talking = false;
+
 func _ready():
 	# These values need to be adjusted for the actor's speed
 	# and the navigation layout.
 	navigation_agent.path_desired_distance = 0.5
 	navigation_agent.target_desired_distance = 0.5
+	
+	DialogueManager.dialogue_started.connect(dialogue_start);
+	DialogueManager.dialogue_ended.connect(dialogue_end);
 
 	# Make sure to not await during _ready.
 	actor_setup.call_deferred()
+	
+	
 
 func actor_setup():
 	# Wait for the first physics frame so the NavigationServer can sync.
 	await get_tree().physics_frame
+	
+	
+func dialogue_start(resource): 
+	is_talking = true;
+	
+func dialogue_end(resource): 
+	is_talking = false;
 
 func set_movement_target(movement_target: Vector3):
 	navigation_agent.set_target_position(movement_target)
@@ -38,6 +52,7 @@ func _physics_process(delta):
 	move_and_slide()
 	
 func _input(event: InputEvent) -> void:
+	if(is_talking): return;
 	if(event.is_action("select")):
 		var selected_position = get_mouse_3D_pos();
 		if(selected_position): 

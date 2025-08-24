@@ -2,11 +2,13 @@
 
 [resource]
 transparency = 1
-albedo_color = Color(0.28, 0.424, 1, 0.666667)
-metallic_specular = 0.62
-roughness = 0.1
+albedo_color = Color(0, 0.215686, 0.854902, 0.721569)
+metallic = 0.63
+metallic_specular = 0.39
+roughness = 0.13
 rim_enabled = true
 clearcoat_enabled = true
-clearcoat_roughness = 0.21
+clearcoat = 0.9
+clearcoat_roughness = 0.22
 refraction_enabled = true
-refraction_scale = 0.03
+refraction_scale = 0.02

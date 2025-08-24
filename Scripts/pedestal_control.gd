@@ -29,9 +29,15 @@ func interact():
 			pickup.visible=true
 			get_tree().get_root().get_node("Root_FPS").IdeaPlaced()
 			canPickup=false
+		else:
+			var dial = load("res://Dialogs/minigame_tips.dialogue")
+			DialogueManager.show_dialogue_balloon(dial, "wrong_place")			
 			
 	elif not fpsChar.hasPickup() and canPickup:
 		fpsChar.setPickup(pickup)
 		#pickup.visible=false
 		pickup=null
+		if not DialogGlobals.has_pickedup:
+			var dial = load("res://Dialogs/minigame_tips.dialogue")
+			DialogueManager.show_dialogue_balloon(dial, "found_thought")
 		

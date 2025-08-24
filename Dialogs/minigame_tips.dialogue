@@ -1,0 +1,24 @@
+~ start
+set DialogGlobals.is_in_dialog=true
+I'm in its mind now
+It's time to reprogram its thought
+set DialogGlobals.is_in_dialog=false
+=> END
+~ found_thought
+set DialogGlobals.is_in_dialog=true
+Good, I found its thought
+Now I need to place this at the right spot
+set DialogGlobals.is_in_dialog=false
+=> END
+~ wrong_place
+set DialogGlobals.is_in_dialog=true
+This is not the right spot for this
+set DialogGlobals.is_in_dialog=false
+=> END
+~ exit
+set DialogGlobals.is_in_dialog=true
+Perfect.
+Its thought are corrected
+I can exit its mind now
+set DialogGlobals.is_in_dialog=false
+=> END
