@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://vbwitd2cgk71"]
+
+[ext_resource type="Script" uid="uid://c5tjgs7jw2eef" path="res://Scripts/interactable.gd" id="1_1uhsb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o05pk"]
+size = Vector3(0.104187, 0.244563, 0.102112)
+
+[node name="Interactible" type="Area3D"]
+script = ExtResource("1_1uhsb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_o05pk")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="on_hover"]
+[connection signal="mouse_exited" from="." to="." method="on_unhover"]

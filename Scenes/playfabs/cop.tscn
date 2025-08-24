@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://8q5t0t2rflcq"]
 
 [ext_resource type="Script" uid="uid://ypp8m7378wvl" path="res://Scripts/cop_control.gd" id="1_eyr17"]
-[ext_resource type="PackedScene" uid="uid://dbk4cit17bgpl" path="res://Assets/Character_VF.fbx" id="2_s54t4"]
+[ext_resource type="PackedScene" uid="uid://cprv0n850qaog" path="res://Assets/Character_VF.fbx" id="2_s54t4"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_132v8"]
 radius = 0.22061

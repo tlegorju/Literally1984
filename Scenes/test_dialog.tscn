@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://o2wwrspgry8k"]
+[gd_scene load_steps=10 format=3 uid="uid://o2wwrspgry8k"]
 
-[ext_resource type="Script" uid="uid://b4yf8adl2pnx4" path="res://Scripts/detenu_control.gd" id="1_132v8"]
+[ext_resource type="PackedScene" uid="uid://vbwitd2cgk71" path="res://Scenes/interactible.tscn" id="1_132v8"]
 [ext_resource type="PackedScene" uid="uid://8q5t0t2rflcq" path="res://Scenes/playfabs/cop.tscn" id="2_132v8"]
+[ext_resource type="Resource" uid="uid://drt3prdxpswbc" path="res://Dialogs/test_dialog.dialogue" id="2_p2nmu"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_qmtr8"]
 size = Vector2(20, 20)
@@ -16,6 +17,9 @@ albedo_color = Color(0.720302, 0.650415, 3.85046e-07, 1)
 material = SubResource("StandardMaterial3D_132v8")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_132v8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0yq5w"]
+size = Vector3(0.38, 0.28, 0.395)
 
 [node name="Node3D" type="Node3D"]
 
@@ -38,7 +42,6 @@ shape = SubResource("BoxShape3D_132v8")
 
 [node name="Detenu" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, -0.000203749, 0.000161346, 0.000203783, 1, -0.000176474, -0.000161302, 0.000176514, 1, 0, 0, 0)
-script = ExtResource("1_132v8")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Detenu"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -48,9 +51,21 @@ mesh = SubResource("CapsuleMesh_ku55n")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_132v8")
 
+[node name="Interactible" parent="Detenu" instance=ExtResource("1_132v8")]
+transform = Transform3D(0.986593, -0.0534254, 0.154214, 7.40874e-09, 0.944903, 0.32735, -0.163206, -0.322961, 0.932234, 0.024456, 1.40393, -0.0658638)
+dialogue_resource = ExtResource("2_p2nmu")
+dialogue_name = "test_dialog"
+
+[node name="CollisionShape3D" parent="Detenu/Interactible" index="0"]
+transform = Transform3D(0.726939, -0.492293, -0.478756, -0.213624, 0.500469, -0.838985, 0.652629, 0.712165, 0.258645, 0.0604396, -0.0695617, 0.200841)
+shape = SubResource("BoxShape3D_0yq5w")
+debug_color = Color(0.980392, 0, 1, 0.419608)
+
 [node name="Cop" parent="." instance=ExtResource("2_132v8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.91762, 0, 0)
 
 [connection signal="input_event" from="Detenu" to="Detenu" method="_on_input_event"]
 [connection signal="mouse_entered" from="Detenu" to="Detenu" method="on_hover"]
 [connection signal="mouse_exited" from="Detenu" to="Detenu" method="on_unhover"]
+
+[editable path="Detenu/Interactible"]

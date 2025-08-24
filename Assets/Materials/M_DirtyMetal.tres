@@ -1,0 +1,24 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://bam2qhaki3pnr"]
+
+[ext_resource type="Texture2D" uid="uid://cmwstc3oombex" path="res://Assets/Textures/noise_metal.tres" id="1_v1stp"]
+
+[sub_resource type="Gradient" id="Gradient_v1stp"]
+offsets = PackedFloat32Array(0.00881058, 1)
+colors = PackedColorArray(0.238631, 0.114334, 0.0536119, 1, 0.061951, 0.0619473, 0.0877126, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ody8o"]
+frequency = 0.0069
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_33864"]
+in_3d_space = true
+seamless = true
+color_ramp = SubResource("Gradient_v1stp")
+noise = SubResource("FastNoiseLite_ody8o")
+
+[resource]
+albedo_texture = SubResource("NoiseTexture2D_33864")
+metallic = 0.82
+metallic_specular = 0.41
+roughness = 0.34
+normal_scale = 0.45
+normal_texture = ExtResource("1_v1stp")
