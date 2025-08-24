@@ -199,7 +199,7 @@ navigation_mesh = SubResource("NavigationMesh_5erdv")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Navigation/NavigationRegion3D"]
 mesh = SubResource("PlaneMesh_5erdv")
 
-[node name="Cop" parent="." groups=["Player"] instance=ExtResource("4_qbrl8")]
+[node name="Cop" parent="." instance=ExtResource("4_qbrl8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.70478, 0.137719, -3.27468)
 input_ray_pickable = false
 movement_speed = 1.5
