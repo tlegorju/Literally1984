@@ -4,7 +4,10 @@ Why am I still here ? You have been keeping me for days now !
 - Are you not enjoying your stay with us ?
 Listen I just want to go back {{GameManager.dialog_word1}}
 - it won't take much longer don't worry
-if GameManager.corrected_word==true
+if GameManager.corrected_word==false
+	set GameManager.go_correct_word = true
+	do GameManager.goToMinigameScene()
+else
 	do GameManager.nextStep()
 => END
 ~ step_2
