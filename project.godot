@@ -30,6 +30,7 @@ enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 interactable="interactable object"
 Player=""
+Clock=""
 
 [input]
 

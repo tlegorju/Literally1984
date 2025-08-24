@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://cnlqiy1t1tlfa"]
+[gd_scene load_steps=47 format=3 uid="uid://cnlqiy1t1tlfa"]
 
 [ext_resource type="Script" uid="uid://uxtklgw6afd8" path="res://Scripts/camera_collider.gd" id="1_a2ia3"]
 [ext_resource type="Material" uid="uid://6hyaudq2jro0" path="res://Assets/Materials/M_Window.tres" id="1_q2fht"]
@@ -26,6 +26,8 @@
 [ext_resource type="Material" uid="uid://bam2qhaki3pnr" path="res://Assets/Materials/M_DirtyMetal.tres" id="20_7wxy1"]
 [ext_resource type="PackedScene" uid="uid://srv25nsamf0l" path="res://Assets/Clock.fbx" id="23_1ubp3"]
 [ext_resource type="PackedScene" uid="uid://5m82uxdy0llk" path="res://Scenes/talker.tscn" id="24_oi0bv"]
+[ext_resource type="FontFile" uid="uid://cc4h2hevqnpxd" path="res://Assets/Font/digital-7.ttf" id="24_yfdo3"]
+[ext_resource type="Script" uid="uid://y81lt0r7cayu" path="res://Scripts/clock_label.gd" id="25_eckhq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5erdv"]
 size = Vector3(4.75, 3, 4.617)
@@ -722,8 +724,19 @@ surface_material_override/0 = ExtResource("20_7wxy1")
 [node name="Interactible" parent="Props/Metaldoor" instance=ExtResource("7_2jcip")]
 transform = Transform3D(4.815, 0, 0, 0, 4.815, 0, 0, 0, 4.815, -0.00609219, 0.0736309, -0.214027)
 
-[node name="Clock" parent="Props" instance=ExtResource("23_1ubp3")]
-transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 2.31757, 1.29753, 1.19621)
+[node name="Clock" parent="Props" groups=["Clock"] instance=ExtResource("23_1ubp3")]
+transform = Transform3D(-8, 0, 6.99382e-07, 0, 8, 0, -6.99382e-07, 0, -8, -2.92543, 2.2617, -0.24564)
+
+[node name="Label3D" type="Label3D" parent="Props/Clock"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.017, -0.00997413)
+pixel_size = 0.0001
+modulate = Color(1, 0.05, 0, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "00:00"
+font = ExtResource("24_yfdo3")
+font_size = 256
+outline_size = 0
+script = ExtResource("25_eckhq")
 
 [node name="Talker" parent="." instance=ExtResource("24_oi0bv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.31865, 0.610167, 2.42823)
@@ -749,6 +762,7 @@ grow_vertical = 2
 [connection signal="body_entered" from="CameraSystem/CAM2/TriggerArea" to="CameraSystem/CAM2/TriggerArea" method="_on_body_entered"]
 [connection signal="body_exited" from="CameraSystem/CAM2/TriggerArea" to="CameraSystem/CAM2/TriggerArea" method="_on_body_exited"]
 [connection signal="body_entered" from="CameraSystem/CAM3/TriggerArea" to="CameraSystem/CAM3/TriggerArea" method="_on_body_entered"]
+[connection signal="body_entered" from="CameraSystem/CAM3/TriggerArea" to="Props/Clock/Label3D" method="_resetClock"]
 [connection signal="body_exited" from="CameraSystem/CAM3/TriggerArea" to="CameraSystem/CAM3/TriggerArea" method="_on_body_exited"]
 [connection signal="body_entered" from="Level/Doors/Area3D" to="Level/Doors/Door" method="on_collision_entered"]
 [connection signal="body_entered" from="Level/Doors/Area3D" to="Level/Doors/Door2" method="on_collision_entered"]
