@@ -20,7 +20,7 @@ config/icon="res://icon.svg"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 TestDialogScript="*res://Scripts/dialog_globals.gd"
 CursorControl="*res://Scripts/cursor_control.gd"
-WordsGlobal="*res://Scripts/GameManager.gd"
+GameManager="*res://Scripts/GameManager.gd"
 
 [editor_plugins]
 
