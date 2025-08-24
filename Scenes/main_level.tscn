@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://d342lkcej38l"]
+[gd_scene load_steps=21 format=3 uid="uid://cnlqiy1t1tlfa"]
 
 [ext_resource type="Script" path="res://Scripts/camera_collider.gd" id="1_a2ia3"]
 [ext_resource type="Material" uid="uid://6hyaudq2jro0" path="res://Assets/Materials/M_Window.tres" id="1_q2fht"]
@@ -6,8 +6,11 @@
 [ext_resource type="Script" path="res://Scripts/swinging.gd" id="3_5erdv"]
 [ext_resource type="PackedScene" uid="uid://8q5t0t2rflcq" path="res://Scenes/playfabs/cop.tscn" id="4_qbrl8"]
 [ext_resource type="Shader" uid="uid://d2xcewttt2h0r" path="res://Assets/Materials/Shaders/crt-effect.gdshader" id="6_236hc"]
-[ext_resource type="Script" path="res://Scripts/moving_trigger.gd" id="6_tqiex"]
+
+[ext_resource type="Script" uid="uid://c0emh3p8iwj30" path="res://Scripts/moving_trigger.gd" id="6_tqiex"]
+[ext_resource type="Shader" uid="uid://b6mdgtm4n033d" path="res://Assets/Materials/Shaders/blinking_screen.gdshader" id="7_ha3dl"]
 [ext_resource type="Texture2D" uid="uid://bmgi4b7e8bjta" path="res://Assets/Textures/noise.png" id="7_lwkuy"]
+[ext_resource type="Script" uid="uid://b74ixv82ftmj3" path="res://Scripts/spinning.gd" id="8_f3gli"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5erdv"]
 size = Vector3(4.75, 3, 4.617)
@@ -23,12 +26,20 @@ sky = SubResource("Sky_tv1p5")
 ambient_light_source = 1
 ssr_enabled = true
 ssao_enabled = true
+ssil_enabled = true
 sdfgi_enabled = true
 sdfgi_use_occlusion = true
+sdfgi_read_sky_light = false
+sdfgi_cascades = 8
 glow_enabled = true
+glow_normalized = true
+glow_blend_mode = 4
+glow_hdr_threshold = 0.79
+volumetric_fog_albedo = Color(0.900569, 0.983344, 1, 1)
+volumetric_fog_emission = Color(0.45376, 0.417378, 0.422848, 1)
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_5erdv"]
-vertices = PackedVector3Array(-4.5, 0.636905, -4.5, -4.5, 0.636905, 4.5, 4.5, 0.636905, 4.5, 4.5, 0.636905, -4.5)
+vertices = PackedVector3Array(-4.5, 0.5, -4.5, -4.5, 0.5, 4.5, 4.5, 0.5, 4.5, 4.5, 0.5, -4.5)
 polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_5erdv"]
@@ -36,6 +47,13 @@ size = Vector2(10, 10)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tqiex"]
 size = Vector3(3.83359, 2.25256, 3.35216)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tqiex"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ha3dl"]
+render_priority = 0
+shader = ExtResource("7_ha3dl")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lwkuy"]
 shader = ExtResource("6_236hc")
@@ -111,66 +129,61 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.44054, -1.41145, -0.342801)
 [node name="RoomSpot" type="SpotLight3D" parent="Lighting/Lights"]
 transform = Transform3D(1, 0, 0, 0, -0.0126883, 0.99992, 0, -0.99992, -0.0126883, 0.77087, 4.57577, -2.31704)
 light_color = Color(0.968627, 0.913725, 0.592157, 1)
+light_energy = 0.6
 shadow_enabled = true
 distance_fade_enabled = true
 distance_fade_begin = 0.0
 distance_fade_shadow = 0.0
 distance_fade_length = 15.0
 spot_range = 5.025
-spot_attenuation = 0.04
-spot_angle = 80.91
-spot_angle_attenuation = 3.249
+spot_attenuation = 0.6
+spot_angle = 60.91
+spot_angle_attenuation = 2.82842
 script = ExtResource("3_5erdv")
 swing_speed = 0.07
+blink_speed = 0.025
 pos_offset = Vector3(0.18, 0, 0)
 rot_offset = Vector3(0.1, 0, 7)
+min_energy = 0.45
 
 [node name="RoomSpot2" type="SpotLight3D" parent="Lighting/Lights"]
 transform = Transform3D(1, 0, 0, 0, -0.0126883, 0.99992, 0, -0.99992, -0.0126883, -3.70381, 4.57029, -2.31704)
 light_color = Color(0.968627, 0.913725, 0.592157, 1)
+light_energy = 0.6
 shadow_enabled = true
 distance_fade_enabled = true
 distance_fade_begin = 0.0
 distance_fade_shadow = 0.0
 distance_fade_length = 15.0
 spot_range = 5.025
-spot_attenuation = 0.04
-spot_angle = 80.91
-spot_angle_attenuation = 3.249
+spot_attenuation = 0.6
+spot_angle = 60.91
+spot_angle_attenuation = 2.82842
 script = ExtResource("3_5erdv")
+noise_offset = 23.46
 swing_speed = 0.08
 pos_offset = Vector3(0.2, 0, 0)
 rot_offset = Vector3(0.1, 0, 8)
+min_energy = 0.5
 
 [node name="RoomSpot4" type="SpotLight3D" parent="Lighting/Lights"]
 transform = Transform3D(1, 0, 0, 0, -0.0126883, 0.99992, 0, -0.99992, -0.0126883, -1.40421, 4.24644, 2.75159)
 light_color = Color(0.968627, 0.913725, 0.592157, 1)
+light_energy = 0.6
 shadow_enabled = true
 distance_fade_enabled = true
 distance_fade_begin = 0.0
 distance_fade_shadow = 0.0
 distance_fade_length = 15.0
 spot_range = 9.471
-spot_attenuation = 0.42
-spot_angle = 86.05
-spot_angle_attenuation = 2.46228
+spot_attenuation = 0.6
+spot_angle = 60.91
+spot_angle_attenuation = 2.82842
 script = ExtResource("3_5erdv")
+noise_offset = 132.94
 swing_speed = 0.1
 pos_offset = Vector3(0.45, 0, 0)
-
-[node name="RoomSpot3" type="SpotLight3D" parent="Lighting/Lights"]
-transform = Transform3D(1, 0, 0, 0, -0.0126883, 0.99992, 0, -0.99992, -0.0126883, 3.28756, 4.68365, -2.31704)
-visible = false
-light_color = Color(0.968627, 0.913725, 0.592157, 1)
-shadow_enabled = true
-distance_fade_enabled = true
-distance_fade_begin = 0.0
-distance_fade_shadow = 0.0
-distance_fade_length = 15.0
-spot_range = 5.025
-spot_attenuation = 0.04
-spot_angle = 80.91
-spot_angle_attenuation = 3.249
+min_energy = 0.4
 
 [node name="Navigation" type="Node3D" parent="."]
 
@@ -182,7 +195,8 @@ navigation_mesh = SubResource("NavigationMesh_5erdv")
 mesh = SubResource("PlaneMesh_5erdv")
 
 [node name="Cop" parent="." instance=ExtResource("4_qbrl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.69482, 0.137719, -3.67262)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.70478, 0.137719, -3.27468)
+movement_speed = 1.5
 
 [node name="Level" type="Node3D" parent="."]
 
@@ -206,13 +220,13 @@ operation = 2
 size = Vector3(2, 2, 1)
 
 [node name="WindowHole" type="CSGBox3D" parent="Level/InteriorWall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.65192, 1.27406, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.943297, 1.27406, 0)
 operation = 2
-size = Vector3(5.02492, 1.31369, 1)
+size = Vector3(3.60767, 1.31369, 1)
 
 [node name="Window" type="CSGBox3D" parent="Level/InteriorWall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.65192, 1.27406, 0)
-size = Vector3(5.025, 1.314, 0.05)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.950721, 1.27406, 0)
+size = Vector3(3.6226, 1.314, 0.05)
 material = ExtResource("1_q2fht")
 
 [node name="Doors" type="CSGCombiner3D" parent="Level"]
@@ -258,6 +272,151 @@ size = Vector3(10, 3.32422, 0.25)
 [node name="CSGBox3D4" type="CSGBox3D" parent="Level/ExteriorWalls"]
 transform = Transform3D(-0.000139638, 0, -1, 0, 1, 0, 1, 0, -0.000139638, 4.87168, 1.64688, -0.0036487)
 size = Vector3(10, 3.31006, 0.25)
+
+[node name="Props" type="Node3D" parent="."]
+
+[node name="Desk" type="CSGCombiner3D" parent="Props"]
+transform = Transform3D(0.999717, 0, -0.0237866, 0, 1, 0, 0.0237866, 0, 0.999717, 0.190541, 0.888613, -4.20775)
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Props/Desk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.187229, 0, 9.53674e-07)
+size = Vector3(1.48554, 0.08, 0.93)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Props/Desk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.776428, -0.36208, 0)
+size = Vector3(0.307146, 0.80416, 0.93)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Props/Desk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.333337, -0.36208, -0.422651)
+size = Vector3(0.05, 0.804, 0.05)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Props/Desk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.333337, -0.36208, 0.399207)
+size = Vector3(0.05, 0.804, 0.05)
+
+[node name="Desk2" type="CSGCombiner3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.69204, 0.887059, -4.23666)
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Props/Desk2"]
+size = Vector3(1.86, 0.08, 0.93)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Props/Desk2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.709768, -0.36208, 0)
+size = Vector3(0.440464, 0.80416, 0.93)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Props/Desk2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.760244, -0.36208, -0.425371)
+size = Vector3(0.05, 0.804, 0.05)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Props/Desk2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.760244, -0.36208, 0.396487)
+size = Vector3(0.05, 0.804, 0.05)
+
+[node name="Trashcan" type="CSGCombiner3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2436, 0, -4.16001)
+use_collision = true
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Props/Trashcan"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.69258, 0.354198, -0.202276)
+radius = 0.202
+height = 0.45
+sides = 16
+
+[node name="Plant" type="CSGCombiner3D" parent="Props"]
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Props/Plant"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.27534, 0.323789, -4.1751)
+radius = 0.227
+height = 0.317
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Props/Plant"]
+transform = Transform3D(1, 0, 0, 0, 0.99903, -0.0440379, 0, 0.0440379, 0.99903, 1.30208, 1.07229, -4.29114)
+size = Vector3(0.015, 1.35, 0.015)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Props/Plant"]
+transform = Transform3D(-0.414979, 0.114757, -0.902565, 0.0238007, 0.993044, 0.115318, 0.90952, 0.0263727, -0.414824, 1.3418, 1.07822, -4.196)
+size = Vector3(0.015, 1.35, 0.015)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Props/Plant"]
+transform = Transform3D(1, 0, 0, 0, 0.999087, 0.0427301, 0, -0.0427301, 0.999087, 1.36093, 1.07822, -4.2026)
+size = Vector3(0.015, 1.35, 0.015)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Props/Plant"]
+transform = Transform3D(1, 0, 0, 0, 0.999891, 0.0147824, 0, -0.0147824, 0.999891, 1.30534, 1.07822, -4.11249)
+size = Vector3(0.015, 1.35, 0.015)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Props/Plant"]
+transform = Transform3D(1, 0, 0, 0, 0.999891, 0.0147824, 0, -0.0147824, 0.999891, 1.19119, 1.07822, -4.16052)
+size = Vector3(0.015, 1.35, 0.015)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Props/Plant"]
+transform = Transform3D(1, 0, 0, 0, 0.999891, 0.0147824, 0, -0.0147824, 0.999891, 1.22839, 1.07822, -4.06725)
+size = Vector3(0.015, 1.35, 0.015)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Props/Plant"]
+transform = Transform3D(1, 0, 0, 0, 0.999891, 0.0147824, 0, -0.0147824, 0.999891, 1.35755, 1.07822, -4.08817)
+size = Vector3(0.015, 1.35, 0.015)
+
+[node name="BigMetalDoor" type="CSGCombiner3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7469, 1.12072, -2.31528)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Props/BigMetalDoor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0939465, 0.139404, 0.147186)
+size = Vector3(0.591309, 2.29785, 2.32147)
+material = SubResource("StandardMaterial3D_tqiex")
+
+[node name="FamilyPhoto" type="CSGCombiner3D" parent="Props"]
+transform = Transform3D(0.88489, 0, 0.4658, 0, 1, 0, -0.4658, 0, 0.88489, 2.27802, 1.24862, -4.58166)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Props/FamilyPhoto"]
+transform = Transform3D(1, 0, 0, 0, 0.91855, 0.395305, 0, -0.395305, 0.91855, -0.3946, -0.194747, 0.368923)
+size = Vector3(0.2108, 0.278687, 0.0274963)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Props/FamilyPhoto"]
+transform = Transform3D(1, 0, 0, 0, 0.91855, 0.395305, 0, -0.395305, 0.91855, -0.3946, -0.1879, 0.384833)
+operation = 2
+size = Vector3(0.17, 0.23, 0.027)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Props/FamilyPhoto"]
+transform = Transform3D(1, 0, 0, 0, 0.949294, -0.31439, 0, 0.31439, 0.949294, -0.398386, -0.255519, 0.305531)
+size = Vector3(0.0668945, 0.21875, 0.0126953)
+
+[node name="ComputerScreen" type="CSGCombiner3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 0.944903, 0.32735, 0, -0.32735, 0.944903, 2.73316, 1.25759, -4.24737)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Props/ComputerScreen"]
+size = Vector3(0.475, 0.367, 0.275)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Props/ComputerScreen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0949655)
+operation = 2
+size = Vector3(0.4, 0.3, 0.275)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Props/ComputerScreen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.0649019, 0, 0, 0.0949655)
+gi_mode = 2
+size = Vector3(0.4, 0.3, 0.275)
+material = SubResource("ShaderMaterial_ha3dl")
+
+[node name="Gyro" type="Node3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 0.374234, 0.927334, 0, -0.927334, 0.374234, 4.86149, 2.71009, -2.24959)
+script = ExtResource("8_f3gli")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Props/Gyro"]
+transform = Transform3D(0.903133, 0, 0.429361, 0, 1, 0, -0.429361, 0, 0.903133, 0, 0, 0)
+light_color = Color(0.672305, 1.76881e-06, 6.257e-07, 1)
+spot_range = 10.0
+spot_angle = 55.0
+spot_angle_attenuation = 3.03143
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Props/Gyro"]
+transform = Transform3D(0.954802, 0, 0.297242, -0.0100314, -0.99943, 0.0322229, 0.297072, -0.0337482, -0.954259, 0, 0, 0)
+light_color = Color(0.672305, 1.76881e-06, 6.257e-07, 1)
+spot_range = 10.0
+spot_angle = 55.0
+spot_angle_attenuation = 3.13834
 
 [node name="Post-Processing" type="Node" parent="."]
 
