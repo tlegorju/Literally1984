@@ -11,13 +11,50 @@ else
 	do GameManager.nextStep()
 => END
 ~ step_2
-Step2
+So ? Are you going to let me go ?
+- First I need you to answer some questions
+I don't know anything, I don't even know what I am doing here !
+- Oh... you know
+...
+- First we need a list of your little friends, all of them.
+My only friend is my {{GameManager.dialog_word1}} !
+- Right, we will need to do a little more digging then...
+if GameManager.corrected_word==false
+	set GameManager.go_correct_word = true
+	do GameManager.goToMinigameScene()
+else
+	do GameManager.nextStep()
 => END
 ~ step_3
-Step3
+What are you doing to me ?
+- You did this to yourself. You are all alone now !
+You are messing with my head, I can feel it !
+I won't break, you can't make me.
+- You will, they all do. Ever heard the name Patrick ?
+What did you do to him ? Let me see him !
+- You can't anymore, he gave us everything... And more...
+You won't get away with this.
+- We just need you to confirm its informations, then...
+Then you'll {{GameManager.dialog_word1}} me like the others !
+if GameManager.corrected_word==false
+	set GameManager.go_correct_word = true
+	do GameManager.goToMinigameScene()
+else
+	do GameManager.nextStep()
 => END
 ~ step_4
-Step4
+Please don't hurt me !
+I swear, I mean no harm !
+- Of course, you know you can trust us right ?
+You are an agent of the State, you only tell {{GameManager.dialog_word1}}
+- We are not here to hurt you, but to fix you
+I don't know, you did {{GameManager.dialog_word2}} me...
+- I only seek the best for my country and its citizens
+if GameManager.corrected_word==false
+	set GameManager.go_correct_word = true
+	do GameManager.goToMinigameScene()
+else
+	do GameManager.nextStep()
 => END
 ~ step_5
 => END

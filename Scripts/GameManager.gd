@@ -5,7 +5,7 @@ enum WordType {OLD_WORD, NEW_WORD, NEUTRAL_WORD}
 
 var words = []
 var curStep : int = 0
-var maxStep : int = 3
+var maxStep : int = 8
 
 var corrected_word=false
 var go_correct_word=false
@@ -34,25 +34,28 @@ func _ready() -> void:
 	#stepArray.clear()
 	var stepArray2 = []
 	stepArray2.append({
-	"oldWord": "peaceful",
-	"newWord": "useful" })
-	stepArray2.append({
-	"oldWord": "lazy",
-	"newWord": "busy" })
+	"oldWord": "DOG",
+	"newWord": "NATION" })
 	words.append(stepArray2)
 	
 	#stepArray.clear()
 	var stepArray3 = []
 	stepArray3.append({
-	"oldWord": "timeoff",
-	"newWord": "work" })
+	"oldWord": "destroy",
+	"newWord": "reeducate" })
 	stepArray3.append({
 	"oldWord": "boss",
 	"newWord": "partner" })
-	stepArray3.append({
-	"oldWord": "system",
-	"newWord": "individual" })
 	words.append(stepArray3)
+	
+	var stepArray4 = []
+	stepArray4.append({
+	"oldWord": "propaganda",
+	"newWord": "facts" })
+	stepArray4.append({
+	"oldWord": "kidnap",
+	"newWord": "help" })
+	words.append(stepArray4)
 	
 	setDialogWord()
 		
@@ -81,6 +84,8 @@ func getCurWords():
 	
 func nextStep():
 	curStep = curStep+1
+	go_correct_word=false
+	corrected_word=false
 	setDialogWord()
 	
 func isFinished():
