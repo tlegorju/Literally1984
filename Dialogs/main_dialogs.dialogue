@@ -1,5 +1,5 @@
 ~ step_1
-Why am I still here ? You have been keeping me for days now !
+Why am I still here ? You have been keeping me for hours now !
 - It doesn't matter why
 - Are you not enjoying your stay with us ?
 Listen I just want to go back {{GameManager.dialog_word1}}
@@ -57,16 +57,110 @@ else
 	do GameManager.nextStep()
 => END
 ~ step_5
+How did you find me ?
+- We have eyes in every streets, ears in every walls
+We only gathered in secret places, with people we trusted !
+- You know you can't trust anyone but us
+How could I trust a {{GameManager.dialog_word1}}
+- Exactly, but we are alone in this room, you can talk freely
+Yes, yes freely. I know the saying
+Freedom is Slavery
+And you make sure that we obey
+But these laws can't change this simple fact
+{{GameManager.dialog_word2}} is the most important thing in the world
+if GameManager.corrected_word==false
+	set GameManager.go_correct_word = true
+	do GameManager.goToMinigameScene()
+else
+	- I could not agree more...
+	do GameManager.nextStep()
 => END
 ~ step_6
+You were right, it was a mistake, this whole operation was a mistake
+- It's a bit late for remorse isn't it ?
+I'm sorry, I can do better ! Please, I beg you !
+- And what are we supposed to do with a traitor of your kind ?
+...
+- You're not good for anything !
+I...
+- Even your friends abandoned you because they knew your worth
+I don't deserve this {{GameManager.dialog_word1}}
+- You don't believe a word you're saying
+You can't change my mind ! I am {{GameManager.dialog_word2}}
+if GameManager.corrected_word==false
+	set GameManager.go_correct_word = true
+	do GameManager.goToMinigameScene()
+else
+	- Very good, we're finally making progress
+	do GameManager.nextStep()	
 => END
 ~ step_7
+What now ?
+- We need to run a few tests, to make sure that the work we did...
+What work ? What did you do to me ?
+- Don't worry, we're almost there
+...
+- What defines our kind ?
+Our {{GameManager.dialog_word1}}
+- Whose existance is prevalent ?
+{{GameManager.dialog_word2}}
+- What is outside of our borders ?
+Only {{GameManager.dialog_word3}}
+if GameManager.corrected_word==false
+	- Only a few more tweaks, and you will be ready
+	set GameManager.go_correct_word = true
+	do GameManager.goToMinigameScene()
+else
+	Wait ! That's not what I meant to say !
+	- No, that's what WE wanted you to say.
+	do GameManager.nextStep()
+
+
+You are an agent of the State, you only tell {{GameManager.dialog_word1}}
+- We are not here to hurt you, but to fix you
+I don't know, you did {{GameManager.dialog_word2}} me...
+- I only seek the best for my country and its citizens
+
 => END
 ~ step_8
-=> END
-if GameManager.corrected_word==true
-	Nathan: That property is greater than or equal to 10
-{{GameManager.dialog_word1}}
-{{GameManager.dialog_word2}}
-{{GameManager.dialog_word3}}
+What am I doing...
+- You have been of great loyalty so far, we're almost done
+You will pay for this. Someday we will win
+- I am afraid you just proved the contrary today
+The people will rise and the {{GameManager.dialog_word1}} of this country will come
+- Is that so ?
+You can't be everywhere, someday your arrogance will cause your lost
+- That's where you're mistaken. You wonder how we found your little group ?
+...
+- You were very careful, but unlike us you can't control everything..
+...
+- Or everyone
+What did you do to us ?
+- Oh, almost nothing. Just a tiny change... Do you feel it ?
+You {{GameManager.dialog_word2}} our minds ?
+- I wouldn't put it like that, but yes
+No ! You can't have ! Everything I know and feel belongs to me !
+- And you belong to the State.
+Is that what you want ? For everybody to be the same ?
+- We want what's best for everyone
+And for that you are willing to {{GameManager.dialog_word3}} us all
+- Finally you get it
+...
+- ...
+...
+if GameManager.corrected_word==false
+	Erase me then, if I can't be myself, I'd rather not be at all
+	- Sadly, we still need your workforce. For the State.
+	There is no State, there is no Society.
+	You are all parasites carving an empty shell of a world.
+	All for your meaningless calm and comfort.
+	You're all barely living more than us.
+	set GameManager.go_correct_word = true
+	do GameManager.goToMinigameScene()
+else
+	- I think it's time for you to go home now
+	...
+	- ...
+	...
+	do GameManager.nextStep()
 => END

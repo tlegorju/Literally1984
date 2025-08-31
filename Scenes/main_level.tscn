@@ -1,13 +1,13 @@
 [gd_scene load_steps=47 format=3 uid="uid://cnlqiy1t1tlfa"]
 
-[ext_resource type="Script" uid="uid://uxtklgw6afd8" path="res://Scripts/camera_collider.gd" id="1_a2ia3"]
+[ext_resource type="Script" path="res://Scripts/camera_collider.gd" id="1_a2ia3"]
 [ext_resource type="Material" uid="uid://6hyaudq2jro0" path="res://Assets/Materials/M_Window.tres" id="1_q2fht"]
 [ext_resource type="Material" uid="uid://3alykgpghls1" path="res://Assets/Materials/M_Door.tres" id="2_ikcpc"]
 [ext_resource type="Script" uid="uid://b1kqadvicdqaf" path="res://Scripts/swinging.gd" id="3_5erdv"]
 [ext_resource type="PackedScene" uid="uid://8q5t0t2rflcq" path="res://Scenes/playfabs/cop.tscn" id="4_qbrl8"]
 [ext_resource type="Shader" uid="uid://d2xcewttt2h0r" path="res://Assets/Materials/Shaders/crt-effect.gdshader" id="6_236hc"]
 [ext_resource type="Script" uid="uid://c0emh3p8iwj30" path="res://Scripts/moving_trigger.gd" id="6_tqiex"]
-[ext_resource type="PackedScene" uid="uid://vbwitd2cgk71" path="res://Scenes/interactible.tscn" id="7_2jcip"]
+[ext_resource type="PackedScene" path="res://Scenes/interactible.tscn" id="7_2jcip"]
 [ext_resource type="PackedScene" uid="uid://coh67gspbn5o6" path="res://Assets/Desk.fbx" id="7_5vthg"]
 [ext_resource type="Shader" uid="uid://b6mdgtm4n033d" path="res://Assets/Materials/Shaders/blinking_screen.gdshader" id="7_ha3dl"]
 [ext_resource type="PackedScene" uid="uid://cerf6trlqr0th" path="res://Assets/Picture.fbx" id="7_jf8f8"]
@@ -27,7 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://srv25nsamf0l" path="res://Assets/Clock.fbx" id="23_1ubp3"]
 [ext_resource type="PackedScene" uid="uid://5m82uxdy0llk" path="res://Scenes/talker.tscn" id="24_oi0bv"]
 [ext_resource type="FontFile" uid="uid://cc4h2hevqnpxd" path="res://Assets/Font/digital-7.ttf" id="24_yfdo3"]
-[ext_resource type="Script" uid="uid://y81lt0r7cayu" path="res://Scripts/clock_label.gd" id="25_eckhq"]
+[ext_resource type="Script" path="res://Scripts/clock_label.gd" id="25_eckhq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5erdv"]
 size = Vector3(4.75, 3, 4.617)

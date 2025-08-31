@@ -41,21 +41,60 @@ func _ready() -> void:
 	#stepArray.clear()
 	var stepArray3 = []
 	stepArray3.append({
-	"oldWord": "destroy",
-	"newWord": "reeducate" })
-	stepArray3.append({
-	"oldWord": "boss",
-	"newWord": "partner" })
+	"oldWord": "DESTROY",
+	"newWord": "REEDUCATE" })
 	words.append(stepArray3)
 	
 	var stepArray4 = []
 	stepArray4.append({
-	"oldWord": "propaganda",
-	"newWord": "facts" })
+	"oldWord": "PROPAGANDA",
+	"newWord": "FACTS" })
 	stepArray4.append({
-	"oldWord": "kidnap",
-	"newWord": "help" })
+	"oldWord": "KIDNAP",
+	"newWord": "HELP" })
 	words.append(stepArray4)
+	
+	var stepArray5 = []
+	stepArray5.append({
+	"oldWord": "DICTATORSHIP",
+	"newWord": "REBELLION" })
+	stepArray5.append({
+	"oldWord": "LIBERTY",
+	"newWord": "SAFETY" })
+	words.append(stepArray5)
+	
+	var stepArray6 = []
+	stepArray6.append({
+	"oldWord": "PUNISHMENT",
+	"newWord": "FORGIVENESS" })
+	stepArray6.append({
+	"oldWord": "WORTHY",
+	"newWord": "WORTHLESS" })
+	words.append(stepArray6)
+	
+	var stepArray7 = []
+	stepArray7.append({
+	"oldWord": "CONSCIOUSNESS",
+	"newWord": "DEVOTION" })
+	stepArray7.append({
+	"oldWord": "NO ONE",
+	"newWord": "MY FAMILY" })
+	stepArray7.append({
+	"oldWord": "KINSHIP",
+	"newWord": "ENNEMIES" })
+	words.append(stepArray7)
+	
+	var stepArray8 = []
+	stepArray8.append({
+	"oldWord": "FALL",
+	"newWord": "GLORY" })
+	stepArray8.append({
+	"oldWord": "INFECTED",
+	"newWord": "FIXED" })
+	stepArray8.append({
+	"oldWord": "CORRUPT",
+	"newWord": "CONTROL" })
+	words.append(stepArray8)
 	
 	setDialogWord()
 		
