@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c8mapbqsrqjk2"
-path="res://.godot/imported/Pedestal.fbx-2b7bc87c8cc5ca1b55222c558296f9b4.scn"
+uid="uid://cyif1ncq4ck3"
+path="res://.godot/imported/Computer.fbx-360101c1af8073772a02fe09a32fbebb.scn"
 
 [deps]
 
-source_file="res://Assets/Pedestal.fbx"
-dest_files=["res://.godot/imported/Pedestal.fbx-2b7bc87c8cc5ca1b55222c558296f9b4.scn"]
+source_file="res://Assets/Models/Computer.fbx"
+dest_files=["res://.godot/imported/Computer.fbx-360101c1af8073772a02fe09a32fbebb.scn"]
 
 [params]
 

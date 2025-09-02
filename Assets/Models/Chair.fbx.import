@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://srv25nsamf0l"
-path="res://.godot/imported/Clock.fbx-15dc34be06d8ba32798ffb10c78e78e2.scn"
+uid="uid://b1qcwk330jacc"
+path="res://.godot/imported/Chair.fbx-344608f38eb35847e53355890ef8f164.scn"
 
 [deps]
 
-source_file="res://Assets/Clock.fbx"
-dest_files=["res://.godot/imported/Clock.fbx-15dc34be06d8ba32798ffb10c78e78e2.scn"]
+source_file="res://Assets/Models/Chair.fbx"
+dest_files=["res://.godot/imported/Chair.fbx-344608f38eb35847e53355890ef8f164.scn"]
 
 [params]
 

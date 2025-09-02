@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cjrrf6r0kw0v2"
-path="res://.godot/imported/Radio.fbx-7bdcf933b349542f84c03e0c81a42b61.scn"
+path="res://.godot/imported/Radio.fbx-60e5437835502e3e68fe4c77492fb22f.scn"
 
 [deps]
 
-source_file="res://Assets/Radio.fbx"
-dest_files=["res://.godot/imported/Radio.fbx-7bdcf933b349542f84c03e0c81a42b61.scn"]
+source_file="res://Assets/Models/Radio.fbx"
+dest_files=["res://.godot/imported/Radio.fbx-60e5437835502e3e68fe4c77492fb22f.scn"]
 
 [params]
 

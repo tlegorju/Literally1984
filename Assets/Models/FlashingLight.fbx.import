@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dkcc5aj1b0n0k"
-path="res://.godot/imported/Wrench.fbx-e46375f32a260a62b6c4aadaaa77e8f8.scn"
+uid="uid://3co42tcj8rnl"
+path="res://.godot/imported/FlashingLight.fbx-a02d458e85f6fd493eeac9f741f71555.scn"
 
 [deps]
 
-source_file="res://Assets/Wrench.fbx"
-dest_files=["res://.godot/imported/Wrench.fbx-e46375f32a260a62b6c4aadaaa77e8f8.scn"]
+source_file="res://Assets/Models/FlashingLight.fbx"
+dest_files=["res://.godot/imported/FlashingLight.fbx-a02d458e85f6fd493eeac9f741f71555.scn"]
 
 [params]
 

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://guamidx30clr"
-path="res://.godot/imported/Carton.fbx-1d5cf6ea4d9e0c8ad92116706ddfda11.scn"
+uid="uid://cyt6mypaxed3t"
+path="res://.godot/imported/Screwdriver.fbx-1c354c57934451ce65de731edc30fe83.scn"
 
 [deps]
 
-source_file="res://Assets/Carton.fbx"
-dest_files=["res://.godot/imported/Carton.fbx-1d5cf6ea4d9e0c8ad92116706ddfda11.scn"]
+source_file="res://Assets/Models/Screwdriver.fbx"
+dest_files=["res://.godot/imported/Screwdriver.fbx-1c354c57934451ce65de731edc30fe83.scn"]
 
 [params]
 

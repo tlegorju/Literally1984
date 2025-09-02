@@ -1,33 +1,19 @@
-[gd_scene load_steps=16 format=3 uid="uid://cayug6s15dq1f"]
+[gd_scene load_steps=14 format=3 uid="uid://cayug6s15dq1f"]
 
 [ext_resource type="Script" uid="uid://d1en8cypc2207" path="res://Scripts/word_room_control.gd" id="1_lk2ee"]
 [ext_resource type="PackedScene" uid="uid://dn7ist6x615jk" path="res://Scenes/pickup.tscn" id="2_evwxb"]
 [ext_resource type="Script" uid="uid://diufqkv1y067u" path="res://Scripts/door_control.gd" id="2_xdv2a"]
 [ext_resource type="Script" uid="uid://dosk1l7em5pwu" path="res://Scripts/pedestal_control.gd" id="3_evwxb"]
+[ext_resource type="PackedScene" uid="uid://bawjf5aq78i25" path="res://Assets/Models/Door.fbx" id="4_55k6m"]
 [ext_resource type="Material" uid="uid://c21ctb8ihv1ay" path="res://Assets/Materials/FPS_Wall_Material.tres" id="5_evwxb"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_87rv1"]
-albedo_color = Color(0.331807, 0.80398, 0.35478, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_55k6m"]
-material = SubResource("StandardMaterial3D_87rv1")
-size = Vector3(0.1, 2.2, 1.5)
+[ext_resource type="PackedScene" uid="uid://c8mapbqsrqjk2" path="res://Assets/Models/Pedestal.fbx" id="6_pbxhd"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pbxhd"]
-size = Vector3(0.1, 2.2, 1.5)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iid7f"]
-albedo_color = Color(0.224768, 0.149891, 0.02069, 1)
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_knc3h"]
-material = SubResource("StandardMaterial3D_iid7f")
-top_radius = 0.2
-bottom_radius = 0.4
-height = 1.0
+size = Vector3(0.1, 2.2, 1.04962)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_2vcfu"]
 height = 1.5
-radius = 0.2
+radius = 0.450195
 
 [sub_resource type="BoxMesh" id="BoxMesh_4upgl"]
 material = ExtResource("5_evwxb")
@@ -46,7 +32,7 @@ size = Vector3(7.602, 3, 0.2)
 [node name="WordRoom" type="Node3D" node_paths=PackedStringArray("door", "doorText", "pedestal", "pickupPivot")]
 script = ExtResource("1_lk2ee")
 door = NodePath("Door")
-doorText = NodePath("Door/Pivot/DoorText")
+doorText = NodePath("Door/Pivot/Door/DoorText")
 pedestal = NodePath("Pedestal")
 pickupPivot = NodePath("Pedestal/PickupPlacement")
 Pickup = ExtResource("2_evwxb")
@@ -57,21 +43,20 @@ script = ExtResource("2_xdv2a")
 timer = NodePath("Timer")
 
 [node name="Pivot" type="RigidBody3D" parent="Door"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.24722e-08, 0, 0.28533)
 freeze = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Door/Pivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0.75)
-mesh = SubResource("BoxMesh_55k6m")
-skeleton = NodePath("../..")
+[node name="Door" parent="Door/Pivot" instance=ExtResource("4_55k6m")]
+transform = Transform3D(-1.5299e-07, 0, 3.5, 0, 3.5, 0, -3.5, 0, -1.5299e-07, 0, 0, 0.5)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Door/Pivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0.75)
-shape = SubResource("BoxShape3D_pbxhd")
-
-[node name="DoorText" type="Label3D" parent="Door/Pivot"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.054, 1.7, 0.75)
+[node name="DoorText" type="Label3D" parent="Door/Pivot/Door"]
+transform = Transform3D(-0.285714, 0, 2.49779e-08, 0, 0.285714, 0, -2.49779e-08, 0, -0.285714, 0.0164787, 0.485714, -0.0154286)
 text = "TEST"
 outline_size = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Door/Pivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.32907e-15, 1.1, 0.524811)
+shape = SubResource("BoxShape3D_pbxhd")
 
 [node name="Timer" type="Timer" parent="Door"]
 wait_time = 3.0
@@ -83,17 +68,15 @@ script = ExtResource("3_evwxb")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Pedestal"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Pedestal/StaticBody3D"]
-transform = Transform3D(1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, 0, 0.5, 0)
-mesh = SubResource("CylinderMesh_knc3h")
-skeleton = NodePath("../..")
+[node name="Pedestal" parent="Pedestal/StaticBody3D" instance=ExtResource("6_pbxhd")]
+transform = Transform3D(4.73, 0, 0, 0, 4.73, 0, 0, 0, 4.73, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Pedestal/StaticBody3D"]
 transform = Transform3D(1.00001, 0, -6.70552e-07, 0, 1, 0, 6.70552e-07, 0, 1.00001, 0, 0.74353, 0)
 shape = SubResource("CylinderShape3D_2vcfu")
 
 [node name="PickupPlacement" type="Node3D" parent="Pedestal"]
-transform = Transform3D(1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, 0, 1.26705, 0)
+transform = Transform3D(1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, 0, 1.14128, 0)
 
 [node name="Walls" type="Node3D" parent="."]
 
@@ -143,9 +126,9 @@ size = Vector3(6, 3, 0.2)
 material = ExtResource("5_evwxb")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Walls/Wall4"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 1.1, 0.021)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0552063, 1.07686, 0.021)
 operation = 2
-size = Vector3(0.5, 2.2, 1.5)
+size = Vector3(0.5, 2.15371, 1.0434)
 material = ExtResource("5_evwxb")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]

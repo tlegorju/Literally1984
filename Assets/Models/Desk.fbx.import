@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://4lbq3gbghjla"
-path="res://.godot/imported/Board.fbx-40c6d0f2973c4ce8316d13b078f5ea47.scn"
+uid="uid://coh67gspbn5o6"
+path="res://.godot/imported/Desk.fbx-adc472c38218d309678d14d6adc5a15c.scn"
 
 [deps]
 
-source_file="res://Assets/Board.fbx"
-dest_files=["res://.godot/imported/Board.fbx-40c6d0f2973c4ce8316d13b078f5ea47.scn"]
+source_file="res://Assets/Models/Desk.fbx"
+dest_files=["res://.godot/imported/Desk.fbx-adc472c38218d309678d14d6adc5a15c.scn"]
 
 [params]
 

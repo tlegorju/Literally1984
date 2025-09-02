@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bawjf5aq78i25"
-path="res://.godot/imported/Door.fbx-17a4600278707bf665e05c230cdf120a.scn"
+uid="uid://cprv0n850qaog"
+path="res://.godot/imported/Character_VF.fbx-097ba97de91fa540710f263994711859.scn"
 
 [deps]
 
-source_file="res://Assets/Door.fbx"
-dest_files=["res://.godot/imported/Door.fbx-17a4600278707bf665e05c230cdf120a.scn"]
+source_file="res://Assets/Models/Character_VF.fbx"
+dest_files=["res://.godot/imported/Character_VF.fbx-097ba97de91fa540710f263994711859.scn"]
 
 [params]
 

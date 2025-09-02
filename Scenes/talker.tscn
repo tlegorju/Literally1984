@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://5m82uxdy0llk"]
+[gd_scene load_steps=4 format=3 uid="uid://5m82uxdy0llk"]
 
 [ext_resource type="Script" uid="uid://bswdxooqotgia" path="res://Scripts/talker_control.gd" id="1_0ujtn"]
+[ext_resource type="PackedScene" uid="uid://b0oxc31egtshy" path="res://Assets/Models/OperatingChair.fbx" id="2_g63n4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lrtdq"]
 
@@ -11,6 +12,9 @@ script = ExtResource("1_0ujtn")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("BoxShape3D_lrtdq")
+
+[node name="OperatingChair" parent="Area3D" instance=ExtResource("2_g63n4")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -0.532648, 0)
 
 [connection signal="input_event" from="Area3D" to="." method="_on_area_3d_input_event"]
 [connection signal="mouse_entered" from="Area3D" to="." method="_on_area_3d_mouse_entered"]

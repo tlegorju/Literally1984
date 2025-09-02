@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cprv0n850qaog"
-path="res://.godot/imported/Character_VF.fbx-28aac80a944523d15494ad2b4f8b46ef.scn"
+uid="uid://b8v1tf7hp0bpy"
+path="res://.godot/imported/Cup.fbx-ff3dcbd320da0558fe8b98d61b1374e0.scn"
 
 [deps]
 
-source_file="res://Assets/Character_VF.fbx"
-dest_files=["res://.godot/imported/Character_VF.fbx-28aac80a944523d15494ad2b4f8b46ef.scn"]
+source_file="res://Assets/Models/Cup.fbx"
+dest_files=["res://.godot/imported/Cup.fbx-ff3dcbd320da0558fe8b98d61b1374e0.scn"]
 
 [params]
 
