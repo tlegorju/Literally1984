@@ -14,6 +14,8 @@ var dialog_word2
 var dialog_word3
 
 @export var player: CharacterBody3D;
+signal gyro_start;
+signal radio_toggle;
 
 var next_dialogue;
 var next_dialogue_name;
@@ -66,8 +68,8 @@ func try_show_dialog(next_dia, next_dia_name, next_p, next_max_d, next_sign):
 func _process(delta):
 	player = get_tree().get_first_node_in_group("Player")
 	if(player and next_dialogue):
-		print(next_dialogue)
 		var dist = player.get_global_position() - next_pos;
+		print(dist.length())
 		if(dist.length() <= next_max_dist):
 			DialogueManager.show_dialogue_balloon(next_dialogue, next_dialogue_name);
 			if next_signal:
@@ -107,3 +109,10 @@ func launchDialog():
 	var dial = load("res://Dialogs/main_dialogs.dialogue")
 	var tag = "step_"+str(curStep+1)
 	DialogueManager.show_dialogue_balloon(dial, tag)		
+	
+func start_alert():
+	gyro_start.emit();
+	
+func toggle_radio():
+	print("hello")
+	radio_toggle.emit();

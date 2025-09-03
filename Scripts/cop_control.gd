@@ -10,7 +10,7 @@ func _ready():
 	# These values need to be adjusted for the actor's speed
 	# and the navigation layout.
 	navigation_agent.path_desired_distance = 0.5
-	navigation_agent.target_desired_distance = 0.5
+	navigation_agent.target_desired_distance = 1
 	
 	DialogueManager.dialogue_started.connect(dialogue_start);
 	DialogueManager.dialogue_ended.connect(dialogue_end);
@@ -27,6 +27,8 @@ func actor_setup():
 	
 func dialogue_start(resource): 
 	is_talking = true;
+	set_movement_target(get_global_position())
+	
 	
 func dialogue_end(resource): 
 	is_talking = false;
@@ -37,11 +39,10 @@ func set_movement_target(movement_target: Vector3):
 func set_character_rotation():
 	var target: Basis = Basis.looking_at(velocity.normalized());
 	basis = basis.slerp(target, 0.2);
-	#var look_at_pos = get_global_position() + velocity.normalized();
-	#look_at(look_at_pos);
 
 func _physics_process(delta):
 	if navigation_agent.is_navigation_finished():
+		velocity = Vector3(0, 0, 0);
 		return
 
 	var current_agent_position: Vector3 = global_position

@@ -1,17 +1,37 @@
 ~ step_1
-Why am I still here ? You have been keeping me for days now !
-- It doesn't matter why
-- Are you not enjoying your stay with us ?
-Listen I just want to go back {{GameManager.dialog_word1}}
-- it won't take much longer don't worry
 if GameManager.corrected_word==false
 	set GameManager.go_correct_word = true
-	do GameManager.goToMinigameScene()
+	The pale figure lays in front of you motionless. 
+	It turns to you and says: 
+	[Who] are you ?
+	- Answer him
+		do GameManager.start_alert()
+		Your words are rendered unintelligible by the sudden alarm.
+	- Leave
 else
 	do GameManager.nextStep()
+	[How] are you ?
+	- Answer him
+		You say: I'm fine, just a few more steps .
+	- Leave
 => END
 ~ step_2
-Step2
+if GameManager.corrected_word==false
+	set GameManager.go_correct_word = true
+	The figure starts to collect its thoughts.
+	It kindly whispers :
+	Can I [leave] please ?
+	- Answer him
+		do GameManager.start_alert()
+		Your words are rendered unintelligible by the sudden alarm.
+	- Leave
+else
+	do GameManager.nextStep()
+	You can feel that the man starts to trust you.
+	Can I [work] please ?
+	- Answer him
+		You say: You're not quite ready yet... I just need a few more tweaks to completely fix you.
+	- Leave
 => END
 ~ step_3
 Step3

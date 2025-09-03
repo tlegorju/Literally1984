@@ -1,17 +1,134 @@
-~ test_dialog
+~ computer
+Your assigned workstation. The pulsing white light shines through your retina like a ticking clock.
+Memories of all the nights spent here rushes through your brain. This feels like home to you.
+- Enter subsystem [if GameManager.go_correct_word == true]
+	do GameManager.goToMinigameScene()
+- Walk away => END
+=> END
 
-~ start
-if DialogGlobals.has_met_robot==false
-	Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
-	set DialogGlobals.has_met_robot = true
-else
-	Nathan: Hello again.
-Nathan: Here are some choices.
-- First one
-	Nathan: You picked the first one.
-- Second one
-	Nathan: You picked the second one.
-- Start again [if DialogGlobals.some_value > 10] => start
-- End the conversation => END
-Nathan: For more information see the online documentation.
+~ photo
+An easel containing a family picture. Bright sun and wide smiles.
+- Stare
+	As your eyes lay rest, you're filled with pride and fulfillment providing them through your diligent work.
+	- Walk away => END
+- Walk away => END
+=> END
+
+~ plant
+A potted plant. Its color makes work a little easier to go by.
+- Touch
+	Each leave feels stiff and lifeless.
+	- Walk away => END
+- Walk away => END
+=> END
+
+~ bin
+An empty trashcan. You don't even remember ever using it.
+- Walk away => END
+=> END
+
+~ truebin
+A trashcan full of teared up paper. Constraints of alternative shifts makes its owner a complete stranger to you but eagerness still rings inside your head.
+You whisper to yourself : "Maybe I should use mine a little bot more".
+- Search
+	You uneasily rummage through your coworker's belongings but find nothing.
+	- Continue Searching
+		Your muscles stiffen and your breath shortens as you reluctantly reach inside the bin. You somehow feel forced to do so.
+		- Continue Searching
+			do GameManager.start_alert()
+			As you reach for the bin once more anxiousness surges through your body, each breath piercing your chest and numbing your limbs.
+			You manage find a teared up newspaper sheet stuck to the bottom of the can.
+			- Grab
+				Covered in stains and wrinkles, the paper almosts collapses as you bring it to your face.
+				You could only manage to decipher a few specks before it fell appart :
+				"[...] is over [...] the last [...] down [...]"
+				This feels meaningless.
+				- Walk away => END
+			- Walk away
+		- Walk away => END
+	- Walk away => END
+- Walk away => END
+=> END
+
+~ clock
+A digital clock. Looking up to the clock you wait for its dismiss.
+Maybe its looking down on you.
+~ clockstart
+- Watch
+	Watching time go by makes it feel endless. => clockstart
+- Walk away => END
+=> END
+
+~ radio
+A portable radio. You've never really liked music.
+- Toggle 
+	do GameManager.toggle_radio()
+	=> radio
+- Walk away => END
+=> END
+
+~ othercomputer
+Your coworker's workstation. You wonder if he does work on the same things you do.
+- Turn On
+	do GameManager.start_alert()
+	The computer screen stays pitch black.
+	- Walk away => END
+- Walk away => END
+=> END
+
+~ metaldoor
+The exit door. 
+You ask yourself : "Have I ever been this happy or sad seeing two different sides of an object ?"
+- Leave
+	I can't leave my shift is not over.
+	- Leave
+		I can't leave my shift is not over.
+		- Leave
+			I can't leave my shift is not over.
+			- Leave
+				I can't leave my shift is not over.
+				- Leave
+					do GameManager.start_alert()
+					I can't leave my shift is not over.
+					- Leave
+						I can't leave my shift is not over.
+						- Live
+							do GameManager.start_alert()
+							I can't live my shift is not over.
+							- Live
+								I can't live my shift is not over.
+								- Live
+									do GameManager.endSequence()
+								- Walk away => END
+							- Walk away => END
+						- Walk away => END
+					- Walk away => END
+				- Walk away => END
+			- Walk away => END
+		- Walk away => END
+	- Walk away => END
+- Walk away => END
+=> END
+
+~ window
+A window looking to the night. You can't wait to feel the fresh air against your skin.
+- Open
+	You see the nearby sign explicitly forbidding this answering your gaze.
+	- Open Anyway
+		do GameManager.start_alert()
+		You anxously reach the handle.
+		As you slowly open the window you feel... nothing?
+		- Reach out
+			Your hand suddenly slam against against a rigid surface.
+			The lifeless stone feels cold to the touch.
+			- Walk away => END
+		- Walk away => END
+	- Walk away => END
+- Walk away => END
+=> END
+
+~ tools
+A bunch of tools. "Work is good because work is hard" you say to yourself.
+You've always liked fixing things, reshaping bad to good, useless to usefull, broken to new.
+- Walk away => END
 => END

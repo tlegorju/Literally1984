@@ -1,8 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://5m82uxdy0llk"]
+[gd_scene load_steps=11 format=3 uid="uid://5m82uxdy0llk"]
 
 [ext_resource type="Script" uid="uid://bswdxooqotgia" path="res://Scripts/talker_control.gd" id="1_0ujtn"]
+[ext_resource type="PackedScene" uid="uid://b0oxc31egtshy" path="res://Assets/OperatingChair.fbx" id="2_g63n4"]
+[ext_resource type="Material" uid="uid://dsnvc51v8sjg0" path="res://Assets/Materials/M_CleanMetal.tres" id="3_6qims"]
+[ext_resource type="PackedScene" uid="uid://gikpeoeqgu2h" path="res://Assets/Character/Character.gltf" id="3_o3mt2"]
+[ext_resource type="Material" uid="uid://bam2qhaki3pnr" path="res://Assets/Materials/M_DirtyMetal.tres" id="4_1ia1b"]
+[ext_resource type="Material" uid="uid://1fw4hwdiedi0" path="res://Assets/Materials/M_Leather.tres" id="5_7hl8y"]
+[ext_resource type="Material" uid="uid://dgu5snwlx8c6v" path="res://Assets/Materials/M_GreenMetal.tres" id="6_s6md8"]
+[ext_resource type="AudioStream" uid="uid://bvrqkkvhpwh38" path="res://Assets/Audio/heart-monitor.mp3" id="8_1ia1b"]
+[ext_resource type="Script" uid="uid://cqe16cx3av0p3" path="res://Scenes/beep.gd" id="9_7hl8y"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lrtdq"]
+size = Vector3(1.13037, 1.28711, 2.2644)
 
 [node name="Talker" type="Node3D"]
 script = ExtResource("1_0ujtn")
@@ -10,8 +19,85 @@ script = ExtResource("1_0ujtn")
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0192871, 0.907682, -0.197632)
 shape = SubResource("BoxShape3D_lrtdq")
+
+[node name="OperatingChair" parent="." instance=ExtResource("2_g63n4")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+
+[node name="pCylinder31" parent="OperatingChair/OperatoringChair" index="1"]
+surface_material_override/0 = ExtResource("3_6qims")
+
+[node name="pCylinder28" parent="OperatingChair/OperatoringChair" index="2"]
+surface_material_override/0 = ExtResource("4_1ia1b")
+
+[node name="pCylinder27" parent="OperatingChair/OperatoringChair" index="3"]
+surface_material_override/0 = ExtResource("4_1ia1b")
+
+[node name="pCylinder26" parent="OperatingChair/OperatoringChair" index="4"]
+surface_material_override/0 = ExtResource("4_1ia1b")
+
+[node name="pCylinder25" parent="OperatingChair/OperatoringChair" index="5"]
+surface_material_override/0 = ExtResource("4_1ia1b")
+
+[node name="pCylinder24" parent="OperatingChair/OperatoringChair" index="6"]
+surface_material_override/0 = ExtResource("4_1ia1b")
+
+[node name="pCylinder23" parent="OperatingChair/OperatoringChair" index="7"]
+surface_material_override/0 = ExtResource("3_6qims")
+
+[node name="pCylinder22" parent="OperatingChair/OperatoringChair" index="8"]
+surface_material_override/0 = ExtResource("3_6qims")
+
+[node name="pCylinder21" parent="OperatingChair/OperatoringChair" index="9"]
+surface_material_override/0 = ExtResource("3_6qims")
+
+[node name="pCylinder20" parent="OperatingChair/OperatoringChair" index="10"]
+surface_material_override/0 = ExtResource("3_6qims")
+
+[node name="polySurface9" parent="OperatingChair/OperatoringChair/pCube66" index="0"]
+surface_material_override/0 = ExtResource("3_6qims")
+
+[node name="polySurface10" parent="OperatingChair/OperatoringChair/pCube66" index="1"]
+surface_material_override/0 = ExtResource("5_7hl8y")
+
+[node name="polySurface7" parent="OperatingChair/OperatoringChair/pCube65" index="0"]
+surface_material_override/0 = ExtResource("3_6qims")
+
+[node name="polySurface8" parent="OperatingChair/OperatoringChair/pCube65" index="1"]
+surface_material_override/0 = ExtResource("5_7hl8y")
+
+[node name="pCube62" parent="OperatingChair/OperatoringChair" index="13"]
+surface_material_override/0 = ExtResource("3_6qims")
+
+[node name="pCube61" parent="OperatingChair/OperatoringChair" index="14"]
+surface_material_override/0 = ExtResource("3_6qims")
+
+[node name="pCube60" parent="OperatingChair/OperatoringChair" index="15"]
+surface_material_override/0 = ExtResource("5_7hl8y")
+
+[node name="pCube59" parent="OperatingChair/OperatoringChair" index="16"]
+surface_material_override/0 = ExtResource("6_s6md8")
+
+[node name="pCube58" parent="OperatingChair/OperatoringChair" index="17"]
+surface_material_override/0 = ExtResource("6_s6md8")
+
+[node name="pCube57" parent="OperatingChair/OperatoringChair" index="18"]
+surface_material_override/0 = ExtResource("6_s6md8")
+
+[node name="AuxScene" parent="." instance=ExtResource("3_o3mt2")]
+transform = Transform3D(0.01, 0, 0, 0, 0.00426663, 0.0090441, 0, -0.0090441, 0.00426663, 0, 0.938647, 0)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.990062, -0.883213)
+stream = ExtResource("8_1ia1b")
+volume_db = -4.0
+autoplay = true
+parameters/looping = true
+script = ExtResource("9_7hl8y")
 
 [connection signal="input_event" from="Area3D" to="." method="_on_area_3d_input_event"]
 [connection signal="mouse_entered" from="Area3D" to="." method="_on_area_3d_mouse_entered"]
 [connection signal="mouse_exited" from="Area3D" to="." method="_on_area_3d_mouse_exited"]
+
+[editable path="OperatingChair"]
