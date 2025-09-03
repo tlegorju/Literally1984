@@ -5,7 +5,7 @@ enum WordType {OLD_WORD, NEW_WORD, NEUTRAL_WORD}
 
 var words = []
 var curStep : int = 0
-var maxStep : int = 3
+var maxStep : int = 8
 
 var corrected_word=false
 var go_correct_word=false
@@ -36,25 +36,67 @@ func _ready() -> void:
 	#stepArray.clear()
 	var stepArray2 = []
 	stepArray2.append({
-	"oldWord": "peaceful",
-	"newWord": "useful" })
-	stepArray2.append({
-	"oldWord": "lazy",
-	"newWord": "busy" })
+	"oldWord": "DOG",
+	"newWord": "NATION" })
 	words.append(stepArray2)
 	
 	#stepArray.clear()
 	var stepArray3 = []
 	stepArray3.append({
-	"oldWord": "timeoff",
-	"newWord": "work" })
-	stepArray3.append({
-	"oldWord": "boss",
-	"newWord": "partner" })
-	stepArray3.append({
-	"oldWord": "system",
-	"newWord": "individual" })
+	"oldWord": "DESTROY",
+	"newWord": "REEDUCATE" })
 	words.append(stepArray3)
+	
+	var stepArray4 = []
+	stepArray4.append({
+	"oldWord": "PROPAGANDA",
+	"newWord": "FACTS" })
+	stepArray4.append({
+	"oldWord": "KIDNAP",
+	"newWord": "HELP" })
+	words.append(stepArray4)
+	
+	var stepArray5 = []
+	stepArray5.append({
+	"oldWord": "DICTATORSHIP",
+	"newWord": "REBELLION" })
+	stepArray5.append({
+	"oldWord": "LIBERTY",
+	"newWord": "SAFETY" })
+	words.append(stepArray5)
+	
+	var stepArray6 = []
+	stepArray6.append({
+	"oldWord": "PUNISHMENT",
+	"newWord": "FORGIVENESS" })
+	stepArray6.append({
+	"oldWord": "WORTHY",
+	"newWord": "WORTHLESS" })
+	words.append(stepArray6)
+	
+	var stepArray7 = []
+	stepArray7.append({
+	"oldWord": "CONSCIOUSNESS",
+	"newWord": "DEVOTION" })
+	stepArray7.append({
+	"oldWord": "NO ONE",
+	"newWord": "MY FAMILY" })
+	stepArray7.append({
+	"oldWord": "KINSHIP",
+	"newWord": "ENNEMIES" })
+	words.append(stepArray7)
+	
+	var stepArray8 = []
+	stepArray8.append({
+	"oldWord": "FALL",
+	"newWord": "GLORY" })
+	stepArray8.append({
+	"oldWord": "INFECTED",
+	"newWord": "FIXED" })
+	stepArray8.append({
+	"oldWord": "CORRUPT",
+	"newWord": "CONTROL" })
+	words.append(stepArray8)
 	
 	setDialogWord()
 		
@@ -83,6 +125,8 @@ func getCurWords():
 	
 func nextStep():
 	curStep = curStep+1
+	go_correct_word=false
+	corrected_word=false
 	setDialogWord()
 	
 func isFinished():

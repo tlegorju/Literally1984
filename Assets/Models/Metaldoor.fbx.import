@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dk54tqm0t0ig8"
-path="res://.godot/imported/Metaldoor.fbx-6babb4853b84cbcc701deec174c55d82.scn"
+path="res://.godot/imported/Metaldoor.fbx-12ee7ff7a5805dbfe63c371297af91cb.scn"
 
 [deps]
 
-source_file="res://Assets/Metaldoor.fbx"
-dest_files=["res://.godot/imported/Metaldoor.fbx-6babb4853b84cbcc701deec174c55d82.scn"]
+source_file="res://Assets/Models/Metaldoor.fbx"
+dest_files=["res://.godot/imported/Metaldoor.fbx-12ee7ff7a5805dbfe63c371297af91cb.scn"]
 
 [params]
 

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cerf6trlqr0th"
-path="res://.godot/imported/Picture.fbx-0905d412932cf320d00fc13b7ab624ee.scn"
+uid="uid://vyi1es640kvu"
+path="res://.godot/imported/Hammer.fbx-63b9e626b764831887dbaf3da0c39cbf.scn"
 
 [deps]
 
-source_file="res://Assets/Picture.fbx"
-dest_files=["res://.godot/imported/Picture.fbx-0905d412932cf320d00fc13b7ab624ee.scn"]
+source_file="res://Assets/Models/Hammer.fbx"
+dest_files=["res://.godot/imported/Hammer.fbx-63b9e626b764831887dbaf3da0c39cbf.scn"]
 
 [params]
 

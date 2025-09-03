@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b0oxc31egtshy"
-path="res://.godot/imported/OperatingChair.fbx-c0e0879427f31a2dcf8d078ba5a43c48.scn"
+uid="uid://cerf6trlqr0th"
+path="res://.godot/imported/Picture.fbx-14069e7dda4306562bf824b56353d96f.scn"
 
 [deps]
 
-source_file="res://Assets/OperatingChair.fbx"
-dest_files=["res://.godot/imported/OperatingChair.fbx-c0e0879427f31a2dcf8d078ba5a43c48.scn"]
+source_file="res://Assets/Models/Picture.fbx"
+dest_files=["res://.godot/imported/Picture.fbx-14069e7dda4306562bf824b56353d96f.scn"]
 
 [params]
 

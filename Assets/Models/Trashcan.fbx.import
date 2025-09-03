@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://srv25nsamf0l"
-path="res://.godot/imported/Clock.fbx-15dc34be06d8ba32798ffb10c78e78e2.scn"
+uid="uid://dxfhepo34c2xx"
+path="res://.godot/imported/Trashcan.fbx-65d4ea197df15282905a8c9b4beca5a1.scn"
 
 [deps]
 
-source_file="res://Assets/Clock.fbx"
-dest_files=["res://.godot/imported/Clock.fbx-15dc34be06d8ba32798ffb10c78e78e2.scn"]
+source_file="res://Assets/Models/Trashcan.fbx"
+dest_files=["res://.godot/imported/Trashcan.fbx-65d4ea197df15282905a8c9b4beca5a1.scn"]
 
 [params]
 

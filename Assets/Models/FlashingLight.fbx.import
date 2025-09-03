@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cprv0n850qaog"
-path="res://.godot/imported/Character_VF.fbx-28aac80a944523d15494ad2b4f8b46ef.scn"
+uid="uid://3co42tcj8rnl"
+path="res://.godot/imported/FlashingLight.fbx-a02d458e85f6fd493eeac9f741f71555.scn"
 
 [deps]
 
-source_file="res://Assets/Character_VF.fbx"
-dest_files=["res://.godot/imported/Character_VF.fbx-28aac80a944523d15494ad2b4f8b46ef.scn"]
+source_file="res://Assets/Models/FlashingLight.fbx"
+dest_files=["res://.godot/imported/FlashingLight.fbx-a02d458e85f6fd493eeac9f741f71555.scn"]
 
 [params]
 
