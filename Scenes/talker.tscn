@@ -1,14 +1,14 @@
 [gd_scene load_steps=11 format=3 uid="uid://5m82uxdy0llk"]
 
-[ext_resource type="Script" uid="uid://bswdxooqotgia" path="res://Scripts/talker_control.gd" id="1_0ujtn"]
-[ext_resource type="PackedScene" uid="uid://b0oxc31egtshy" path="res://Assets/OperatingChair.fbx" id="2_g63n4"]
+[ext_resource type="Script" path="res://Scripts/talker_control.gd" id="1_0ujtn"]
+[ext_resource type="PackedScene" uid="uid://b0oxc31egtshy" path="res://Assets/Models/OperatingChair.fbx" id="2_g63n4"]
 [ext_resource type="Material" uid="uid://dsnvc51v8sjg0" path="res://Assets/Materials/M_CleanMetal.tres" id="3_6qims"]
 [ext_resource type="PackedScene" uid="uid://gikpeoeqgu2h" path="res://Assets/Character/Character.gltf" id="3_o3mt2"]
 [ext_resource type="Material" uid="uid://bam2qhaki3pnr" path="res://Assets/Materials/M_DirtyMetal.tres" id="4_1ia1b"]
 [ext_resource type="Material" uid="uid://1fw4hwdiedi0" path="res://Assets/Materials/M_Leather.tres" id="5_7hl8y"]
 [ext_resource type="Material" uid="uid://dgu5snwlx8c6v" path="res://Assets/Materials/M_GreenMetal.tres" id="6_s6md8"]
 [ext_resource type="AudioStream" uid="uid://bvrqkkvhpwh38" path="res://Assets/Audio/heart-monitor.mp3" id="8_1ia1b"]
-[ext_resource type="Script" uid="uid://cqe16cx3av0p3" path="res://Scenes/beep.gd" id="9_7hl8y"]
+[ext_resource type="Script" path="res://Scenes/beep.gd" id="9_7hl8y"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lrtdq"]
 size = Vector3(1.13037, 1.28711, 2.2644)
