@@ -28,16 +28,19 @@ func _ready() -> void:
 	words.clear()
 	
 	var stepArray = []	
+	#stepArray.append({
+	#"oldWord": "HOME",
+	#"newWord": "TO WORK" })
 	stepArray.append({
-	"oldWord": "HOME",
-	"newWord": "TO WORK" })
+	"oldWord": "WHO",
+	"newWord": "HOW" })
 	words.append(stepArray)
 	
 	#stepArray.clear()
 	var stepArray2 = []
 	stepArray2.append({
-	"oldWord": "DOG",
-	"newWord": "NATION" })
+	"oldWord": "LEAVE",
+	"newWord": "WORK" })
 	words.append(stepArray2)
 	
 	#stepArray.clear()
@@ -76,14 +79,14 @@ func _ready() -> void:
 	
 	var stepArray7 = []
 	stepArray7.append({
-	"oldWord": "CONSCIOUSNESS",
-	"newWord": "DEVOTION" })
+	"oldWord": "ME",
+	"newWord": "WE" })
 	stepArray7.append({
-	"oldWord": "NO ONE",
-	"newWord": "MY FAMILY" })
+	"oldWord": "INDIVIDUALS",
+	"newWord": "SYSTEM" })
 	stepArray7.append({
-	"oldWord": "KINSHIP",
-	"newWord": "ENNEMIES" })
+	"oldWord": "ENNEMIES",
+	"newWord": "KINSHIP" })
 	words.append(stepArray7)
 	
 	var stepArray8 = []
@@ -94,7 +97,7 @@ func _ready() -> void:
 	"oldWord": "INFECTED",
 	"newWord": "FIXED" })
 	stepArray8.append({
-	"oldWord": "CORRUPT",
+	"oldWord": "CORRUPTED",
 	"newWord": "CONTROL" })
 	words.append(stepArray8)
 	
@@ -143,6 +146,8 @@ func goToMainScene():
 
 func setDialogWord():
 	var curWords = getCurWords()
+	if curWords.is_empty():
+		return
 	dialog_word1 = curWords[0]["newWord"] if corrected_word else curWords[0]["oldWord"]
 	if curWords.size()>=2:
 		dialog_word2 = curWords[1]["newWord"] if corrected_word else curWords[1]["oldWord"]

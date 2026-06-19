@@ -1,0 +1,27 @@
+TODO Literally1984
+
+1. INTERROGATOIRE
+- correct pathfinding
+	- finish dialogs
+- picture on the screens heads
+- texture bug on main character on start 
+- sound design
+- transition between phases (dialog after correction -> dialog next step)
+- color text depending on who's talking
+- check pronouns
+- footstep sounds
+
+2. FPS
+- transition before and after
+		- mouse sensitivity in FPS
+		- door collision
+- better explanations (tuto)
+- make it more beautiful
+- sound design
+- some words are too long
+	- don't talk all the time except for when everything is corrected
+
+3. OVERALL
+- Menu
+- Options 
+	+ mouse sensitivity

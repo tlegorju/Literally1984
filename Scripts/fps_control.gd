@@ -12,7 +12,7 @@ const MAX_SLOPE_ANGLE = 40
 var camera
 var rotation_helper
 
-var MOUSE_SENSITIVITY = 0.05
+var MOUSE_SENSITIVITY = 0.1
 
 var pickup: Node3D = null
 @export var handRef : Node3D

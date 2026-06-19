@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c8mapbqsrqjk2" path="res://Assets/Models/Pedestal.fbx" id="6_pbxhd"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pbxhd"]
-size = Vector3(0.1, 2.2, 1.04962)
+size = Vector3(0.054, 2.15, 1.05)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_2vcfu"]
 height = 1.5
@@ -55,7 +55,7 @@ text = "TEST"
 outline_size = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Door/Pivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.32907e-15, 1.1, 0.524811)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.08, 0.5)
 shape = SubResource("BoxShape3D_pbxhd")
 
 [node name="Timer" type="Timer" parent="Door"]
@@ -128,7 +128,7 @@ material = ExtResource("5_evwxb")
 [node name="CSGBox3D2" type="CSGBox3D" parent="Walls/Wall4"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0552063, 1.07686, 0.021)
 operation = 2
-size = Vector3(0.5, 2.15371, 1.0434)
+size = Vector3(0.5, 2.16, 1.043)
 material = ExtResource("5_evwxb")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]

@@ -41,6 +41,10 @@ func set_character_rotation():
 	basis = basis.slerp(target, 0.2);
 
 func _physics_process(delta):
+	# Do not query when the map has never synchronized and is empty.
+	if NavigationServer3D.map_get_iteration_id(navigation_agent.get_navigation_map()) == 0:
+		print("no map")
+		return
 	if navigation_agent.is_navigation_finished():
 		velocity = Vector3(0, 0, 0);
 		return
@@ -48,9 +52,13 @@ func _physics_process(delta):
 	var current_agent_position: Vector3 = global_position
 	var next_path_position: Vector3 = navigation_agent.get_next_path_position()
 
-	velocity = current_agent_position.direction_to(next_path_position) * movement_speed
+	var new_velocity: Vector3 = current_agent_position.direction_to(next_path_position) * movement_speed
 	set_character_rotation();
-	move_and_slide()
+	if navigation_agent.avoidance_enabled:
+		navigation_agent.set_velocity(new_velocity)
+	else:
+		velocity = new_velocity
+		move_and_slide()
 	
 func _input(event: InputEvent) -> void:
 	if(is_talking): return;

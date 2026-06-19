@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cilmqphwo3w6i" path="res://Scenes/exit_door.tscn" id="4_27wqy"]
 [ext_resource type="Texture2D" uid="uid://c4ny0rxflcdrs" path="res://tmp_art/pickup.png" id="6_55t8s"]
 [ext_resource type="Texture2D" uid="uid://beivm1l7puaba" path="res://tmp_art/select.png" id="6_qs4p1"]
-[ext_resource type="Script" uid="uid://bqfxxsgkqjv58" path="res://Scripts/reticule_control.gd" id="8_ojsxo"]
+[ext_resource type="Script" path="res://Scripts/reticule_control.gd" id="8_ojsxo"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_87rv1"]
 material = ExtResource("4_20jko")

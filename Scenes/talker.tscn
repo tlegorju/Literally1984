@@ -8,7 +8,7 @@
 [ext_resource type="Material" uid="uid://1fw4hwdiedi0" path="res://Assets/Materials/M_Leather.tres" id="5_7hl8y"]
 [ext_resource type="Material" uid="uid://dgu5snwlx8c6v" path="res://Assets/Materials/M_GreenMetal.tres" id="6_s6md8"]
 [ext_resource type="AudioStream" uid="uid://bvrqkkvhpwh38" path="res://Assets/Audio/heart-monitor.mp3" id="8_1ia1b"]
-[ext_resource type="Script" path="res://Scenes/beep.gd" id="9_7hl8y"]
+[ext_resource type="Script" uid="uid://cqe16cx3av0p3" path="res://beep.gd" id="9_7hl8y"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lrtdq"]
 size = Vector3(1.13037, 1.28711, 2.2644)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=4 uid="uid://cnlqiy1t1tlfa"]
+[gd_scene load_steps=78 format=4 uid="uid://cnlqiy1t1tlfa"]
 
 [ext_resource type="Script" uid="uid://uxtklgw6afd8" path="res://Scripts/camera_collider.gd" id="1_a2ia3"]
 [ext_resource type="Material" uid="uid://6hyaudq2jro0" path="res://Assets/Materials/M_Window.tres" id="1_q2fht"]
@@ -6,7 +6,7 @@
 [ext_resource type="Material" uid="uid://3alykgpghls1" path="res://Assets/Materials/M_Door.tres" id="2_ikcpc"]
 [ext_resource type="Script" uid="uid://b1kqadvicdqaf" path="res://Scripts/swinging.gd" id="3_5erdv"]
 [ext_resource type="AudioStream" uid="uid://crikseqlv5kqx" path="res://Assets/Audio/computer-loop.mp3" id="3_unjri"]
-[ext_resource type="Script" path="res://Scenes/computer_screen.gd" id="4_ddui2"]
+[ext_resource type="Script" uid="uid://cr165n1k1x1di" path="res://computer_screen.gd" id="4_ddui2"]
 [ext_resource type="PackedScene" uid="uid://8q5t0t2rflcq" path="res://Scenes/playfabs/cop.tscn" id="4_qbrl8"]
 [ext_resource type="Shader" uid="uid://d2xcewttt2h0r" path="res://Assets/Materials/Shaders/crt-effect.gdshader" id="6_236hc"]
 [ext_resource type="Script" uid="uid://c0emh3p8iwj30" path="res://Scripts/moving_trigger.gd" id="6_tqiex"]
@@ -37,7 +37,7 @@
 [ext_resource type="Texture2D" uid="uid://cuk31i8c8ensv" path="res://Assets/DontWater.png" id="26_i7ce5"]
 [ext_resource type="PackedScene" uid="uid://ct5bg000truph" path="res://Assets/Window.fbx" id="27_2xkur"]
 [ext_resource type="AudioStream" uid="uid://dpu4d6goeatj" path="res://Assets/Audio/noise.mp3" id="29_m5xbg"]
-[ext_resource type="Script" path="res://Scenes/radio_stream.gd" id="30_4l012"]
+[ext_resource type="Script" uid="uid://bveuv6emt0vhg" path="res://radio_stream.gd" id="30_4l012"]
 [ext_resource type="AudioStream" uid="uid://c8oy0qhv8gjcc" path="res://Assets/Audio/demonic-breath.mp3" id="31_p5w27"]
 [ext_resource type="Script" path="res://Scripts/talker_control.gd" id="37_w6jpp"]
 [ext_resource type="PackedScene" uid="uid://b0oxc31egtshy" path="res://Assets/Models/OperatingChair.fbx" id="38_p5w27"]
@@ -45,7 +45,7 @@
 [ext_resource type="Material" uid="uid://1fw4hwdiedi0" path="res://Assets/Materials/M_Leather.tres" id="40_76m0p"]
 [ext_resource type="PackedScene" uid="uid://gikpeoeqgu2h" path="res://Assets/Character/Character.gltf" id="41_5pa0w"]
 [ext_resource type="AudioStream" uid="uid://bvrqkkvhpwh38" path="res://Assets/Audio/heart-monitor.mp3" id="42_3loty"]
-[ext_resource type="Script" path="res://Scenes/beep.gd" id="43_gmjuu"]
+[ext_resource type="Script" uid="uid://cqe16cx3av0p3" path="res://beep.gd" id="43_gmjuu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5erdv"]
 size = Vector3(4.75, 3, 4.617)
@@ -73,9 +73,12 @@ glow_hdr_threshold = 0.79
 volumetric_fog_albedo = Color(0.900569, 0.983344, 1, 1)
 volumetric_fog_emission = Color(0.45376, 0.417378, 0.422848, 1)
 
-[sub_resource type="NavigationMesh" id="NavigationMesh_5erdv"]
-vertices = PackedVector3Array(-4.5, 0.5, -4.5, -4.5, 0.5, 4.5, 4.5, 0.5, 4.5, 4.5, 0.5, -4.5)
-polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+[sub_resource type="NavigationMesh" id="NavigationMesh_p5w27"]
+vertices = PackedVector3Array(-2.4561, 1.7944, -5.99106, -2.4561, 1.7944, -5.49106, -0.2061, 1.7944, -5.49106, -0.2061, 1.7944, -5.99106, 1.5439, 1.7944, -5.99106, 1.5439, 1.7944, -5.49106, 3.7939, 1.7944, -5.49106, 3.7939, 1.7944, -5.99106, 0.0438995, 1.0444, 3.75894, 0.5439, 1.0444, 4.25894, 0.5439, 1.0444, 3.50894, -0.7061, 1.0444, 2.75894, -1.4561, 1.0444, -2.99106, -3.7061, 1.0444, -4.49106, -3.4561, 1.0444, 0.258944, -2.4561, 1.0444, -0.241056, -0.7061, 1.0444, 2.00894, 0.5439, 1.0444, 1.25894, 0.7939, 1.0444, 0.508944, -2.2061, 1.0444, 0.508944, 1.2939, 1.0444, -2.74106, 0.0438995, 1.0444, -3.74106, 4.2939, 1.0444, -3.24106, 2.2939, 1.0444, -3.49106, 4.2939, 1.0444, -0.491056, -4.4561, 1.0444, 0.508944, -4.4561, 1.0444, 3.75894, -0.7061, 1.7944, -4.49106, -0.7061, 1.7944, -3.99106, -0.2061, 1.7944, -3.99106, -0.2061, 1.7944, -4.49106, 3.2939, 1.7944, -4.49106, 3.2939, 1.7944, -3.99106, 3.7939, 1.7944, -3.99106, 3.7939, 1.7944, -4.49106, 1.2939, 2.0444, -3.74106, 1.2939, 2.0444, -3.24106, 2.0439, 2.0444, -3.49106, 1.7939, 1.0444, 1.50894, 4.2939, 1.0444, 0.508944, 1.7939, 1.0444, 3.25894, 4.2939, 1.0444, 4.25894, 2.2939, 1.0444, 2.25894)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Array(7, 6, 4), PackedInt32Array(4, 6, 5), PackedInt32Array(9, 8, 10), PackedInt32Array(10, 8, 11), PackedInt32Array(15, 14, 12), PackedInt32Array(12, 14, 13), PackedInt32Array(17, 16, 18), PackedInt32Array(18, 16, 19), PackedInt32Array(15, 19, 14), PackedInt32Array(16, 11, 19), PackedInt32Array(19, 11, 14), PackedInt32Array(12, 21, 20), PackedInt32Array(23, 22, 20), PackedInt32Array(20, 22, 24), PackedInt32Array(25, 14, 26), PackedInt32Array(26, 14, 11), PackedInt32Array(26, 11, 8), PackedInt32Array(12, 20, 15), PackedInt32Array(15, 20, 24), PackedInt32Array(30, 29, 27), PackedInt32Array(27, 29, 28), PackedInt32Array(34, 33, 31), PackedInt32Array(31, 33, 32), PackedInt32Array(37, 36, 35), PackedInt32Array(17, 18, 38), PackedInt32Array(38, 18, 39), PackedInt32Array(10, 40, 9), PackedInt32Array(9, 40, 41), PackedInt32Array(40, 42, 41), PackedInt32Array(41, 42, 39), PackedInt32Array(39, 42, 38)]
+agent_radius = 0.25
+agent_max_climb = 0.1
+agent_max_slope = 10.0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_5erdv"]
 size = Vector2(10, 10)
@@ -146,7 +149,7 @@ albedo_color = Color(0.354063, 0.354063, 0.354063, 1)
 albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8ce4n"]
-size = Vector3(0.177124, 0.777466, 0.14624)
+size = Vector3(0.699493, 1.92677, 0.480194)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_edjj2"]
 size = Vector3(0.104187, 0.0403888, 0.0519105)
@@ -165,6 +168,9 @@ size = Vector3(0.558922, 0.420943, 0.102112)
 [sub_resource type="BoxShape3D" id="BoxShape3D_lrtdq"]
 size = Vector3(1.13037, 1.28711, 2.2644)
 
+[sub_resource type="BoxMesh" id="BoxMesh_p5w27"]
+size = Vector3(7, 5, 0.2)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lwkuy"]
 shader = ExtResource("6_236hc")
 shader_parameter/noise_texture = ExtResource("7_lwkuy")
@@ -172,6 +178,7 @@ shader_parameter/noise_texture = ExtResource("7_lwkuy")
 [node name="MainLevel" type="Node3D"]
 
 [node name="CameraSystem" type="Node3D" parent="."]
+visible = false
 
 [node name="CAM1" type="Node3D" parent="CameraSystem"]
 
@@ -337,532 +344,528 @@ swing_speed = 0.1
 pos_offset = Vector3(0.45, 0, 0)
 min_energy = 0.4
 
-[node name="Navigation" type="Node3D" parent="."]
-
-[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Navigation"]
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.463233, 0)
-navigation_mesh = SubResource("NavigationMesh_5erdv")
+navigation_mesh = SubResource("NavigationMesh_p5w27")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Navigation/NavigationRegion3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D"]
 mesh = SubResource("PlaneMesh_5erdv")
 
-[node name="Cop" parent="." groups=["Player"] instance=ExtResource("4_qbrl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.70478, 0.137719, -3.27468)
-input_ray_pickable = false
-movement_speed = 1.5
+[node name="Level" type="Node3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.463233, 0)
 
-[node name="Level" type="Node3D" parent="."]
-
-[node name="Floor" type="CSGCombiner3D" parent="Level"]
+[node name="Floor" type="CSGCombiner3D" parent="NavigationRegion3D/Level"]
 use_collision = true
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Level/Floor"]
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D/Level/Floor"]
 size = Vector3(10, 0.25, 10)
 
-[node name="InteriorWall" type="CSGCombiner3D" parent="Level"]
+[node name="InteriorWall" type="CSGCombiner3D" parent="NavigationRegion3D/Level"]
 operation = 2
 use_collision = true
 
-[node name="Wall" type="CSGBox3D" parent="Level/InteriorWall"]
+[node name="Wall" type="CSGBox3D" parent="NavigationRegion3D/Level/InteriorWall"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.65778, 0)
 size = Vector3(10, 3.31555, 0.25)
 
-[node name="Door" type="CSGBox3D" parent="Level/InteriorWall"]
+[node name="Door" type="CSGBox3D" parent="NavigationRegion3D/Level/InteriorWall"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.94346, 1.08273, 0)
 operation = 2
 size = Vector3(2, 2, 1)
 
-[node name="WindowHole" type="CSGBox3D" parent="Level/InteriorWall"]
+[node name="WindowHole" type="CSGBox3D" parent="NavigationRegion3D/Level/InteriorWall"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.943297, 1.27406, 0)
 operation = 2
 size = Vector3(3.60767, 1.31369, 1)
 
-[node name="Window" type="CSGBox3D" parent="Level/InteriorWall"]
+[node name="Window" type="CSGBox3D" parent="NavigationRegion3D/Level/InteriorWall"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.950721, 1.27406, 0)
 size = Vector3(3.6226, 1.314, 0.05)
 material = ExtResource("1_q2fht")
 
-[node name="Doors" type="CSGCombiner3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.65192, 1.27406, 0)
+[node name="Doors" type="CSGCombiner3D" parent="NavigationRegion3D/Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.652, 1.27, 0)
 
-[node name="Door" type="CSGBox3D" parent="Level/Doors"]
+[node name="Door" type="CSGBox3D" parent="NavigationRegion3D/Level/Doors"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.09844, -0.17195, 0)
 size = Vector3(0.981216, 1.91936, 0.065)
 material = ExtResource("2_ikcpc")
 script = ExtResource("6_tqiex")
 offset = Vector3(-1, 0, 0)
 
-[node name="Door2" type="CSGBox3D" parent="Level/Doors"]
+[node name="Door2" type="CSGBox3D" parent="NavigationRegion3D/Level/Doors"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.08813, -0.173335, 0)
 size = Vector3(0.975723, 1.91659, 0.065)
 material = ExtResource("2_ikcpc")
 script = ExtResource("6_tqiex")
 offset = Vector3(1, 0, 0)
 
-[node name="Area3D" type="Area3D" parent="Level/Doors"]
+[node name="Area3D" type="Area3D" parent="NavigationRegion3D/Level/Doors"]
+visible = false
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Doors/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Level/Doors/Area3D"]
 transform = Transform3D(0.999691, 0, 0.0248684, 0, 1, 0, -0.0248684, 0, 0.999691, -4.43982, -0.0158081, 0.00105505)
 shape = SubResource("BoxShape3D_tqiex")
 
-[node name="ExteriorWalls" type="CSGCombiner3D" parent="Level"]
+[node name="ExteriorWalls" type="CSGCombiner3D" parent="NavigationRegion3D/Level"]
 use_collision = true
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Level/ExteriorWalls"]
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D/Level/ExteriorWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.024632, 1.56628, 4.80726)
 size = Vector3(10, 3.46924, 0.25)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Level/ExteriorWalls"]
+[node name="CSGBox3D2" type="CSGBox3D" parent="NavigationRegion3D/Level/ExteriorWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.64609, -4.87601)
 size = Vector3(10, 3.30847, 0.25)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="Level/ExteriorWalls"]
+[node name="CSGBox3D3" type="CSGBox3D" parent="NavigationRegion3D/Level/ExteriorWalls"]
 transform = Transform3D(-0.000139638, 0, -1, 0, 1, 0, 1, 0, -0.000139638, -4.87168, 1.65396, -0.00500924)
 size = Vector3(10, 3.32422, 0.25)
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="Level/ExteriorWalls"]
+[node name="CSGBox3D4" type="CSGBox3D" parent="NavigationRegion3D/Level/ExteriorWalls"]
 transform = Transform3D(-0.000139638, 0, -1, 0, 1, 0, 1, 0, -0.000139638, 4.87168, 1.64688, -0.0036487)
 size = Vector3(10, 3.31006, 0.25)
 
-[node name="CSGBox3D7" type="CSGBox3D" parent="Level/ExteriorWalls"]
+[node name="CSGBox3D7" type="CSGBox3D" parent="NavigationRegion3D/Level/ExteriorWalls"]
 transform = Transform3D(-1, 0, 0.000279276, 0, 1, 0, -0.000279276, 0, -1, -2.34138, 1.19807, 4.37922)
 size = Vector3(4.76593, 0.098389, 0.686279)
 material = SubResource("StandardMaterial3D_bm8oi")
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="Level/ExteriorWalls"]
+[node name="CSGBox3D5" type="CSGBox3D" parent="NavigationRegion3D/Level/ExteriorWalls"]
 transform = Transform3D(-0.000139638, 0, -1, 0, 1, 0, 1, 0, -0.000139638, -4.57492, 0.994658, -2.51484)
 material_override = SubResource("StandardMaterial3D_unjri")
 size = Vector3(4.97754, 0.098389, 0.867676)
 material = ExtResource("8_unus1")
 
-[node name="CSGBox3D6" type="CSGBox3D" parent="Level/ExteriorWalls"]
+[node name="CSGBox3D6" type="CSGBox3D" parent="NavigationRegion3D/Level/ExteriorWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.05436, 1.7846, -2.07584)
 operation = 2
 size = Vector3(1.70618, 1.20929, 1.57666)
 
-[node name="Props" type="Node3D" parent="."]
+[node name="Props" type="Node3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.463233, 0)
 
-[node name="Tools" type="Node3D" parent="Props"]
+[node name="Tools" type="Node3D" parent="NavigationRegion3D/Props"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.300138, 1.25062, 4.34906)
 
-[node name="Hammer" parent="Props/Tools" instance=ExtResource("8_b8vxi")]
+[node name="Hammer" parent="NavigationRegion3D/Props/Tools" instance=ExtResource("8_b8vxi")]
 transform = Transform3D(0.304439, 0.896506, 2.84668, 0.17822, 2.85089, -0.91689, -2.97919, 0.262158, 0.236048, -0.321862, 0.096483, -0.0769153)
 
-[node name="Hammer" parent="Props/Tools/Hammer" index="0"]
+[node name="Hammer" parent="NavigationRegion3D/Props/Tools/Hammer" index="0"]
 surface_material_override/0 = ExtResource("9_lkiyy")
 
-[node name="Screwdriver" parent="Props/Tools" instance=ExtResource("7_ehh7o")]
+[node name="Screwdriver" parent="NavigationRegion3D/Props/Tools" instance=ExtResource("7_ehh7o")]
 transform = Transform3D(2.41995, 0, -1.77308, 0, 3, 0, 1.77308, 0, 2.41995, -0.31251, 0.00488997, 0.0324244)
 
-[node name="Screwdriver" parent="Props/Tools/Screwdriver" index="0"]
+[node name="Screwdriver" parent="NavigationRegion3D/Props/Tools/Screwdriver" index="0"]
 surface_material_override/0 = ExtResource("9_lkiyy")
 
-[node name="Hammer2" parent="Props/Tools" instance=ExtResource("8_b8vxi")]
+[node name="Hammer2" parent="NavigationRegion3D/Props/Tools" instance=ExtResource("8_b8vxi")]
 transform = Transform3D(-2.92143, 0.367453, 0.574669, 0.17822, 2.85089, -0.91689, -0.65841, -0.858737, -2.79805, -0.025527, 0.096483, -0.0241389)
 
-[node name="Hammer" parent="Props/Tools/Hammer2" index="0"]
+[node name="Hammer" parent="NavigationRegion3D/Props/Tools/Hammer2" index="0"]
 surface_material_override/0 = ExtResource("9_lkiyy")
 
-[node name="Screwdriver2" parent="Props/Tools" instance=ExtResource("7_ehh7o")]
+[node name="Screwdriver2" parent="NavigationRegion3D/Props/Tools" instance=ExtResource("7_ehh7o")]
 transform = Transform3D(2.04967, 0, 2.19063, 0, 3, 0, -2.19063, 0, 2.04967, 0.0841465, 0.00488997, -0.0203519)
 
-[node name="Screwdriver" parent="Props/Tools/Screwdriver2" index="0"]
+[node name="Screwdriver" parent="NavigationRegion3D/Props/Tools/Screwdriver2" index="0"]
 surface_material_override/0 = ExtResource("9_lkiyy")
 
-[node name="Hammer3" parent="Props/Tools" instance=ExtResource("8_b8vxi")]
+[node name="Hammer3" parent="NavigationRegion3D/Props/Tools" instance=ExtResource("8_b8vxi")]
 transform = Transform3D(0.724245, -0.932278, -2.75796, 0.17822, 2.85089, -0.91689, 2.90581, 0.0575095, 0.74363, 0.284587, 0.096483, 0.0901322)
 
-[node name="Hammer" parent="Props/Tools/Hammer3" index="0"]
+[node name="Hammer" parent="NavigationRegion3D/Props/Tools/Hammer3" index="0"]
 surface_material_override/0 = ExtResource("9_lkiyy")
 
-[node name="Screwdriver3" parent="Props/Tools" instance=ExtResource("7_ehh7o")]
+[node name="Screwdriver3" parent="NavigationRegion3D/Props/Tools" instance=ExtResource("7_ehh7o")]
 transform = Transform3D(-2.87794, 0, 0.847025, 0, 3, 0, -0.847025, 0, -2.87794, 0.238699, 0.00488997, -0.00955153)
 
-[node name="Screwdriver" parent="Props/Tools/Screwdriver3" index="0"]
+[node name="Screwdriver" parent="NavigationRegion3D/Props/Tools/Screwdriver3" index="0"]
 surface_material_override/0 = ExtResource("9_lkiyy")
 
-[node name="Hammer4" parent="Props/Tools" instance=ExtResource("8_b8vxi")]
+[node name="Hammer4" parent="NavigationRegion3D/Props/Tools" instance=ExtResource("8_b8vxi")]
 transform = Transform3D(0.724245, -0.932278, -2.75796, 0.36822, -2.78986, 1.03976, -2.88789, -0.589525, -0.559086, -0.0787657, 0.0150164, 0.0891075)
 
-[node name="Hammer" parent="Props/Tools/Hammer4" index="0"]
+[node name="Hammer" parent="NavigationRegion3D/Props/Tools/Hammer4" index="0"]
 surface_material_override/0 = ExtResource("9_lkiyy")
 
-[node name="Screwdriver4" parent="Props/Tools" instance=ExtResource("7_ehh7o")]
+[node name="Screwdriver4" parent="NavigationRegion3D/Props/Tools" instance=ExtResource("7_ehh7o")]
 transform = Transform3D(-2.87794, 0, 0.847025, -0.158368, -2.9471, -0.538088, 0.832088, -0.560909, 2.82719, -0.124654, 0.0863565, 0.204159)
 
-[node name="Screwdriver" parent="Props/Tools/Screwdriver4" index="0"]
+[node name="Screwdriver" parent="NavigationRegion3D/Props/Tools/Screwdriver4" index="0"]
 surface_material_override/0 = ExtResource("9_lkiyy")
 
-[node name="Hammer5" parent="Props/Tools" instance=ExtResource("8_b8vxi")]
+[node name="Hammer5" parent="NavigationRegion3D/Props/Tools" instance=ExtResource("8_b8vxi")]
 transform = Transform3D(-1.84913, 0.82726, 2.21278, 0.17822, 2.85089, -0.91689, -2.35563, -0.433694, -1.80636, -0.935658, 0.096483, 0.15586)
 
-[node name="Hammer" parent="Props/Tools/Hammer5" index="0"]
+[node name="Hammer" parent="NavigationRegion3D/Props/Tools/Hammer5" index="0"]
 surface_material_override/0 = ExtResource("9_lkiyy")
 
-[node name="Screwdriver5" parent="Props/Tools" instance=ExtResource("7_ehh7o")]
+[node name="Screwdriver5" parent="NavigationRegion3D/Props/Tools" instance=ExtResource("7_ehh7o")]
 transform = Transform3D(2.9727, 0, 0.403826, 0, 3, 0, -0.403826, 0, 2.9727, -0.85302, 0.00488997, 0.228066)
 
-[node name="Screwdriver" parent="Props/Tools/Screwdriver5" index="0"]
+[node name="Screwdriver" parent="NavigationRegion3D/Props/Tools/Screwdriver5" index="0"]
 surface_material_override/0 = ExtResource("9_lkiyy")
 
-[node name="Hammer6" parent="Props/Tools" instance=ExtResource("8_b8vxi")]
+[node name="Hammer6" parent="NavigationRegion3D/Props/Tools" instance=ExtResource("8_b8vxi")]
 transform = Transform3D(-2.55979, -0.331687, -1.52887, 0.17822, 2.85089, -0.91689, 1.55425, -0.873175, -2.41285, -0.685731, 0.096483, -0.011879)
 
-[node name="Hammer" parent="Props/Tools/Hammer6" index="0"]
+[node name="Hammer" parent="NavigationRegion3D/Props/Tools/Hammer6" index="0"]
 surface_material_override/0 = ExtResource("9_lkiyy")
 
-[node name="Screwdriver6" parent="Props/Tools" instance=ExtResource("7_ehh7o")]
+[node name="Screwdriver6" parent="NavigationRegion3D/Props/Tools" instance=ExtResource("7_ehh7o")]
 transform = Transform3D(-0.0455515, 0, 2.99965, 0, 3, 0, -2.99965, 0, -0.0455515, -0.604165, 0.00488997, -0.0852919)
 
-[node name="Screwdriver" parent="Props/Tools/Screwdriver6" index="0"]
+[node name="Screwdriver" parent="NavigationRegion3D/Props/Tools/Screwdriver6" index="0"]
 surface_material_override/0 = ExtResource("9_lkiyy")
 
-[node name="Hammer7" parent="Props/Tools" instance=ExtResource("8_b8vxi")]
+[node name="Hammer7" parent="NavigationRegion3D/Props/Tools" instance=ExtResource("8_b8vxi")]
 transform = Transform3D(2.53858, -0.631084, -1.46879, 0.17822, 2.85089, -0.91689, 1.58867, 0.688609, 2.44989, -0.383196, 0.096483, -0.144923)
 
-[node name="Hammer" parent="Props/Tools/Hammer7" index="0"]
+[node name="Hammer" parent="NavigationRegion3D/Props/Tools/Hammer7" index="0"]
 surface_material_override/0 = ExtResource("9_lkiyy")
 
-[node name="Screwdriver7" parent="Props/Tools" instance=ExtResource("7_ehh7o")]
+[node name="Screwdriver7" parent="NavigationRegion3D/Props/Tools" instance=ExtResource("7_ehh7o")]
 transform = Transform3D(-2.65944, 0, -1.38831, 0, 3, 0, 1.38831, 0, -2.65944, -0.485427, 0.00488997, -0.184813)
 
-[node name="Screwdriver" parent="Props/Tools/Screwdriver7" index="0"]
+[node name="Screwdriver" parent="NavigationRegion3D/Props/Tools/Screwdriver7" index="0"]
 surface_material_override/0 = ExtResource("9_lkiyy")
 
-[node name="Hammer8" parent="Props/Tools" instance=ExtResource("8_b8vxi")]
+[node name="Hammer8" parent="NavigationRegion3D/Props/Tools" instance=ExtResource("8_b8vxi")]
 transform = Transform3D(-1.48359, -1.08028, -2.37318, 0.36822, -2.78986, 1.03976, -2.58136, 0.222905, 1.51226, -0.645431, 0.0150164, 0.106591)
 
-[node name="Hammer" parent="Props/Tools/Hammer8" index="0"]
+[node name="Hammer" parent="NavigationRegion3D/Props/Tools/Hammer8" index="0"]
 surface_material_override/0 = ExtResource("9_lkiyy")
 
-[node name="Screwdriver8" parent="Props/Tools" instance=ExtResource("7_ehh7o")]
+[node name="Screwdriver8" parent="NavigationRegion3D/Props/Tools" instance=ExtResource("7_ehh7o")]
 transform = Transform3D(-1.49374, -0.389401, 2.57237, -0.158368, -2.9471, -0.538088, 2.59685, -0.403716, 1.44685, -0.598587, 0.0863565, 0.221256)
 
-[node name="Screwdriver" parent="Props/Tools/Screwdriver8" index="0"]
+[node name="Screwdriver" parent="NavigationRegion3D/Props/Tools/Screwdriver8" index="0"]
 surface_material_override/0 = ExtResource("9_lkiyy")
 
-[node name="Hammer9" parent="Props/Tools" instance=ExtResource("8_b8vxi")]
+[node name="Hammer9" parent="NavigationRegion3D/Props/Tools" instance=ExtResource("8_b8vxi")]
 transform = Transform3D(0.784559, 0.841983, 2.77048, 0.17822, 2.85089, -0.91689, -2.89011, 0.40437, 0.695543, -1.57419, 0.096483, -0.122529)
 
-[node name="Hammer" parent="Props/Tools/Hammer9" index="0"]
+[node name="Hammer" parent="NavigationRegion3D/Props/Tools/Hammer9" index="0"]
 surface_material_override/0 = ExtResource("9_lkiyy")
 
-[node name="Screwdriver9" parent="Props/Tools" instance=ExtResource("7_ehh7o")]
+[node name="Screwdriver9" parent="NavigationRegion3D/Props/Tools" instance=ExtResource("7_ehh7o")]
 transform = Transform3D(2.09963, 0, -2.14279, 0, 3, 0, 2.14279, 0, 2.09963, -1.58274, 0.00488997, -0.013123)
 
-[node name="Screwdriver" parent="Props/Tools/Screwdriver9" index="0"]
+[node name="Screwdriver" parent="NavigationRegion3D/Props/Tools/Screwdriver9" index="0"]
 surface_material_override/0 = ExtResource("9_lkiyy")
 
-[node name="Hammer10" parent="Props/Tools" instance=ExtResource("8_b8vxi")]
+[node name="Hammer10" parent="NavigationRegion3D/Props/Tools" instance=ExtResource("8_b8vxi")]
 transform = Transform3D(-2.77559, 0.502127, 1.02176, 0.17822, 2.85089, -0.91689, -1.12444, -0.787603, -2.66746, -1.29037, 0.096483, -0.022295)
 
-[node name="Hammer" parent="Props/Tools/Hammer10" index="0"]
+[node name="Hammer" parent="NavigationRegion3D/Props/Tools/Hammer10" index="0"]
 surface_material_override/0 = ExtResource("9_lkiyy")
 
-[node name="Screwdriver10" parent="Props/Tools" instance=ExtResource("7_ehh7o")]
+[node name="Screwdriver10" parent="NavigationRegion3D/Props/Tools" instance=ExtResource("7_ehh7o")]
 transform = Transform3D(2.37843, 0, 1.8284, 0, 3, 0, -1.8284, 0, 2.37843, -1.18277, 0.00488997, -0.000734329)
 
-[node name="Screwdriver" parent="Props/Tools/Screwdriver10" index="0"]
+[node name="Screwdriver" parent="NavigationRegion3D/Props/Tools/Screwdriver10" index="0"]
 surface_material_override/0 = ExtResource("9_lkiyy")
 
-[node name="Hammer11" parent="Props/Tools" instance=ExtResource("8_b8vxi")]
+[node name="Hammer11" parent="NavigationRegion3D/Props/Tools" instance=ExtResource("8_b8vxi")]
 transform = Transform3D(0.242374, -0.929231, -2.84214, 0.17822, 2.85089, -0.91689, 2.98488, -0.0947658, 0.28553, -1.00295, 0.096483, 0.140856)
 
-[node name="Hammer" parent="Props/Tools/Hammer11" index="0"]
+[node name="Hammer" parent="NavigationRegion3D/Props/Tools/Hammer11" index="0"]
 surface_material_override/0 = ExtResource("9_lkiyy")
 
-[node name="Screwdriver11" parent="Props/Tools" instance=ExtResource("7_ehh7o")]
+[node name="Screwdriver11" parent="NavigationRegion3D/Props/Tools" instance=ExtResource("7_ehh7o")]
 transform = Transform3D(-2.70203, 0, 1.30348, 0, 3, 0, -1.30348, 0, -2.70203, -1.03203, 0.00488997, 0.0350394)
 
-[node name="Screwdriver" parent="Props/Tools/Screwdriver11" index="0"]
+[node name="Screwdriver" parent="NavigationRegion3D/Props/Tools/Screwdriver11" index="0"]
 surface_material_override/0 = ExtResource("9_lkiyy")
 
-[node name="Hammer12" parent="Props/Tools" instance=ExtResource("8_b8vxi")]
+[node name="Hammer12" parent="NavigationRegion3D/Props/Tools" instance=ExtResource("8_b8vxi")]
 transform = Transform3D(1.18395, -0.824077, -2.63043, 0.36822, -2.78986, 1.03976, -2.73179, -0.733198, -0.999867, -1.36131, 0.0150164, 0.0807939)
 
-[node name="Hammer" parent="Props/Tools/Hammer12" index="0"]
+[node name="Hammer" parent="NavigationRegion3D/Props/Tools/Hammer12" index="0"]
 surface_material_override/0 = ExtResource("9_lkiyy")
 
-[node name="Screwdriver12" parent="Props/Tools" instance=ExtResource("7_ehh7o")]
+[node name="Screwdriver12" parent="NavigationRegion3D/Props/Tools" instance=ExtResource("7_ehh7o")]
 transform = Transform3D(-2.97491, 0.0911571, 0.376299, -0.233588, -2.74784, -1.18102, 0.308783, -1.20045, 2.73196, -1.42529, 0.0408137, 0.184244)
 
-[node name="Screwdriver" parent="Props/Tools/Screwdriver12" index="0"]
+[node name="Screwdriver" parent="NavigationRegion3D/Props/Tools/Screwdriver12" index="0"]
 surface_material_override/0 = ExtResource("9_lkiyy")
 
-[node name="Hammer13" parent="Props/Tools" instance=ExtResource("8_b8vxi")]
+[node name="Hammer13" parent="NavigationRegion3D/Props/Tools" instance=ExtResource("8_b8vxi")]
 transform = Transform3D(2.88989, 0.0771511, 0.801608, 0.216859, 2.80134, -1.05142, -0.775564, 1.07077, 2.69294, -0.497127, 0.131901, -0.272366)
 
-[node name="Hammer" parent="Props/Tools/Hammer13" index="0"]
+[node name="Hammer" parent="NavigationRegion3D/Props/Tools/Hammer13" index="0"]
 surface_material_override/0 = ExtResource("9_lkiyy")
 
-[node name="Screwdriver13" parent="Props/Tools" instance=ExtResource("7_ehh7o")]
+[node name="Screwdriver13" parent="NavigationRegion3D/Props/Tools" instance=ExtResource("7_ehh7o")]
 transform = Transform3D(-0.786163, -7.86024e-09, -2.89516, -0.143245, 2.99633, 0.0388972, 2.89161, 0.148432, -0.7852, -0.595822, 0.0380461, -0.228977)
 
-[node name="Screwdriver" parent="Props/Tools/Screwdriver13" index="0"]
+[node name="Screwdriver" parent="NavigationRegion3D/Props/Tools/Screwdriver13" index="0"]
 surface_material_override/0 = ExtResource("9_lkiyy")
 
-[node name="Hammer14" parent="Props/Tools" instance=ExtResource("8_b8vxi")]
+[node name="Hammer14" parent="NavigationRegion3D/Props/Tools" instance=ExtResource("8_b8vxi")]
 transform = Transform3D(-0.434232, 0.933406, 2.81784, 0.324606, 2.84568, -0.892607, -2.95061, 0.175696, -0.512892, -0.440005, 0.117279, 0.0228)
 
-[node name="Hammer" parent="Props/Tools/Hammer14" index="0"]
+[node name="Hammer" parent="NavigationRegion3D/Props/Tools/Hammer14" index="0"]
 surface_material_override/0 = ExtResource("9_lkiyy")
 
-[node name="Screwdriver14" parent="Props/Tools" instance=ExtResource("7_ehh7o")]
+[node name="Screwdriver14" parent="NavigationRegion3D/Props/Tools" instance=ExtResource("7_ehh7o")]
 transform = Transform3D(2.78041, 1.57205e-08, -1.12663, -0.0557429, 2.99633, -0.137567, 1.12526, 0.148432, 2.77701, -0.404169, 0.0206662, 0.121864)
 
-[node name="Screwdriver" parent="Props/Tools/Screwdriver14" index="0"]
+[node name="Screwdriver" parent="NavigationRegion3D/Props/Tools/Screwdriver14" index="0"]
 surface_material_override/0 = ExtResource("9_lkiyy")
 
-[node name="Hammer15" parent="Props/Tools" instance=ExtResource("8_b8vxi")]
+[node name="Hammer15" parent="NavigationRegion3D/Props/Tools" instance=ExtResource("8_b8vxi")]
 transform = Transform3D(-2.45212, -0.388352, -1.68413, 0.092945, 2.88943, -0.801615, 1.72583, -0.707396, -2.3497, -0.435333, 0.100928, 0.352859)
 
-[node name="Hammer" parent="Props/Tools/Hammer15" index="0"]
+[node name="Hammer" parent="NavigationRegion3D/Props/Tools/Hammer15" index="0"]
 surface_material_override/0 = ExtResource("9_lkiyy")
 
-[node name="Screwdriver15" parent="Props/Tools" instance=ExtResource("7_ehh7o")]
+[node name="Screwdriver15" parent="NavigationRegion3D/Props/Tools" instance=ExtResource("7_ehh7o")]
 transform = Transform3D(-0.24258, -4.10684e-09, 2.99018, 0.147946, 2.99632, 0.0120022, -2.98651, 0.148432, -0.242282, -0.358767, 0.0133371, 0.269809)
 
-[node name="Screwdriver" parent="Props/Tools/Screwdriver15" index="0"]
+[node name="Screwdriver" parent="NavigationRegion3D/Props/Tools/Screwdriver15" index="0"]
 surface_material_override/0 = ExtResource("9_lkiyy")
 
-[node name="Hammer16" parent="Props/Tools" instance=ExtResource("8_b8vxi")]
+[node name="Hammer16" parent="NavigationRegion3D/Props/Tools" instance=ExtResource("8_b8vxi")]
 transform = Transform3D(2.95538, 0.215553, -0.468252, 0.385618, -2.73292, 1.17578, -0.342085, -1.21848, -2.71998, -0.564815, 0.0363593, 0.00974369)
 
-[node name="Hammer" parent="Props/Tools/Hammer16" index="0"]
+[node name="Hammer" parent="NavigationRegion3D/Props/Tools/Hammer16" index="0"]
 surface_material_override/0 = ExtResource("9_lkiyy")
 
-[node name="Screwdriver16" parent="Props/Tools" instance=ExtResource("7_ehh7o")]
+[node name="Screwdriver16" parent="NavigationRegion3D/Props/Tools" instance=ExtResource("7_ehh7o")]
 transform = Transform3D(-1.80977, 0.523521, -2.33467, -0.040052, -2.93352, -0.62676, -2.39231, -0.346927, 1.77666, -0.688671, 0.107688, 0.0117483)
 
-[node name="Screwdriver" parent="Props/Tools/Screwdriver16" index="0"]
+[node name="Screwdriver" parent="NavigationRegion3D/Props/Tools/Screwdriver16" index="0"]
 surface_material_override/0 = ExtResource("9_lkiyy")
 
-[node name="Hammer17" parent="Props/Tools" instance=ExtResource("8_b8vxi")]
+[node name="Hammer17" parent="NavigationRegion3D/Props/Tools" instance=ExtResource("8_b8vxi")]
 transform = Transform3D(2.88989, 0.0771511, 0.801608, 0.168242, 2.86247, -0.88203, -0.787542, 0.894611, 2.75308, -1.47334, 0.112564, -0.275895)
 
-[node name="Hammer" parent="Props/Tools/Hammer17" index="0"]
+[node name="Hammer" parent="NavigationRegion3D/Props/Tools/Hammer17" index="0"]
 surface_material_override/0 = ExtResource("9_lkiyy")
 
-[node name="Screwdriver17" parent="Props/Tools" instance=ExtResource("7_ehh7o")]
+[node name="Screwdriver17" parent="NavigationRegion3D/Props/Tools" instance=ExtResource("7_ehh7o")]
 transform = Transform3D(-0.786163, -7.86024e-09, -2.89516, 0.0367344, 2.99976, -0.00997502, 2.89493, -0.0380645, -0.7861, -1.57203, 0.0215873, -0.226758)
 
-[node name="Screwdriver" parent="Props/Tools/Screwdriver17" index="0"]
+[node name="Screwdriver" parent="NavigationRegion3D/Props/Tools/Screwdriver17" index="0"]
 surface_material_override/0 = ExtResource("9_lkiyy")
 
-[node name="Hammer18" parent="Props/Tools" instance=ExtResource("8_b8vxi")]
+[node name="Hammer18" parent="NavigationRegion3D/Props/Tools" instance=ExtResource("8_b8vxi")]
 transform = Transform3D(-0.434232, 0.933406, 2.81784, 0.14061, 2.8511, -0.922756, -2.96508, -0.00149128, -0.456428, -1.41622, 0.116314, 0.0196085)
 
-[node name="Hammer" parent="Props/Tools/Hammer18" index="0"]
+[node name="Hammer" parent="NavigationRegion3D/Props/Tools/Hammer18" index="0"]
 surface_material_override/0 = ExtResource("9_lkiyy")
 
-[node name="Screwdriver18" parent="Props/Tools" instance=ExtResource("7_ehh7o")]
+[node name="Screwdriver18" parent="NavigationRegion3D/Props/Tools" instance=ExtResource("7_ehh7o")]
 transform = Transform3D(2.78041, 1.57205e-08, -1.12663, 0.0142949, 2.99976, 0.0352784, 1.12654, -0.0380647, 2.78019, -1.38038, 0.0260444, 0.124485)
 
-[node name="Screwdriver" parent="Props/Tools/Screwdriver18" index="0"]
+[node name="Screwdriver" parent="NavigationRegion3D/Props/Tools/Screwdriver18" index="0"]
 surface_material_override/0 = ExtResource("9_lkiyy")
 
-[node name="Hammer19" parent="Props/Tools" instance=ExtResource("8_b8vxi")]
+[node name="Hammer19" parent="NavigationRegion3D/Props/Tools" instance=ExtResource("8_b8vxi")]
 transform = Transform3D(-2.45212, -0.388352, -1.68413, 0.200019, 2.83988, -0.946091, 1.71672, -0.885594, -2.29535, -1.41155, 0.120507, 0.350046)
 
-[node name="Hammer" parent="Props/Tools/Hammer19" index="0"]
+[node name="Hammer" parent="NavigationRegion3D/Props/Tools/Hammer19" index="0"]
 surface_material_override/0 = ExtResource("9_lkiyy")
 
-[node name="Screwdriver19" parent="Props/Tools" instance=ExtResource("7_ehh7o")]
+[node name="Screwdriver19" parent="NavigationRegion3D/Props/Tools" instance=ExtResource("7_ehh7o")]
 transform = Transform3D(-0.24258, -4.10684e-09, 2.99018, -0.03794, 2.99976, -0.0030779, -2.98993, -0.0380645, -0.24256, -1.33498, 0.0279237, 0.2726)
 
-[node name="Screwdriver" parent="Props/Tools/Screwdriver19" index="0"]
+[node name="Screwdriver" parent="NavigationRegion3D/Props/Tools/Screwdriver19" index="0"]
 surface_material_override/0 = ExtResource("9_lkiyy")
 
-[node name="Hammer20" parent="Props/Tools" instance=ExtResource("8_b8vxi")]
+[node name="Hammer20" parent="NavigationRegion3D/Props/Tools" instance=ExtResource("8_b8vxi")]
 transform = Transform3D(2.95538, 0.215553, -0.468252, 0.363614, -2.80336, 1.00447, -0.365388, -1.04628, -2.78779, -1.54103, 0.0347393, 0.0116062)
 
-[node name="Hammer" parent="Props/Tools/Hammer20" index="0"]
+[node name="Hammer" parent="NavigationRegion3D/Props/Tools/Hammer20" index="0"]
 surface_material_override/0 = ExtResource("9_lkiyy")
 
-[node name="Screwdriver20" parent="Props/Tools" instance=ExtResource("7_ehh7o")]
+[node name="Screwdriver20" parent="NavigationRegion3D/Props/Tools" instance=ExtResource("7_ehh7o")]
 transform = Transform3D(-1.80977, 0.523521, -2.33467, -0.188647, -2.94941, -0.515136, -2.3852, -0.16395, 1.81217, -1.66488, 0.106054, 0.00917387)
 
-[node name="Screwdriver" parent="Props/Tools/Screwdriver20" index="0"]
+[node name="Screwdriver" parent="NavigationRegion3D/Props/Tools/Screwdriver20" index="0"]
 surface_material_override/0 = ExtResource("9_lkiyy")
 
-[node name="Interactible" type="Area3D" parent="Props/Tools"]
+[node name="Interactible" type="Area3D" parent="NavigationRegion3D/Props/Tools"]
 script = ExtResource("11_o0i6v")
 dialogue_resource = ExtResource("8_6l6h0")
 dialogue_name = "tools"
 max_dist = 1.5
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Props/Tools/Interactible"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Props/Tools/Interactible"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.712135, 0.0277264, -0.0019722)
 shape = SubResource("BoxShape3D_ddui2")
 
-[node name="Picture" parent="Props" instance=ExtResource("7_jf8f8")]
+[node name="Picture" parent="NavigationRegion3D/Props" instance=ExtResource("7_jf8f8")]
 transform = Transform3D(3.00128, 0, 1.80064, 0, 3.5, 0, -1.80064, 0, 3.00128, 2.16136, 0.942008, -4.11792)
 
-[node name="Interactible" type="Area3D" parent="Props/Picture"]
+[node name="Interactible" type="Area3D" parent="NavigationRegion3D/Props/Picture"]
 script = ExtResource("11_o0i6v")
 dialogue_resource = ExtResource("8_6l6h0")
 dialogue_name = "photo"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Props/Picture/Interactible"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Props/Picture/Interactible"]
 transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 3.57628e-07, 0.0426553, 8.41022e-05)
 shape = SubResource("BoxShape3D_ehh7o")
 
-[node name="Desk3" parent="Props" instance=ExtResource("7_5vthg")]
+[node name="Desk3" parent="NavigationRegion3D/Props" instance=ExtResource("7_5vthg")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -1.27559, 0.131295, -4.20775)
 
-[node name="pCube11" parent="Props/Desk3/Desk" index="0"]
+[node name="pCube11" parent="NavigationRegion3D/Props/Desk3/Desk" index="0"]
 surface_material_override/0 = ExtResource("8_unus1")
 
-[node name="pCube10" parent="Props/Desk3/Desk" index="1"]
+[node name="pCube10" parent="NavigationRegion3D/Props/Desk3/Desk" index="1"]
 surface_material_override/0 = ExtResource("8_unus1")
 
-[node name="pCube1" parent="Props/Desk3/Desk" index="2"]
+[node name="pCube1" parent="NavigationRegion3D/Props/Desk3/Desk" index="2"]
 surface_material_override/0 = ExtResource("8_unus1")
 
-[node name="pCube9" parent="Props/Desk3/Desk" index="3"]
+[node name="pCube9" parent="NavigationRegion3D/Props/Desk3/Desk" index="3"]
 surface_material_override/0 = ExtResource("8_unus1")
 
-[node name="pCube6" parent="Props/Desk3/Desk" index="4"]
+[node name="pCube6" parent="NavigationRegion3D/Props/Desk3/Desk" index="4"]
 surface_material_override/0 = ExtResource("8_unus1")
 
-[node name="pCube7" parent="Props/Desk3/Desk" index="5"]
+[node name="pCube7" parent="NavigationRegion3D/Props/Desk3/Desk" index="5"]
 surface_material_override/0 = ExtResource("8_unus1")
 
-[node name="pCube8" parent="Props/Desk3/Desk" index="6"]
+[node name="pCube8" parent="NavigationRegion3D/Props/Desk3/Desk" index="6"]
 surface_material_override/0 = ExtResource("8_unus1")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Props/Desk3"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Props/Desk3"]
 input_ray_pickable = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Props/Desk3/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Props/Desk3/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00878912, -0.195679, -0.206238)
 shape = SubResource("BoxShape3D_eckhq")
 
-[node name="Desk4" parent="Props" instance=ExtResource("7_5vthg")]
+[node name="Desk4" parent="NavigationRegion3D/Props" instance=ExtResource("7_5vthg")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 2.69204, 0.122575, -4.23666)
 
-[node name="pCube11" parent="Props/Desk4/Desk" index="0"]
+[node name="pCube11" parent="NavigationRegion3D/Props/Desk4/Desk" index="0"]
 surface_material_override/0 = ExtResource("8_unus1")
 
-[node name="pCube10" parent="Props/Desk4/Desk" index="1"]
+[node name="pCube10" parent="NavigationRegion3D/Props/Desk4/Desk" index="1"]
 surface_material_override/0 = ExtResource("8_unus1")
 
-[node name="pCube1" parent="Props/Desk4/Desk" index="2"]
+[node name="pCube1" parent="NavigationRegion3D/Props/Desk4/Desk" index="2"]
 surface_material_override/0 = ExtResource("8_unus1")
 
-[node name="pCube9" parent="Props/Desk4/Desk" index="3"]
+[node name="pCube9" parent="NavigationRegion3D/Props/Desk4/Desk" index="3"]
 surface_material_override/0 = ExtResource("8_unus1")
 
-[node name="pCube6" parent="Props/Desk4/Desk" index="4"]
+[node name="pCube6" parent="NavigationRegion3D/Props/Desk4/Desk" index="4"]
 surface_material_override/0 = ExtResource("8_unus1")
 
-[node name="pCube7" parent="Props/Desk4/Desk" index="5"]
+[node name="pCube7" parent="NavigationRegion3D/Props/Desk4/Desk" index="5"]
 surface_material_override/0 = ExtResource("8_unus1")
 
-[node name="pCube8" parent="Props/Desk4/Desk" index="6"]
+[node name="pCube8" parent="NavigationRegion3D/Props/Desk4/Desk" index="6"]
 surface_material_override/0 = ExtResource("8_unus1")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Props/Desk4"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Props/Desk4"]
 input_ray_pickable = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Props/Desk4/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Props/Desk4/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00878912, -0.195679, -0.206238)
 shape = SubResource("BoxShape3D_eckhq")
 
-[node name="Plant2" parent="Props" instance=ExtResource("9_vgie2")]
+[node name="Plant2" parent="NavigationRegion3D/Props" instance=ExtResource("9_vgie2")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0.99652, 0, -4.17214)
 script = ExtResource("11_o0i6v")
 
-[node name="Plant" parent="Props/Plant2" index="0"]
+[node name="Plant" parent="NavigationRegion3D/Props/Plant2" index="0"]
 transform = Transform3D(0.799196, 0, 0, 0, 0.998995, 0, 0, 0, 0.799196, 0, 0, 0)
 
-[node name="pCylinder11" parent="Props/Plant2/Plant" index="0"]
+[node name="pCylinder11" parent="NavigationRegion3D/Props/Plant2/Plant" index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_and0o")
 
-[node name="pCube37" parent="Props/Plant2/Plant" index="1"]
+[node name="pCube37" parent="NavigationRegion3D/Props/Plant2/Plant" index="1"]
 transform = Transform3D(0.186553, 0, -0.696225, 0, 1.03677, 0, 0.696225, 0, 0.186553, 0, 0.0937493, -8.04067e-05)
 surface_material_override/0 = ExtResource("10_and0o")
 
-[node name="pCube36" parent="Props/Plant2/Plant" index="2"]
+[node name="pCube36" parent="NavigationRegion3D/Props/Plant2/Plant" index="2"]
 transform = Transform3D(-0.696225, 0, -0.186553, 0, 1.03677, 0, 0.186553, 0, -0.696225, 0, 0.0937493, -8.04067e-05)
 surface_material_override/0 = ExtResource("10_and0o")
 
-[node name="pCube35" parent="Props/Plant2/Plant" index="3"]
+[node name="pCube35" parent="NavigationRegion3D/Props/Plant2/Plant" index="3"]
 transform = Transform3D(-0.360392, 0, -0.624218, 0, 1.03677, 0, 0.624218, 0, -0.360392, 0, 0.0937493, -8.04067e-05)
 surface_material_override/0 = ExtResource("10_and0o")
 
-[node name="pCube34" parent="Props/Plant2/Plant" index="4"]
+[node name="pCube34" parent="NavigationRegion3D/Props/Plant2/Plant" index="4"]
 transform = Transform3D(0.624218, 0, -0.360392, 0, 1.03677, 0, 0.360392, 0, 0.624218, 0, 0.0937493, -8.04067e-05)
 surface_material_override/0 = ExtResource("10_and0o")
 
-[node name="pCube33" parent="Props/Plant2/Plant" index="5"]
+[node name="pCube33" parent="NavigationRegion3D/Props/Plant2/Plant" index="5"]
 transform = Transform3D(0.696225, 0, 0.186553, 0, 1.03677, 0, -0.186553, 0, 0.696225, 0, 0.0937493, -8.04067e-05)
 surface_material_override/0 = ExtResource("10_and0o")
 
-[node name="pCube32" parent="Props/Plant2/Plant" index="6"]
+[node name="pCube32" parent="NavigationRegion3D/Props/Plant2/Plant" index="6"]
 transform = Transform3D(-0.624218, 0, 0.360392, 0, 1.03677, 0, -0.360392, 0, -0.624218, 0, 0.0937493, -8.04067e-05)
 surface_material_override/0 = ExtResource("10_and0o")
 
-[node name="pCube31" parent="Props/Plant2/Plant" index="7"]
+[node name="pCube31" parent="NavigationRegion3D/Props/Plant2/Plant" index="7"]
 transform = Transform3D(0.360392, 0, 0.624218, 0, 1.03677, 0, -0.624218, 0, 0.360392, 0, 0.0937493, -8.04067e-05)
 surface_material_override/0 = ExtResource("10_and0o")
 
-[node name="pCube30" parent="Props/Plant2/Plant" index="8"]
+[node name="pCube30" parent="NavigationRegion3D/Props/Plant2/Plant" index="8"]
 transform = Transform3D(-0.186553, 0, 0.696225, 0, 1.03677, 0, -0.696225, 0, -0.186553, 0, 0.0937493, -8.04067e-05)
 surface_material_override/0 = ExtResource("10_and0o")
 
-[node name="pCube29" parent="Props/Plant2/Plant" index="9"]
+[node name="pCube29" parent="NavigationRegion3D/Props/Plant2/Plant" index="9"]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1.43839, 0, -0.707107, 0, 0.707107, 0, 0.0937493, -8.04067e-05)
 surface_material_override/0 = ExtResource("10_and0o")
 
-[node name="pCube28" parent="Props/Plant2/Plant" index="10"]
+[node name="pCube28" parent="NavigationRegion3D/Props/Plant2/Plant" index="10"]
 transform = Transform3D(0, 0, 1, 0, 1.43839, 0, -1, 0, 0, 0, 0.0937493, -8.04067e-05)
 surface_material_override/0 = ExtResource("10_and0o")
 
-[node name="pCube27" parent="Props/Plant2/Plant" index="11"]
+[node name="pCube27" parent="NavigationRegion3D/Props/Plant2/Plant" index="11"]
 transform = Transform3D(-0.707107, 0, 0.707107, 0, 1.43839, 0, -0.707107, 0, -0.707107, 0, 0.0937493, -8.04067e-05)
 surface_material_override/0 = ExtResource("10_and0o")
 
-[node name="pCube26" parent="Props/Plant2/Plant" index="12"]
+[node name="pCube26" parent="NavigationRegion3D/Props/Plant2/Plant" index="12"]
 transform = Transform3D(-1, 0, -1.89882e-15, 0, 1.43839, 0, 1.89882e-15, 0, -1, 0, 0.0937493, -8.04067e-05)
 surface_material_override/0 = ExtResource("10_and0o")
 
-[node name="pCube25" parent="Props/Plant2/Plant" index="13"]
+[node name="pCube25" parent="NavigationRegion3D/Props/Plant2/Plant" index="13"]
 transform = Transform3D(-0.707107, 0, -0.707107, 0, 1.43839, 0, 0.707107, 0, -0.707107, 0, 0.0937493, -8.04067e-05)
 surface_material_override/0 = ExtResource("10_and0o")
 
-[node name="pCube24" parent="Props/Plant2/Plant" index="14"]
+[node name="pCube24" parent="NavigationRegion3D/Props/Plant2/Plant" index="14"]
 transform = Transform3D(0, 0, -1, 0, 1.43839, 0, 1, 0, 0, 0, 0.0937493, -8.04067e-05)
 surface_material_override/0 = ExtResource("10_and0o")
 
-[node name="pCube23" parent="Props/Plant2/Plant" index="15"]
+[node name="pCube23" parent="NavigationRegion3D/Props/Plant2/Plant" index="15"]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1.43839, 0, 0.707107, 0, 0.707107, 0, 0.0937493, -8.04067e-05)
 surface_material_override/0 = ExtResource("10_and0o")
 
-[node name="pCube22" parent="Props/Plant2/Plant" index="16"]
+[node name="pCube22" parent="NavigationRegion3D/Props/Plant2/Plant" index="16"]
 transform = Transform3D(1, 0, 0, 0, 1.43839, 0, 0, 0, 1, 0, 0.0937493, -8.04067e-05)
 surface_material_override/0 = ExtResource("10_and0o")
 
-[node name="Interactible" type="Area3D" parent="Props/Plant2"]
+[node name="Interactible" type="Area3D" parent="NavigationRegion3D/Props/Plant2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.143294, 0)
 script = ExtResource("11_o0i6v")
 dialogue_resource = ExtResource("8_6l6h0")
 dialogue_name = "plant"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Props/Plant2/Interactible"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Props/Plant2/Interactible"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0265261, 0.000213623)
 shape = SubResource("BoxShape3D_o05pk")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Props/Plant2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Props/Plant2"]
 input_ray_pickable = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Props/Plant2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Props/Plant2/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00362545, -0.150273, -0.00109863)
 shape = SubResource("BoxShape3D_i7ce5")
 
-[node name="Gyro" type="Node3D" parent="Props" groups=["gyro"]]
+[node name="Gyro" type="Node3D" parent="NavigationRegion3D/Props" groups=["gyro"]]
 transform = Transform3D(1, 0, 0, 0, 0.960982, 0.27661, 0, -0.27661, 0.960982, 4.86149, 2.71009, -2.24959)
 script = ExtResource("8_f3gli")
 turn_speed = 120.0
@@ -871,7 +874,7 @@ rotation_direction = Vector3(1, 0, 0)
 min_intensity = 0.0
 blink_speed = 7.0
 
-[node name="SpotLight3D" type="SpotLight3D" parent="Props/Gyro"]
+[node name="SpotLight3D" type="SpotLight3D" parent="NavigationRegion3D/Props/Gyro"]
 transform = Transform3D(0.250894, 0.652586, 0.714971, -0.355857, 0.749056, -0.558822, -0.900233, -0.114223, 0.420161, 0, 0, 0)
 light_color = Color(0.672305, 1.76881e-06, 6.257e-07, 1)
 spot_range = 10.0
@@ -879,7 +882,7 @@ spot_attenuation = -1.0
 spot_angle = 41.6
 spot_angle_attenuation = 1.1487
 
-[node name="SpotLight3D2" type="SpotLight3D" parent="Props/Gyro"]
+[node name="SpotLight3D2" type="SpotLight3D" parent="NavigationRegion3D/Props/Gyro"]
 transform = Transform3D(0.156232, 0.429002, 0.88969, 0.26486, -0.885959, 0.380693, 0.951547, 0.176167, -0.25204, 0, 0, 0)
 light_color = Color(0.672305, 1.76881e-06, 6.257e-07, 1)
 spot_range = 10.0
@@ -887,217 +890,222 @@ spot_attenuation = -1.0
 spot_angle = 37.75
 spot_angle_attenuation = 1.1487
 
-[node name="siren" type="AudioStreamPlayer3D" parent="Props/Gyro"]
+[node name="siren" type="AudioStreamPlayer3D" parent="NavigationRegion3D/Props/Gyro"]
 stream = SubResource("AudioStreamMP3_p5w27")
 volume_db = 11.808
 max_polyphony = 16
 panning_strength = 0.0
 parameters/looping = true
 
-[node name="Trashcan2" parent="Props" instance=ExtResource("11_o18aq")]
+[node name="Trashcan2" parent="NavigationRegion3D/Props" instance=ExtResource("11_o18aq")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 4.05453, 0.129382, -3.9118)
 
-[node name="polySurface2" parent="Props/Trashcan2/Trashcan" index="0"]
+[node name="polySurface2" parent="NavigationRegion3D/Props/Trashcan2/Trashcan" index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_o0i6v")
 
-[node name="polySurface1" parent="Props/Trashcan2/Trashcan" index="1"]
+[node name="polySurface1" parent="NavigationRegion3D/Props/Trashcan2/Trashcan" index="1"]
 surface_material_override/0 = SubResource("StandardMaterial3D_o0i6v")
 
-[node name="Interactible" parent="Props/Trashcan2" instance=ExtResource("7_2jcip")]
+[node name="Interactible" parent="NavigationRegion3D/Props/Trashcan2" instance=ExtResource("7_2jcip")]
 dialogue_resource = ExtResource("8_6l6h0")
 dialogue_name = "bin"
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Props/Trashcan2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Props/Trashcan2"]
 input_ray_pickable = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Props/Trashcan2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Props/Trashcan2/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000293016, -0.246842, -0.0179077)
 shape = SubResource("BoxShape3D_2xkur")
 
-[node name="Trashcan3" parent="Props" instance=ExtResource("11_o18aq")]
+[node name="Trashcan3" parent="NavigationRegion3D/Props" instance=ExtResource("11_o18aq")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -2.70054, 0.129382, -4.30327)
 
-[node name="polySurface2" parent="Props/Trashcan3/Trashcan" index="0"]
+[node name="polySurface2" parent="NavigationRegion3D/Props/Trashcan3/Trashcan" index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_o0i6v")
 
-[node name="polySurface1" parent="Props/Trashcan3/Trashcan" index="1"]
+[node name="polySurface1" parent="NavigationRegion3D/Props/Trashcan3/Trashcan" index="1"]
 surface_material_override/0 = SubResource("StandardMaterial3D_o0i6v")
 
-[node name="Interactible" parent="Props/Trashcan3" instance=ExtResource("7_2jcip")]
+[node name="Interactible" parent="NavigationRegion3D/Props/Trashcan3" instance=ExtResource("7_2jcip")]
 dialogue_resource = ExtResource("8_6l6h0")
 dialogue_name = "truebin"
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Props/Trashcan3"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Props/Trashcan3"]
 input_ray_pickable = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Props/Trashcan3/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Props/Trashcan3/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000293016, -0.246842, -0.0179077)
 shape = SubResource("BoxShape3D_2xkur")
 
-[node name="Computer" parent="Props" instance=ExtResource("11_hd7sb")]
+[node name="Computer" parent="NavigationRegion3D/Props" instance=ExtResource("11_hd7sb")]
 transform = Transform3D(-0.0692511, 1.91498e-09, 3.9994, -1.24478, 3.80133, -0.0215537, -3.80075, -1.24496, -0.0658115, 2.76725, 0.932588, -4.24377)
 
-[node name="pCube47" parent="Props/Computer/Computer" index="0"]
+[node name="pCube47" parent="NavigationRegion3D/Props/Computer/Computer" index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_o18aq")
 
-[node name="polySurface4" parent="Props/Computer/Computer" index="1"]
+[node name="polySurface4" parent="NavigationRegion3D/Props/Computer/Computer" index="1"]
 surface_material_override/0 = SubResource("ShaderMaterial_hd7sb")
 
-[node name="polySurface3" parent="Props/Computer/Computer" index="2"]
+[node name="polySurface3" parent="NavigationRegion3D/Props/Computer/Computer" index="2"]
 surface_material_override/0 = SubResource("StandardMaterial3D_o18aq")
 
-[node name="pCube48" parent="Props/Computer/Computer" index="3"]
+[node name="pCube48" parent="NavigationRegion3D/Props/Computer/Computer" index="3"]
 surface_material_override/0 = SubResource("StandardMaterial3D_o18aq")
 
-[node name="pCylinder14" parent="Props/Computer/Computer" index="4"]
+[node name="pCylinder14" parent="NavigationRegion3D/Props/Computer/Computer" index="4"]
 surface_material_override/0 = SubResource("StandardMaterial3D_o18aq")
 
-[node name="pCylinder16" parent="Props/Computer/Computer" index="5"]
+[node name="pCylinder16" parent="NavigationRegion3D/Props/Computer/Computer" index="5"]
 surface_material_override/0 = SubResource("StandardMaterial3D_o18aq")
 
-[node name="pCylinder17" parent="Props/Computer/Computer" index="6"]
+[node name="pCylinder17" parent="NavigationRegion3D/Props/Computer/Computer" index="6"]
 surface_material_override/0 = SubResource("StandardMaterial3D_o18aq")
 
-[node name="Interactible" parent="Props/Computer" instance=ExtResource("7_2jcip")]
+[node name="Interactible" parent="NavigationRegion3D/Props/Computer" instance=ExtResource("7_2jcip")]
 transform = Transform3D(0.0344987, 0.00343773, -0.247584, 0.012699, 0.249622, 0.00523549, 0.247282, -0.0132988, 0.034272, -0.00485057, 0.0666597, -0.000857115)
 dialogue_resource = ExtResource("8_6l6h0")
 dialogue_name = "computer"
 max_dist = 1.5
 
-[node name="CollisionShape3D" parent="Props/Computer/Interactible" index="0"]
+[node name="CollisionShape3D" parent="NavigationRegion3D/Props/Computer/Interactible" index="0"]
 transform = Transform3D(0.978571, -0.0510988, -0.199466, -0.0142766, 0.949548, -0.313297, 0.205411, 0.309431, 0.928471, 0.0054903, 0.0727899, 0.147582)
 shape = SubResource("BoxShape3D_6l6h0")
 debug_color = Color(0.980392, 0, 1, 0.419608)
 
-[node name="Computer2" parent="Props" instance=ExtResource("11_hd7sb")]
+[node name="Computer2" parent="NavigationRegion3D/Props" instance=ExtResource("11_hd7sb")]
 transform = Transform3D(-0.0692511, 1.91498e-09, 3.9994, -1.24478, 3.80133, -0.0215537, -3.80075, -1.24496, -0.0658115, -1.29682, 0.932588, -4.24377)
 
-[node name="pCube47" parent="Props/Computer2/Computer" index="0"]
+[node name="pCube47" parent="NavigationRegion3D/Props/Computer2/Computer" index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_o18aq")
 
-[node name="polySurface4" parent="Props/Computer2/Computer" index="1"]
+[node name="polySurface4" parent="NavigationRegion3D/Props/Computer2/Computer" index="1"]
 surface_material_override/0 = SubResource("StandardMaterial3D_8ce4n")
 
-[node name="polySurface3" parent="Props/Computer2/Computer" index="2"]
+[node name="polySurface3" parent="NavigationRegion3D/Props/Computer2/Computer" index="2"]
 surface_material_override/0 = SubResource("StandardMaterial3D_o18aq")
 
-[node name="pCube48" parent="Props/Computer2/Computer" index="3"]
+[node name="pCube48" parent="NavigationRegion3D/Props/Computer2/Computer" index="3"]
 surface_material_override/0 = SubResource("StandardMaterial3D_o18aq")
 
-[node name="pCylinder14" parent="Props/Computer2/Computer" index="4"]
+[node name="pCylinder14" parent="NavigationRegion3D/Props/Computer2/Computer" index="4"]
 surface_material_override/0 = SubResource("StandardMaterial3D_o18aq")
 
-[node name="pCylinder16" parent="Props/Computer2/Computer" index="5"]
+[node name="pCylinder16" parent="NavigationRegion3D/Props/Computer2/Computer" index="5"]
 surface_material_override/0 = SubResource("StandardMaterial3D_o18aq")
 
-[node name="pCylinder17" parent="Props/Computer2/Computer" index="6"]
+[node name="pCylinder17" parent="NavigationRegion3D/Props/Computer2/Computer" index="6"]
 surface_material_override/0 = SubResource("StandardMaterial3D_o18aq")
 
-[node name="Interactible" parent="Props/Computer2" instance=ExtResource("7_2jcip")]
+[node name="Interactible" parent="NavigationRegion3D/Props/Computer2" instance=ExtResource("7_2jcip")]
 transform = Transform3D(0.0344987, 0.00343774, -0.247584, 0.012699, 0.249622, 0.00523549, 0.247282, -0.0132988, 0.034272, -0.00671291, 0.0723472, -0.000889391)
 dialogue_resource = ExtResource("8_6l6h0")
 dialogue_name = "othercomputer"
 max_dist = 2.0
 
-[node name="CollisionShape3D" parent="Props/Computer2/Interactible" index="0"]
+[node name="CollisionShape3D" parent="NavigationRegion3D/Props/Computer2/Interactible" index="0"]
 transform = Transform3D(0.978571, -0.0510988, -0.199466, -0.0142766, 0.949548, -0.313297, 0.205411, 0.309431, 0.928471, 0.0054903, 0.0727899, 0.147582)
 shape = SubResource("BoxShape3D_6l6h0")
 debug_color = Color(0.980392, 0, 1, 0.419608)
 
-[node name="Chair" parent="Props" instance=ExtResource("7_qx7ya")]
-transform = Transform3D(-2.9015, 0, -2.75342, 0, 4, 0, 2.75342, 0, -2.9015, 1.87972, 0.165314, -3.57069)
+[node name="Chair" parent="NavigationRegion3D/Props" instance=ExtResource("7_qx7ya")]
+transform = Transform3D(-0.725374, 0, -0.688354, 0, 1, 0, 0.688354, 0, -0.725374, 1.6778, 0.165314, -3.57069)
 
-[node name="pCube21" parent="Props/Chair/Chair" index="0"]
+[node name="Chair" parent="NavigationRegion3D/Props/Chair" index="0"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+
+[node name="pCube21" parent="NavigationRegion3D/Props/Chair/Chair" index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_7wxy1")
 
-[node name="pCube18" parent="Props/Chair/Chair" index="1"]
+[node name="pCube18" parent="NavigationRegion3D/Props/Chair/Chair" index="1"]
 surface_material_override/0 = SubResource("StandardMaterial3D_7wxy1")
 
-[node name="pCube17" parent="Props/Chair/Chair" index="2"]
+[node name="pCube17" parent="NavigationRegion3D/Props/Chair/Chair" index="2"]
 surface_material_override/0 = SubResource("StandardMaterial3D_7wxy1")
 
-[node name="pCube14" parent="Props/Chair/Chair" index="3"]
+[node name="pCube14" parent="NavigationRegion3D/Props/Chair/Chair" index="3"]
 surface_material_override/0 = SubResource("StandardMaterial3D_7wxy1")
 
-[node name="pCube13" parent="Props/Chair/Chair" index="4"]
+[node name="pCube13" parent="NavigationRegion3D/Props/Chair/Chair" index="4"]
 surface_material_override/0 = SubResource("StandardMaterial3D_7wxy1")
 
-[node name="pCube12" parent="Props/Chair/Chair" index="5"]
+[node name="pCube12" parent="NavigationRegion3D/Props/Chair/Chair" index="5"]
 surface_material_override/0 = SubResource("StandardMaterial3D_7wxy1")
 
-[node name="pCylinder10" parent="Props/Chair/Chair" index="6"]
+[node name="pCylinder10" parent="NavigationRegion3D/Props/Chair/Chair" index="6"]
 surface_material_override/0 = SubResource("StandardMaterial3D_7wxy1")
 
-[node name="pCylinder9" parent="Props/Chair/Chair" index="7"]
+[node name="pCylinder9" parent="NavigationRegion3D/Props/Chair/Chair" index="7"]
 surface_material_override/0 = SubResource("StandardMaterial3D_7wxy1")
 
-[node name="pCylinder8" parent="Props/Chair/Chair" index="8"]
+[node name="pCylinder8" parent="NavigationRegion3D/Props/Chair/Chair" index="8"]
 surface_material_override/0 = SubResource("StandardMaterial3D_7wxy1")
 
-[node name="pCylinder7" parent="Props/Chair/Chair" index="9"]
+[node name="pCylinder7" parent="NavigationRegion3D/Props/Chair/Chair" index="9"]
 surface_material_override/0 = SubResource("StandardMaterial3D_7wxy1")
 
-[node name="pCylinder6" parent="Props/Chair/Chair" index="10"]
+[node name="pCylinder6" parent="NavigationRegion3D/Props/Chair/Chair" index="10"]
 surface_material_override/0 = SubResource("StandardMaterial3D_7wxy1")
 
-[node name="pCylinder5" parent="Props/Chair/Chair" index="11"]
+[node name="pCylinder5" parent="NavigationRegion3D/Props/Chair/Chair" index="11"]
 surface_material_override/0 = SubResource("StandardMaterial3D_7wxy1")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Props/Chair"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Props/Chair"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.385554, 0)
+collision_layer = 255
 input_ray_pickable = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Props/Chair/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0115356, -0.111267, -0.00109863)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Props/Chair/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0132296, 0.468285, -0.00276017)
 shape = SubResource("BoxShape3D_8ce4n")
 
-[node name="Radio" parent="Props" instance=ExtResource("19_8ce4n")]
+[node name="Radio" parent="NavigationRegion3D/Props" instance=ExtResource("19_8ce4n")]
 transform = Transform3D(-2.27936, 0, 3.28703, 0, 4, 0, -3.28703, 0, -2.27936, -4.42098, 1.04517, -0.916385)
 
-[node name="pCube50" parent="Props/Radio/Radio" index="0"]
+[node name="pCube50" parent="NavigationRegion3D/Props/Radio/Radio" index="0"]
 surface_material_override/0 = ExtResource("20_7wxy1")
 
-[node name="polySurface6" parent="Props/Radio/Radio" index="1"]
+[node name="polySurface6" parent="NavigationRegion3D/Props/Radio/Radio" index="1"]
 surface_material_override/0 = ExtResource("20_7wxy1")
 
-[node name="polySurface5" parent="Props/Radio/Radio" index="2"]
+[node name="polySurface5" parent="NavigationRegion3D/Props/Radio/Radio" index="2"]
 surface_material_override/0 = ExtResource("20_7wxy1")
 
-[node name="pCube51" parent="Props/Radio/Radio" index="3"]
+[node name="pCube51" parent="NavigationRegion3D/Props/Radio/Radio" index="3"]
 surface_material_override/0 = ExtResource("20_7wxy1")
 
-[node name="pCube52" parent="Props/Radio/Radio" index="4"]
+[node name="pCube52" parent="NavigationRegion3D/Props/Radio/Radio" index="4"]
 surface_material_override/0 = ExtResource("20_7wxy1")
 
-[node name="pCylinder18" parent="Props/Radio/Radio" index="5"]
+[node name="pCylinder18" parent="NavigationRegion3D/Props/Radio/Radio" index="5"]
 transform = Transform3D(0.413316, -7.45058e-09, 0, 0, 0, -0.413316, 0, 0.231445, 0, -0.0275844, 0.0147641, 0.0102804)
 surface_material_override/0 = ExtResource("8_unus1")
 
-[node name="pCylinder19" parent="Props/Radio/Radio" index="6"]
+[node name="pCylinder19" parent="NavigationRegion3D/Props/Radio/Radio" index="6"]
 surface_material_override/0 = ExtResource("8_unus1")
 
-[node name="pCube53" parent="Props/Radio/Radio" index="7"]
+[node name="pCube53" parent="NavigationRegion3D/Props/Radio/Radio" index="7"]
 surface_material_override/0 = ExtResource("8_unus1")
 
-[node name="pCube54" parent="Props/Radio/Radio" index="8"]
+[node name="pCube54" parent="NavigationRegion3D/Props/Radio/Radio" index="8"]
 surface_material_override/0 = ExtResource("8_unus1")
 
-[node name="pCube55" parent="Props/Radio/Radio" index="9"]
+[node name="pCube55" parent="NavigationRegion3D/Props/Radio/Radio" index="9"]
 surface_material_override/0 = ExtResource("8_unus1")
 
-[node name="pCube56" parent="Props/Radio/Radio" index="10"]
+[node name="pCube56" parent="NavigationRegion3D/Props/Radio/Radio" index="10"]
 surface_material_override/0 = ExtResource("8_unus1")
 
-[node name="Interactible" type="Area3D" parent="Props/Radio"]
+[node name="Interactible" type="Area3D" parent="NavigationRegion3D/Props/Radio"]
 script = ExtResource("11_o0i6v")
 dialogue_resource = ExtResource("8_6l6h0")
 dialogue_name = "radio"
 max_dist = 1.5
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Props/Radio/Interactible"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Props/Radio/Interactible"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.048762, 0)
 shape = SubResource("BoxShape3D_o05pk")
 
-[node name="RadioSound" type="AudioStreamPlayer3D" parent="Props/Radio"]
+[node name="RadioSound" type="AudioStreamPlayer3D" parent="NavigationRegion3D/Props/Radio"]
 stream = ExtResource("29_m5xbg")
 volume_db = -18.0
 max_db = -0.376
@@ -1106,90 +1114,94 @@ max_polyphony = 4
 panning_strength = 5.95
 script = ExtResource("30_4l012")
 
-[node name="LuckySound" type="AudioStreamPlayer3D" parent="Props/Radio/RadioSound"]
+[node name="LuckySound" type="AudioStreamPlayer3D" parent="NavigationRegion3D/Props/Radio/RadioSound"]
 stream = ExtResource("31_p5w27")
 volume_db = 25.0
 max_db = 4.893
 parameters/looping = true
 
-[node name="Chair2" parent="Props" instance=ExtResource("7_qx7ya")]
-transform = Transform3D(2.17188, 0, -3.35901, 0, 4, 0, 3.35901, 0, 2.17188, -1.32829, 0.165314, -3.863)
+[node name="Chair2" parent="NavigationRegion3D/Props" instance=ExtResource("7_qx7ya")]
+transform = Transform3D(0.54297, 0, -0.839752, 0, 1, 0, 0.839752, 0, 0.54297, -1.32829, 0.165314, -3.863)
 
-[node name="pCube21" parent="Props/Chair2/Chair" index="0"]
+[node name="Chair" parent="NavigationRegion3D/Props/Chair2" index="0"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+
+[node name="pCube21" parent="NavigationRegion3D/Props/Chair2/Chair" index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_7wxy1")
 
-[node name="pCube18" parent="Props/Chair2/Chair" index="1"]
+[node name="pCube18" parent="NavigationRegion3D/Props/Chair2/Chair" index="1"]
 surface_material_override/0 = SubResource("StandardMaterial3D_7wxy1")
 
-[node name="pCube17" parent="Props/Chair2/Chair" index="2"]
+[node name="pCube17" parent="NavigationRegion3D/Props/Chair2/Chair" index="2"]
 surface_material_override/0 = SubResource("StandardMaterial3D_7wxy1")
 
-[node name="pCube14" parent="Props/Chair2/Chair" index="3"]
+[node name="pCube14" parent="NavigationRegion3D/Props/Chair2/Chair" index="3"]
 surface_material_override/0 = SubResource("StandardMaterial3D_7wxy1")
 
-[node name="pCube13" parent="Props/Chair2/Chair" index="4"]
+[node name="pCube13" parent="NavigationRegion3D/Props/Chair2/Chair" index="4"]
 surface_material_override/0 = SubResource("StandardMaterial3D_7wxy1")
 
-[node name="pCube12" parent="Props/Chair2/Chair" index="5"]
+[node name="pCube12" parent="NavigationRegion3D/Props/Chair2/Chair" index="5"]
 surface_material_override/0 = SubResource("StandardMaterial3D_7wxy1")
 
-[node name="pCylinder10" parent="Props/Chair2/Chair" index="6"]
+[node name="pCylinder10" parent="NavigationRegion3D/Props/Chair2/Chair" index="6"]
 surface_material_override/0 = SubResource("StandardMaterial3D_7wxy1")
 
-[node name="pCylinder9" parent="Props/Chair2/Chair" index="7"]
+[node name="pCylinder9" parent="NavigationRegion3D/Props/Chair2/Chair" index="7"]
 surface_material_override/0 = SubResource("StandardMaterial3D_7wxy1")
 
-[node name="pCylinder8" parent="Props/Chair2/Chair" index="8"]
+[node name="pCylinder8" parent="NavigationRegion3D/Props/Chair2/Chair" index="8"]
 surface_material_override/0 = SubResource("StandardMaterial3D_7wxy1")
 
-[node name="pCylinder7" parent="Props/Chair2/Chair" index="9"]
+[node name="pCylinder7" parent="NavigationRegion3D/Props/Chair2/Chair" index="9"]
 surface_material_override/0 = SubResource("StandardMaterial3D_7wxy1")
 
-[node name="pCylinder6" parent="Props/Chair2/Chair" index="10"]
+[node name="pCylinder6" parent="NavigationRegion3D/Props/Chair2/Chair" index="10"]
 surface_material_override/0 = SubResource("StandardMaterial3D_7wxy1")
 
-[node name="pCylinder5" parent="Props/Chair2/Chair" index="11"]
+[node name="pCylinder5" parent="NavigationRegion3D/Props/Chair2/Chair" index="11"]
 surface_material_override/0 = SubResource("StandardMaterial3D_7wxy1")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Props/Chair2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Props/Chair2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.180565, 0)
 input_ray_pickable = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Props/Chair2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Props/Chair2/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0115356, -0.111267, -0.00109863)
 shape = SubResource("BoxShape3D_8ce4n")
 
-[node name="Metaldoor" parent="Props" instance=ExtResource("19_d4dc6")]
+[node name="Metaldoor" parent="NavigationRegion3D/Props" instance=ExtResource("19_d4dc6")]
 transform = Transform3D(-1.74846e-07, 0, -4, 0, 4, 0, 4, 0, -1.74846e-07, 4.69003, -0.150699, -2.15918)
 
-[node name="pCube38" parent="Props/Metaldoor/MetalDoor" index="0"]
+[node name="pCube38" parent="NavigationRegion3D/Props/Metaldoor/MetalDoor" index="0"]
 transform = Transform3D(49.4526, 0, 0, 0, 58.7886, 0, -2.27374e-13, 0, 2.97318, 0, 0.355857, 0)
 surface_material_override/0 = ExtResource("20_7wxy1")
 
-[node name="pCylinder12" parent="Props/Metaldoor/MetalDoor" index="1"]
+[node name="pCylinder12" parent="NavigationRegion3D/Props/Metaldoor/MetalDoor" index="1"]
 surface_material_override/0 = ExtResource("20_7wxy1")
 
-[node name="pCube41" parent="Props/Metaldoor/MetalDoor" index="2"]
+[node name="pCube41" parent="NavigationRegion3D/Props/Metaldoor/MetalDoor" index="2"]
 surface_material_override/0 = ExtResource("20_7wxy1")
 
-[node name="pCube42" parent="Props/Metaldoor/MetalDoor" index="3"]
+[node name="pCube42" parent="NavigationRegion3D/Props/Metaldoor/MetalDoor" index="3"]
 surface_material_override/0 = ExtResource("20_7wxy1")
 
-[node name="pCube43" parent="Props/Metaldoor/MetalDoor" index="4"]
+[node name="pCube43" parent="NavigationRegion3D/Props/Metaldoor/MetalDoor" index="4"]
 surface_material_override/0 = ExtResource("20_7wxy1")
 
-[node name="pCylinder13" parent="Props/Metaldoor/MetalDoor" index="5"]
+[node name="pCylinder13" parent="NavigationRegion3D/Props/Metaldoor/MetalDoor" index="5"]
 surface_material_override/0 = ExtResource("20_7wxy1")
 
-[node name="Interactible" parent="Props/Metaldoor" instance=ExtResource("7_2jcip")]
+[node name="Interactible" parent="NavigationRegion3D/Props/Metaldoor" instance=ExtResource("7_2jcip")]
 transform = Transform3D(4.815, 0, 0, 0, 4.815, 0, 0, 0, 4.815, -0.00609219, 0.0736309, -0.214027)
 dialogue_resource = ExtResource("8_6l6h0")
 dialogue_name = "metaldoor"
 max_dist = 2.0
 
-[node name="Clock" parent="Props" groups=["Clock"] instance=ExtResource("23_1ubp3")]
-transform = Transform3D(-8, 0, 6.99382e-07, 0, 8, 0, -6.99382e-07, 0, -8, -2.92543, 2.2617, -0.24564)
+[node name="Clock" parent="NavigationRegion3D/Props" groups=["Clock"] instance=ExtResource("23_1ubp3")]
+transform = Transform3D(-8, 0, 6.99382e-07, 0, 8, 0, -6.99382e-07, 0, -8, -2.925, 2.262, -0.246)
 
-[node name="Label3D" type="Label3D" parent="Props/Clock"]
+[node name="Label3D" type="Label3D" parent="NavigationRegion3D/Props/Clock"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.017, -0.00997413)
 pixel_size = 0.0001
 modulate = Color(1, 0.05, 0, 1)
@@ -1200,125 +1212,125 @@ font_size = 256
 outline_size = 0
 script = ExtResource("25_eckhq")
 
-[node name="Interactible" parent="Props/Clock" instance=ExtResource("7_2jcip")]
+[node name="Interactible" parent="NavigationRegion3D/Props/Clock" instance=ExtResource("7_2jcip")]
 dialogue_resource = ExtResource("8_6l6h0")
 dialogue_name = "clock"
 max_dist = 2.5
 
-[node name="CollisionShape3D" parent="Props/Clock/Interactible" index="0"]
+[node name="CollisionShape3D" parent="NavigationRegion3D/Props/Clock/Interactible" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0197061, -0.0251008)
 shape = SubResource("BoxShape3D_edjj2")
 
-[node name="DontWater" type="Sprite3D" parent="Props"]
+[node name="DontWater" type="Sprite3D" parent="NavigationRegion3D/Props"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.434101, 1.71596, -4.75019)
 pixel_size = 0.0001
 transparent = false
 shaded = true
 texture = ExtResource("26_i7ce5")
 
-[node name="Window" parent="Props" instance=ExtResource("27_2xkur")]
+[node name="Window" parent="NavigationRegion3D/Props" instance=ExtResource("27_2xkur")]
 transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, -4.73, 1.148, -2.077)
 
-[node name="Window2" parent="Props/Window/Window" index="0"]
+[node name="Window2" parent="NavigationRegion3D/Props/Window/Window" index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_2xkur")
 surface_material_override/1 = ExtResource("8_unus1")
 
-[node name="Window1" parent="Props/Window/Window" index="1"]
+[node name="Window1" parent="NavigationRegion3D/Props/Window/Window" index="1"]
 surface_material_override/0 = SubResource("StandardMaterial3D_edjj2")
 surface_material_override/1 = ExtResource("8_unus1")
 
-[node name="Interactible" type="Area3D" parent="Props/Window"]
+[node name="Interactible" type="Area3D" parent="NavigationRegion3D/Props/Window"]
 script = ExtResource("11_o0i6v")
 dialogue_resource = ExtResource("8_6l6h0")
 dialogue_name = "window"
 max_dist = 1.5
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Props/Window/Interactible"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Props/Window/Interactible"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00391257, 0.206399, 0.000148892)
 shape = SubResource("BoxShape3D_b8vxi")
 
-[node name="Sprite3D" type="Sprite3D" parent="Props"]
+[node name="Sprite3D" type="Sprite3D" parent="NavigationRegion3D/Props"]
 transform = Transform3D(-0.00211371, -0.00453125, 3.48911e-06, 8.16895e-06, 3.93188e-08, 0.00499999, -0.00453124, 0.00211371, 7.38644e-06, -4.41391, 1.04407, -2.6614)
 shaded = true
 texture = ExtResource("7_lkiyy")
 
-[node name="Talker" type="Node3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.678716, 0.12262, 2.38618)
+[node name="Talker" type="Node3D" parent="NavigationRegion3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.678716, 0.585853, 2.38618)
 script = ExtResource("37_w6jpp")
 
-[node name="Area3D" type="Area3D" parent="Talker"]
+[node name="Area3D" type="Area3D" parent="NavigationRegion3D/Talker"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Talker/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Talker/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0192871, 0.907682, -0.197632)
 shape = SubResource("BoxShape3D_lrtdq")
 
-[node name="OperatingChair" parent="Talker" instance=ExtResource("38_p5w27")]
+[node name="OperatingChair" parent="NavigationRegion3D/Talker" instance=ExtResource("38_p5w27")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
 
-[node name="pCylinder31" parent="Talker/OperatingChair/OperatoringChair" index="1"]
+[node name="pCylinder31" parent="NavigationRegion3D/Talker/OperatingChair/OperatoringChair" index="1"]
 surface_material_override/0 = ExtResource("39_r6y0e")
 
-[node name="pCylinder28" parent="Talker/OperatingChair/OperatoringChair" index="2"]
+[node name="pCylinder28" parent="NavigationRegion3D/Talker/OperatingChair/OperatoringChair" index="2"]
 surface_material_override/0 = ExtResource("20_7wxy1")
 
-[node name="pCylinder27" parent="Talker/OperatingChair/OperatoringChair" index="3"]
+[node name="pCylinder27" parent="NavigationRegion3D/Talker/OperatingChair/OperatoringChair" index="3"]
 surface_material_override/0 = ExtResource("20_7wxy1")
 
-[node name="pCylinder26" parent="Talker/OperatingChair/OperatoringChair" index="4"]
+[node name="pCylinder26" parent="NavigationRegion3D/Talker/OperatingChair/OperatoringChair" index="4"]
 surface_material_override/0 = ExtResource("20_7wxy1")
 
-[node name="pCylinder25" parent="Talker/OperatingChair/OperatoringChair" index="5"]
+[node name="pCylinder25" parent="NavigationRegion3D/Talker/OperatingChair/OperatoringChair" index="5"]
 surface_material_override/0 = ExtResource("20_7wxy1")
 
-[node name="pCylinder24" parent="Talker/OperatingChair/OperatoringChair" index="6"]
+[node name="pCylinder24" parent="NavigationRegion3D/Talker/OperatingChair/OperatoringChair" index="6"]
 surface_material_override/0 = ExtResource("20_7wxy1")
 
-[node name="pCylinder23" parent="Talker/OperatingChair/OperatoringChair" index="7"]
+[node name="pCylinder23" parent="NavigationRegion3D/Talker/OperatingChair/OperatoringChair" index="7"]
 surface_material_override/0 = ExtResource("39_r6y0e")
 
-[node name="pCylinder22" parent="Talker/OperatingChair/OperatoringChair" index="8"]
+[node name="pCylinder22" parent="NavigationRegion3D/Talker/OperatingChair/OperatoringChair" index="8"]
 surface_material_override/0 = ExtResource("39_r6y0e")
 
-[node name="pCylinder21" parent="Talker/OperatingChair/OperatoringChair" index="9"]
+[node name="pCylinder21" parent="NavigationRegion3D/Talker/OperatingChair/OperatoringChair" index="9"]
 surface_material_override/0 = ExtResource("39_r6y0e")
 
-[node name="pCylinder20" parent="Talker/OperatingChair/OperatoringChair" index="10"]
+[node name="pCylinder20" parent="NavigationRegion3D/Talker/OperatingChair/OperatoringChair" index="10"]
 surface_material_override/0 = ExtResource("39_r6y0e")
 
-[node name="polySurface9" parent="Talker/OperatingChair/OperatoringChair/pCube66" index="0"]
+[node name="polySurface9" parent="NavigationRegion3D/Talker/OperatingChair/OperatoringChair/pCube66" index="0"]
 surface_material_override/0 = ExtResource("39_r6y0e")
 
-[node name="polySurface10" parent="Talker/OperatingChair/OperatoringChair/pCube66" index="1"]
+[node name="polySurface10" parent="NavigationRegion3D/Talker/OperatingChair/OperatoringChair/pCube66" index="1"]
 surface_material_override/0 = ExtResource("40_76m0p")
 
-[node name="polySurface7" parent="Talker/OperatingChair/OperatoringChair/pCube65" index="0"]
+[node name="polySurface7" parent="NavigationRegion3D/Talker/OperatingChair/OperatoringChair/pCube65" index="0"]
 surface_material_override/0 = ExtResource("39_r6y0e")
 
-[node name="polySurface8" parent="Talker/OperatingChair/OperatoringChair/pCube65" index="1"]
+[node name="polySurface8" parent="NavigationRegion3D/Talker/OperatingChair/OperatoringChair/pCube65" index="1"]
 surface_material_override/0 = ExtResource("40_76m0p")
 
-[node name="pCube62" parent="Talker/OperatingChair/OperatoringChair" index="13"]
+[node name="pCube62" parent="NavigationRegion3D/Talker/OperatingChair/OperatoringChair" index="13"]
 surface_material_override/0 = ExtResource("39_r6y0e")
 
-[node name="pCube61" parent="Talker/OperatingChair/OperatoringChair" index="14"]
+[node name="pCube61" parent="NavigationRegion3D/Talker/OperatingChair/OperatoringChair" index="14"]
 surface_material_override/0 = ExtResource("39_r6y0e")
 
-[node name="pCube60" parent="Talker/OperatingChair/OperatoringChair" index="15"]
+[node name="pCube60" parent="NavigationRegion3D/Talker/OperatingChair/OperatoringChair" index="15"]
 surface_material_override/0 = ExtResource("40_76m0p")
 
-[node name="pCube59" parent="Talker/OperatingChair/OperatoringChair" index="16"]
+[node name="pCube59" parent="NavigationRegion3D/Talker/OperatingChair/OperatoringChair" index="16"]
 surface_material_override/0 = ExtResource("9_lkiyy")
 
-[node name="pCube58" parent="Talker/OperatingChair/OperatoringChair" index="17"]
+[node name="pCube58" parent="NavigationRegion3D/Talker/OperatingChair/OperatoringChair" index="17"]
 surface_material_override/0 = ExtResource("9_lkiyy")
 
-[node name="pCube57" parent="Talker/OperatingChair/OperatoringChair" index="18"]
+[node name="pCube57" parent="NavigationRegion3D/Talker/OperatingChair/OperatoringChair" index="18"]
 surface_material_override/0 = ExtResource("9_lkiyy")
 
-[node name="AuxScene" parent="Talker" instance=ExtResource("41_5pa0w")]
+[node name="AuxScene" parent="NavigationRegion3D/Talker" instance=ExtResource("41_5pa0w")]
 transform = Transform3D(0.01, 0, 0, 0, 0.00426663, 0.0090441, 0, -0.0090441, 0.00426663, 0, 0.938647, 0)
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Talker"]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="NavigationRegion3D/Talker"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.990062, -0.883213)
 stream = ExtResource("42_3loty")
 volume_db = -4.0
@@ -1326,6 +1338,24 @@ autoplay = true
 parameters/looping = true
 script = ExtResource("43_gmjuu")
 lowerDB = -10.0
+
+[node name="BakingWall" type="Node3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.55499, -6.56312, 0)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="NavigationRegion3D/BakingWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.230529, 0, 0)
+mesh = SubResource("BoxMesh_p5w27")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="NavigationRegion3D/BakingWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.76109, 0, 0)
+mesh = SubResource("BoxMesh_p5w27")
+skeleton = NodePath("../..")
+
+[node name="Cop" parent="." groups=["Player"] instance=ExtResource("4_qbrl8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.70478, 0.124592, -3.27468)
+input_ray_pickable = false
+movement_speed = 1.5
 
 [node name="Post-Processing" type="Node" parent="."]
 
@@ -1347,86 +1377,86 @@ grow_vertical = 2
 [connection signal="body_entered" from="CameraSystem/CAM2/TriggerArea" to="CameraSystem/CAM2/TriggerArea" method="_on_body_entered"]
 [connection signal="body_exited" from="CameraSystem/CAM2/TriggerArea" to="CameraSystem/CAM2/TriggerArea" method="_on_body_exited"]
 [connection signal="body_entered" from="CameraSystem/CAM3/TriggerArea" to="CameraSystem/CAM3/TriggerArea" method="_on_body_entered"]
-[connection signal="body_entered" from="CameraSystem/CAM3/TriggerArea" to="Props/Clock/Label3D" method="_resetClock"]
-[connection signal="body_entered" from="CameraSystem/CAM3/TriggerArea" to="Talker/AudioStreamPlayer3D" method="on_enter"]
+[connection signal="body_entered" from="CameraSystem/CAM3/TriggerArea" to="NavigationRegion3D/Props/Clock/Label3D" method="_resetClock"]
+[connection signal="body_entered" from="CameraSystem/CAM3/TriggerArea" to="NavigationRegion3D/Talker/AudioStreamPlayer3D" method="on_enter"]
 [connection signal="body_exited" from="CameraSystem/CAM3/TriggerArea" to="CameraSystem/CAM3/TriggerArea" method="_on_body_exited"]
-[connection signal="body_exited" from="CameraSystem/CAM3/TriggerArea" to="Talker/AudioStreamPlayer3D" method="on_leave"]
-[connection signal="body_entered" from="Level/Doors/Area3D" to="Level/Doors/Door" method="on_collision_entered"]
-[connection signal="body_entered" from="Level/Doors/Area3D" to="Level/Doors/Door2" method="on_collision_entered"]
-[connection signal="body_exited" from="Level/Doors/Area3D" to="Level/Doors/Door" method="on_collision_exited"]
-[connection signal="body_exited" from="Level/Doors/Area3D" to="Level/Doors/Door2" method="on_collision_exited"]
-[connection signal="input_event" from="Props/Tools/Interactible" to="Props/Tools/Interactible" method="_on_input_event"]
-[connection signal="mouse_entered" from="Props/Tools/Interactible" to="Props/Tools/Interactible" method="on_hover"]
-[connection signal="mouse_exited" from="Props/Tools/Interactible" to="Props/Tools/Interactible" method="on_unhover"]
-[connection signal="input_event" from="Props/Picture/Interactible" to="Props/Picture/Interactible" method="_on_input_event"]
-[connection signal="mouse_entered" from="Props/Picture/Interactible" to="Props/Picture/Interactible" method="on_hover"]
-[connection signal="mouse_exited" from="Props/Picture/Interactible" to="Props/Picture/Interactible" method="on_unhover"]
-[connection signal="input_event" from="Props/Plant2/Interactible" to="Props/Plant2/Interactible" method="_on_input_event"]
-[connection signal="mouse_entered" from="Props/Plant2/Interactible" to="Props/Plant2/Interactible" method="on_hover"]
-[connection signal="mouse_exited" from="Props/Plant2/Interactible" to="Props/Plant2/Interactible" method="on_unhover"]
-[connection signal="input_event" from="Props/Radio/Interactible" to="Props/Radio/Interactible" method="_on_input_event"]
-[connection signal="mouse_entered" from="Props/Radio/Interactible" to="Props/Radio/Interactible" method="on_hover"]
-[connection signal="mouse_exited" from="Props/Radio/Interactible" to="Props/Radio/Interactible" method="on_unhover"]
-[connection signal="input_event" from="Props/Window/Interactible" to="Props/Window/Interactible" method="_on_input_event"]
-[connection signal="mouse_entered" from="Props/Window/Interactible" to="Props/Window/Interactible" method="on_hover"]
-[connection signal="mouse_exited" from="Props/Window/Interactible" to="Props/Window/Interactible" method="on_unhover"]
-[connection signal="input_event" from="Talker/Area3D" to="Talker" method="_on_area_3d_input_event"]
-[connection signal="mouse_entered" from="Talker/Area3D" to="Talker" method="_on_area_3d_mouse_entered"]
-[connection signal="mouse_exited" from="Talker/Area3D" to="Talker" method="_on_area_3d_mouse_exited"]
+[connection signal="body_exited" from="CameraSystem/CAM3/TriggerArea" to="NavigationRegion3D/Talker/AudioStreamPlayer3D" method="on_leave"]
+[connection signal="body_entered" from="NavigationRegion3D/Level/Doors/Area3D" to="NavigationRegion3D/Level/Doors/Door" method="on_collision_entered"]
+[connection signal="body_entered" from="NavigationRegion3D/Level/Doors/Area3D" to="NavigationRegion3D/Level/Doors/Door2" method="on_collision_entered"]
+[connection signal="body_exited" from="NavigationRegion3D/Level/Doors/Area3D" to="NavigationRegion3D/Level/Doors/Door" method="on_collision_exited"]
+[connection signal="body_exited" from="NavigationRegion3D/Level/Doors/Area3D" to="NavigationRegion3D/Level/Doors/Door2" method="on_collision_exited"]
+[connection signal="input_event" from="NavigationRegion3D/Props/Tools/Interactible" to="NavigationRegion3D/Props/Tools/Interactible" method="_on_input_event"]
+[connection signal="mouse_entered" from="NavigationRegion3D/Props/Tools/Interactible" to="NavigationRegion3D/Props/Tools/Interactible" method="on_hover"]
+[connection signal="mouse_exited" from="NavigationRegion3D/Props/Tools/Interactible" to="NavigationRegion3D/Props/Tools/Interactible" method="on_unhover"]
+[connection signal="input_event" from="NavigationRegion3D/Props/Picture/Interactible" to="NavigationRegion3D/Props/Picture/Interactible" method="_on_input_event"]
+[connection signal="mouse_entered" from="NavigationRegion3D/Props/Picture/Interactible" to="NavigationRegion3D/Props/Picture/Interactible" method="on_hover"]
+[connection signal="mouse_exited" from="NavigationRegion3D/Props/Picture/Interactible" to="NavigationRegion3D/Props/Picture/Interactible" method="on_unhover"]
+[connection signal="input_event" from="NavigationRegion3D/Props/Plant2/Interactible" to="NavigationRegion3D/Props/Plant2/Interactible" method="_on_input_event"]
+[connection signal="mouse_entered" from="NavigationRegion3D/Props/Plant2/Interactible" to="NavigationRegion3D/Props/Plant2/Interactible" method="on_hover"]
+[connection signal="mouse_exited" from="NavigationRegion3D/Props/Plant2/Interactible" to="NavigationRegion3D/Props/Plant2/Interactible" method="on_unhover"]
+[connection signal="input_event" from="NavigationRegion3D/Props/Radio/Interactible" to="NavigationRegion3D/Props/Radio/Interactible" method="_on_input_event"]
+[connection signal="mouse_entered" from="NavigationRegion3D/Props/Radio/Interactible" to="NavigationRegion3D/Props/Radio/Interactible" method="on_hover"]
+[connection signal="mouse_exited" from="NavigationRegion3D/Props/Radio/Interactible" to="NavigationRegion3D/Props/Radio/Interactible" method="on_unhover"]
+[connection signal="input_event" from="NavigationRegion3D/Props/Window/Interactible" to="NavigationRegion3D/Props/Window/Interactible" method="_on_input_event"]
+[connection signal="mouse_entered" from="NavigationRegion3D/Props/Window/Interactible" to="NavigationRegion3D/Props/Window/Interactible" method="on_hover"]
+[connection signal="mouse_exited" from="NavigationRegion3D/Props/Window/Interactible" to="NavigationRegion3D/Props/Window/Interactible" method="on_unhover"]
+[connection signal="input_event" from="NavigationRegion3D/Talker/Area3D" to="NavigationRegion3D/Talker" method="_on_area_3d_input_event"]
+[connection signal="mouse_entered" from="NavigationRegion3D/Talker/Area3D" to="NavigationRegion3D/Talker" method="_on_area_3d_mouse_entered"]
+[connection signal="mouse_exited" from="NavigationRegion3D/Talker/Area3D" to="NavigationRegion3D/Talker" method="_on_area_3d_mouse_exited"]
 
-[editable path="Props/Tools/Hammer"]
-[editable path="Props/Tools/Screwdriver"]
-[editable path="Props/Tools/Hammer2"]
-[editable path="Props/Tools/Screwdriver2"]
-[editable path="Props/Tools/Hammer3"]
-[editable path="Props/Tools/Screwdriver3"]
-[editable path="Props/Tools/Hammer4"]
-[editable path="Props/Tools/Screwdriver4"]
-[editable path="Props/Tools/Hammer5"]
-[editable path="Props/Tools/Screwdriver5"]
-[editable path="Props/Tools/Hammer6"]
-[editable path="Props/Tools/Screwdriver6"]
-[editable path="Props/Tools/Hammer7"]
-[editable path="Props/Tools/Screwdriver7"]
-[editable path="Props/Tools/Hammer8"]
-[editable path="Props/Tools/Screwdriver8"]
-[editable path="Props/Tools/Hammer9"]
-[editable path="Props/Tools/Screwdriver9"]
-[editable path="Props/Tools/Hammer10"]
-[editable path="Props/Tools/Screwdriver10"]
-[editable path="Props/Tools/Hammer11"]
-[editable path="Props/Tools/Screwdriver11"]
-[editable path="Props/Tools/Hammer12"]
-[editable path="Props/Tools/Screwdriver12"]
-[editable path="Props/Tools/Hammer13"]
-[editable path="Props/Tools/Screwdriver13"]
-[editable path="Props/Tools/Hammer14"]
-[editable path="Props/Tools/Screwdriver14"]
-[editable path="Props/Tools/Hammer15"]
-[editable path="Props/Tools/Screwdriver15"]
-[editable path="Props/Tools/Hammer16"]
-[editable path="Props/Tools/Screwdriver16"]
-[editable path="Props/Tools/Hammer17"]
-[editable path="Props/Tools/Screwdriver17"]
-[editable path="Props/Tools/Hammer18"]
-[editable path="Props/Tools/Screwdriver18"]
-[editable path="Props/Tools/Hammer19"]
-[editable path="Props/Tools/Screwdriver19"]
-[editable path="Props/Tools/Hammer20"]
-[editable path="Props/Tools/Screwdriver20"]
-[editable path="Props/Desk3"]
-[editable path="Props/Desk4"]
-[editable path="Props/Plant2"]
-[editable path="Props/Trashcan2"]
-[editable path="Props/Trashcan3"]
-[editable path="Props/Computer"]
-[editable path="Props/Computer/Interactible"]
-[editable path="Props/Computer2"]
-[editable path="Props/Computer2/Interactible"]
-[editable path="Props/Chair"]
-[editable path="Props/Radio"]
-[editable path="Props/Chair2"]
-[editable path="Props/Metaldoor"]
-[editable path="Props/Clock/Interactible"]
-[editable path="Props/Window"]
-[editable path="Talker/OperatingChair"]
+[editable path="NavigationRegion3D/Props/Tools/Hammer"]
+[editable path="NavigationRegion3D/Props/Tools/Screwdriver"]
+[editable path="NavigationRegion3D/Props/Tools/Hammer2"]
+[editable path="NavigationRegion3D/Props/Tools/Screwdriver2"]
+[editable path="NavigationRegion3D/Props/Tools/Hammer3"]
+[editable path="NavigationRegion3D/Props/Tools/Screwdriver3"]
+[editable path="NavigationRegion3D/Props/Tools/Hammer4"]
+[editable path="NavigationRegion3D/Props/Tools/Screwdriver4"]
+[editable path="NavigationRegion3D/Props/Tools/Hammer5"]
+[editable path="NavigationRegion3D/Props/Tools/Screwdriver5"]
+[editable path="NavigationRegion3D/Props/Tools/Hammer6"]
+[editable path="NavigationRegion3D/Props/Tools/Screwdriver6"]
+[editable path="NavigationRegion3D/Props/Tools/Hammer7"]
+[editable path="NavigationRegion3D/Props/Tools/Screwdriver7"]
+[editable path="NavigationRegion3D/Props/Tools/Hammer8"]
+[editable path="NavigationRegion3D/Props/Tools/Screwdriver8"]
+[editable path="NavigationRegion3D/Props/Tools/Hammer9"]
+[editable path="NavigationRegion3D/Props/Tools/Screwdriver9"]
+[editable path="NavigationRegion3D/Props/Tools/Hammer10"]
+[editable path="NavigationRegion3D/Props/Tools/Screwdriver10"]
+[editable path="NavigationRegion3D/Props/Tools/Hammer11"]
+[editable path="NavigationRegion3D/Props/Tools/Screwdriver11"]
+[editable path="NavigationRegion3D/Props/Tools/Hammer12"]
+[editable path="NavigationRegion3D/Props/Tools/Screwdriver12"]
+[editable path="NavigationRegion3D/Props/Tools/Hammer13"]
+[editable path="NavigationRegion3D/Props/Tools/Screwdriver13"]
+[editable path="NavigationRegion3D/Props/Tools/Hammer14"]
+[editable path="NavigationRegion3D/Props/Tools/Screwdriver14"]
+[editable path="NavigationRegion3D/Props/Tools/Hammer15"]
+[editable path="NavigationRegion3D/Props/Tools/Screwdriver15"]
+[editable path="NavigationRegion3D/Props/Tools/Hammer16"]
+[editable path="NavigationRegion3D/Props/Tools/Screwdriver16"]
+[editable path="NavigationRegion3D/Props/Tools/Hammer17"]
+[editable path="NavigationRegion3D/Props/Tools/Screwdriver17"]
+[editable path="NavigationRegion3D/Props/Tools/Hammer18"]
+[editable path="NavigationRegion3D/Props/Tools/Screwdriver18"]
+[editable path="NavigationRegion3D/Props/Tools/Hammer19"]
+[editable path="NavigationRegion3D/Props/Tools/Screwdriver19"]
+[editable path="NavigationRegion3D/Props/Tools/Hammer20"]
+[editable path="NavigationRegion3D/Props/Tools/Screwdriver20"]
+[editable path="NavigationRegion3D/Props/Desk3"]
+[editable path="NavigationRegion3D/Props/Desk4"]
+[editable path="NavigationRegion3D/Props/Plant2"]
+[editable path="NavigationRegion3D/Props/Trashcan2"]
+[editable path="NavigationRegion3D/Props/Trashcan3"]
+[editable path="NavigationRegion3D/Props/Computer"]
+[editable path="NavigationRegion3D/Props/Computer/Interactible"]
+[editable path="NavigationRegion3D/Props/Computer2"]
+[editable path="NavigationRegion3D/Props/Computer2/Interactible"]
+[editable path="NavigationRegion3D/Props/Chair"]
+[editable path="NavigationRegion3D/Props/Radio"]
+[editable path="NavigationRegion3D/Props/Chair2"]
+[editable path="NavigationRegion3D/Props/Metaldoor"]
+[editable path="NavigationRegion3D/Props/Clock/Interactible"]
+[editable path="NavigationRegion3D/Props/Window"]
+[editable path="NavigationRegion3D/Talker/OperatingChair"]

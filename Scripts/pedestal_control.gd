@@ -37,7 +37,8 @@ func interact():
 		fpsChar.setPickup(pickup)
 		#pickup.visible=false
 		pickup=null
-		if not DialogGlobals.has_pickedup:
+		if not DialogGlobals.has_pickedup and not DialogGlobals.has_pickedup_once:
 			var dial = load("res://Dialogs/minigame_tips.dialogue")
 			DialogueManager.show_dialogue_balloon(dial, "found_thought")
+			DialogGlobals.has_pickedup_once = true
 		
