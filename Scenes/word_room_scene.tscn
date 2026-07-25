@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cayug6s15dq1f"]
+[gd_scene load_steps=15 format=3 uid="uid://cayug6s15dq1f"]
 
 [ext_resource type="Script" uid="uid://d1en8cypc2207" path="res://Scripts/word_room_control.gd" id="1_lk2ee"]
 [ext_resource type="PackedScene" uid="uid://dn7ist6x615jk" path="res://Scenes/pickup.tscn" id="2_evwxb"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bawjf5aq78i25" path="res://Assets/Models/Door.fbx" id="4_55k6m"]
 [ext_resource type="Material" uid="uid://c21ctb8ihv1ay" path="res://Assets/Materials/FPS_Wall_Material.tres" id="5_evwxb"]
 [ext_resource type="PackedScene" uid="uid://c8mapbqsrqjk2" path="res://Assets/Models/Pedestal.fbx" id="6_pbxhd"]
+[ext_resource type="Script" uid="uid://bgp7y07umwygy" path="res://Scripts/PropsSpawner.gd" id="8_iid7f"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pbxhd"]
 size = Vector3(0.054, 2.15, 1.05)
@@ -50,8 +51,9 @@ freeze = true
 transform = Transform3D(-1.5299e-07, 0, 3.5, 0, 3.5, 0, -3.5, 0, -1.5299e-07, 0, 0, 0.5)
 
 [node name="DoorText" type="Label3D" parent="Door/Pivot/Door"]
-transform = Transform3D(-0.285714, 0, 2.49779e-08, 0, 0.285714, 0, -2.49779e-08, 0, -0.285714, 0.0164787, 0.485714, -0.0154286)
+transform = Transform3D(-0.285714, 0, 4.31416e-08, 0, 0.285714, 0, -4.31416e-08, 0, -0.285714, -9.31323e-10, 0.486, -0.00766285)
 text = "TEST"
+font_size = 26
 outline_size = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Door/Pivot"]
@@ -136,14 +138,24 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.035
 light_color = Color(0.990427, 0.605932, 0.397478, 1)
 light_bake_mode = 1
 
-[node name="SpotLight3D2" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.0422941, 0.999105, 0, -0.999105, 0.0422941, 2, 2.5, 2)
-light_color = Color(0.620082, 0.752678, 0.960737, 1)
-light_energy = 1.927
-light_bake_mode = 1
-spot_range = 4.623
-spot_attenuation = 0.24
-spot_angle = 78.3
-spot_angle_attenuation = 3.13834
+[node name="PropsSpawn" type="Node3D" parent="."]
+
+[node name="Props1" type="Node3D" parent="PropsSpawn"]
+transform = Transform3D(0.997317, 0, -0.0732034, 0, 1, 0, 0.0732034, 0, 0.997317, -2.44733, 0, -7.09301)
+script = ExtResource("8_iid7f")
+
+[node name="Props2" type="Node3D" parent="PropsSpawn"]
+transform = Transform3D(-0.955035, 0, -0.296492, 0, 1, 0, 0.296492, 0, -0.955035, -2.03479, 0, -0.606533)
+script = ExtResource("8_iid7f")
+spawnProba = 0.25
+
+[node name="Props3" type="Node3D" parent="PropsSpawn"]
+transform = Transform3D(0.997317, 0, -0.0732034, 0, 1, 0, 0.0732034, 0, 0.997317, 2.13022, 0, -7.09301)
+script = ExtResource("8_iid7f")
+
+[node name="Props4" type="Node3D" parent="PropsSpawn"]
+transform = Transform3D(-0.955035, 0, -0.296492, 0, 1, 0, 0.296492, 0, -0.955035, 2.54276, 0, -0.606533)
+script = ExtResource("8_iid7f")
+spawnProba = 0.25
 
 [connection signal="timeout" from="Door/Timer" to="Door" method="_on_timer_timeout"]

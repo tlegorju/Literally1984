@@ -79,6 +79,10 @@ Your coworker's workstation. You wonder if he does work on the same things you d
 ~ metaldoor
 The exit door. 
 You ask yourself : "Have I ever been this happy or sad seeing two different sides of an object ?"
+if GameManager.isFinished() == true
+	- Leave
+		GameManager.end_game()
+	- Walk away => END
 - Leave
 	I can't leave my shift is not over.
 	- Leave

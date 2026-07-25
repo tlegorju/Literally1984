@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://dx1iaus40m8ya"]
+
+[ext_resource type="PackedScene" uid="uid://dxfhepo34c2xx" path="res://Assets/Models/Trashcan.fbx" id="1_va7gr"]
+[ext_resource type="PackedScene" uid="uid://vbwitd2cgk71" path="res://Scenes/interactible.tscn" id="2_qxoar"]
+[ext_resource type="Resource" uid="uid://drt3prdxpswbc" path="res://Dialogs/test_dialog.dialogue" id="3_au6ry"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ijbu6"]
+size = Vector3(0.285529, 0.951183, 0.277484)
+
+[node name="Trashcan" instance=ExtResource("1_va7gr")]
+
+[node name="Trashcan" parent="." index="0"]
+transform = Transform3D(6.612, 0, 0, 0, 6.612, 0, 0, 0, 6.612, 0, 0, 0)
+
+[node name="Interactible" parent="." index="2" instance=ExtResource("2_qxoar")]
+dialogue_resource = ExtResource("3_au6ry")
+dialogue_name = "truebin"
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="3"]
+input_ray_pickable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00743717, -0.108176, 0.00204163)
+shape = SubResource("BoxShape3D_ijbu6")

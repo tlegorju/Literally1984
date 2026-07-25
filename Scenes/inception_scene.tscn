@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cayug6s15dq1f" path="res://Scenes/word_room_scene.tscn" id="2_55t8s"]
 [ext_resource type="Material" uid="uid://c21ctb8ihv1ay" path="res://Assets/Materials/FPS_Wall_Material.tres" id="4_20jko"]
 [ext_resource type="PackedScene" uid="uid://cilmqphwo3w6i" path="res://Scenes/exit_door.tscn" id="4_27wqy"]
+[ext_resource type="PackedScene" uid="uid://ca38yelop8t3l" path="res://Scenes/playfabs/inception_corridor_light.tscn" id="4_r41h3"]
 [ext_resource type="Texture2D" uid="uid://c4ny0rxflcdrs" path="res://tmp_art/pickup.png" id="6_55t8s"]
 [ext_resource type="Texture2D" uid="uid://beivm1l7puaba" path="res://tmp_art/select.png" id="6_qs4p1"]
 [ext_resource type="Script" path="res://Scripts/reticule_control.gd" id="8_ojsxo"]
@@ -21,18 +22,12 @@ size = Vector2(200, 200)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_27wqy"]
 
-[sub_resource type="Environment" id="Environment_20jko"]
-sdfgi_read_sky_light = false
-sdfgi_cascades = 2
-sdfgi_max_distance = 51.2
-glow_enabled = true
-volumetric_fog_enabled = true
-
 [node name="Root_FPS" type="Node3D" node_paths=PackedStringArray("fpsChar")]
 script = ExtResource("1_20jko")
 fpsChar = NodePath("FPSChar")
 RoomScene = ExtResource("2_55t8s")
 ExitDoorScene = ExtResource("4_27wqy")
+CorridorLight = ExtResource("4_r41h3")
 
 [node name="Floor" type="StaticBody3D" parent="."]
 
@@ -67,9 +62,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="HandRef" type="Node3D" parent="FPSChar/RotationHelper"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.212836, -0.124609, -0.186658)
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_20jko")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 anchors_preset = 15

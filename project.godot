@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Literally 1984"
-run/main_scene="uid://cnlqiy1t1tlfa"
+run/main_scene="uid://dg8y8rko0jher"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -25,7 +25,7 @@ GameManager="*res://Scripts/GameManager.gd"
 [display]
 
 window/size/viewport_width=1200
-window/size/viewport_height=1080
+window/size/viewport_height=720
 window/size/borderless=true
 
 [editor_plugins]

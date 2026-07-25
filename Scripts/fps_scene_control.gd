@@ -11,6 +11,8 @@ var ideaToPlace=1
 @export var RoomScene : PackedScene
 @export var ExitDoorScene : PackedScene
 
+@export var CorridorLight : PackedScene
+
 var rooms = []
 var exitDoors = []
 var words = []
@@ -25,6 +27,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if initState==0:
 		InstantiateRooms()
+		InstantiateLights()
 		initState+=1
 	elif initState==1:
 		SetupWordsRoom()
@@ -66,6 +69,18 @@ func InstantiateRooms():
 	add_child.call_deferred(exitDoors[1])
 	exitDoors[1].set_position(curPos)
 	exitDoors[1].rotate_y(deg_to_rad(180))
+	
+func InstantiateLights():
+	var roomCount = words.size()
+	var curPos = fpsChar.get_position() + Vector3(roomSpacing/2.0,0,0)
+	print("instantiate light")
+	for i in roomCount:
+		var newLight = CorridorLight.instantiate()
+		add_child.call_deferred(newLight)
+		print("instantiate light ", newLight)
+		newLight.set_position(curPos + Vector3(0, 2.5, 0))
+		
+		curPos += Vector3(roomSpacing,0,0)
 
 func SetupWordsRoom():
 	rooms.shuffle()

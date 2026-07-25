@@ -8,7 +8,7 @@ var curStep : int = 0
 var maxStep : int = 8
 
 var corrected_word=false
-var go_correct_word=false
+@export var go_correct_word=false
 var dialog_word1
 var dialog_word2
 var dialog_word3
@@ -23,10 +23,12 @@ var next_pos;
 var next_max_dist;
 var next_signal;
 
-func _ready() -> void:
-	#player = get_tree().get_first_node_in_group("Player");
+func init_game_manager():
 	words.clear()
-	
+	curStep=0
+	corrected_word=false
+	go_correct_word=false
+
 	var stepArray = []	
 	#stepArray.append({
 	#"oldWord": "HOME",
@@ -102,6 +104,9 @@ func _ready() -> void:
 	words.append(stepArray8)
 	
 	setDialogWord()
+
+func _ready() -> void:
+	init_game_manager()
 		
 func try_show_dialog(next_dia, next_dia_name, next_p, next_max_d, next_sign):
 	next_dialogue = next_dia;
@@ -114,7 +119,7 @@ func _process(delta):
 	player = get_tree().get_first_node_in_group("Player")
 	if(player and next_dialogue):
 		var dist = player.get_global_position() - next_pos;
-		print(dist.length())
+		#print(dist.length())
 		if(dist.length() <= next_max_dist):
 			DialogueManager.show_dialogue_balloon(next_dialogue, next_dialogue_name);
 			if next_signal:
@@ -143,6 +148,10 @@ func goToMainScene():
 	setDialogWord()
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	get_tree().change_scene_to_file("res://Scenes/main_level.tscn")
+	
+func start_game():
+	init_game_manager()
+	goToMainScene()
 
 func setDialogWord():
 	var curWords = getCurWords()
@@ -165,3 +174,6 @@ func start_alert():
 func toggle_radio():
 	print("hello")
 	radio_toggle.emit();
+
+func end_game():
+	print("end game - todo")

@@ -1,0 +1,21 @@
+[gd_resource type="Environment" load_steps=2 format=3 uid="uid://c5m861x73rox2"]
+
+[sub_resource type="Sky" id="Sky_tv1p5"]
+
+[resource]
+background_mode = 1
+sky = SubResource("Sky_tv1p5")
+ambient_light_source = 1
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+sdfgi_use_occlusion = true
+sdfgi_read_sky_light = false
+sdfgi_cascades = 8
+glow_enabled = true
+glow_normalized = true
+glow_blend_mode = 4
+glow_hdr_threshold = 0.79
+volumetric_fog_albedo = Color(0.900569, 0.983344, 1, 1)
+volumetric_fog_emission = Color(0.45376, 0.417378, 0.422848, 1)

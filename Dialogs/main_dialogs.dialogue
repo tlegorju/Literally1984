@@ -194,4 +194,6 @@ else
 		I hope to never see you again.
 		do GameManager.nextStep()
 	- Leave
+~ step_9
+	There's nothing more I can do with it.
 => END

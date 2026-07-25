@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cilmqphwo3w6i"]
+[gd_scene load_steps=6 format=3 uid="uid://cilmqphwo3w6i"]
 
 [ext_resource type="Script" uid="uid://cmjs4mt084rdk" path="res://Scripts/exit_door_control.gd" id="1_elbft"]
 [ext_resource type="Material" uid="uid://c21ctb8ihv1ay" path="res://Assets/Materials/FPS_Wall_Material.tres" id="2_b4nh8"]
 [ext_resource type="PackedScene" uid="uid://d1d8sgiua5jly" path="res://Assets/Models/ExitDoor.fbx" id="2_dog84"]
+[ext_resource type="Script" uid="uid://bgp7y07umwygy" path="res://Scripts/PropsSpawner.gd" id="4_i36wp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_87rv1"]
 size = Vector3(0.1, 2.2, 1.5)
@@ -57,3 +58,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.347628, 2.61313, 0)
 light_color = Color(0.841905, 0.195842, 0.13333, 1)
 light_energy = 0.5
 light_bake_mode = 1
+
+[node name="PropsSpawn" type="Node3D" parent="."]
+
+[node name="Props1" type="Node3D" parent="PropsSpawn"]
+transform = Transform3D(0.997317, 0, -0.0732034, 0, 1, 0, 0.0732034, 0, 0.997317, 0.502075, 0, -1.50134)
+script = ExtResource("4_i36wp")
+
+[node name="Props2" type="Node3D" parent="PropsSpawn"]
+transform = Transform3D(-0.955035, 0, -0.296492, 0, 1, 0, 0.296492, 0, -0.955035, 0.454712, 0, 1.41016)
+script = ExtResource("4_i36wp")
