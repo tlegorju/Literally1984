@@ -1,14 +1,18 @@
 TODO Literally1984
 
 1. INTERROGATOIRE
-- end of game
 - color text depending on who's talking
-- check pronouns
+		=> Color game
+		=> add style for events and thought
+	=> Find coherent pseudo for each
+	=> Add styling for relevant words
+- end of game
 - transition between phases (dialog after correction -> dialog next step)
 - sound design
 - footstep sounds
 - texture bug? on main character on start 
 - picture on the screens heads
+	- camera bug
 	- correct pathfinding
 	- finish dialogs
 
@@ -26,10 +30,20 @@ TODO Literally1984
 		=> fix overillumination
 
 3. OVERALL
-- Menu
-- Options 
-	+ mouse sensitivity
-	
+	- PauseMenu
+		+ add shortcut to open/close (escape)
+		+ integrate in game
+		+ brancher button back / quit
+		
 4. Bonus
+- picture on the screens heads
 - More decoration in FPS
-- Props that go to weirder and weirder spaces when steps go up
+- Props that go to weirder a
+- MainMenu
+	+ brancher mouse sensitivity
+	+ brancher volumend weirder spaces when steps go up
+- PauseMenu
+	+ add option panel
+	+ (brancher same options)
+	+ space between back and quit
+	+ confirmation panel on quit

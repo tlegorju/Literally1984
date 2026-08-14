@@ -125,6 +125,11 @@ func _process(delta):
 			if next_signal:
 				next_signal.emit();
 			next_dialogue = null;
+			
+	if Input.is_action_just_pressed("escape"):
+		var pauseMenu = get_tree().get_first_node_in_group("PauseMenu")
+		if pauseMenu:
+			pauseMenu.toggle_menu()
 	
 func getCurWords():
 	if curStep>=0 && curStep < maxStep:
@@ -148,6 +153,10 @@ func goToMainScene():
 	setDialogWord()
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	get_tree().change_scene_to_file("res://Scenes/main_level.tscn")
+	
+func goToMainMenu():
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
 	
 func start_game():
 	init_game_manager()
@@ -176,4 +185,7 @@ func toggle_radio():
 	radio_toggle.emit();
 
 func end_game():
-	print("end game - todo")
+	var fade = get_tree().get_first_node_in_group("Fade")
+	if fade:
+		fade.fade_finished.connect(goToMainMenu)
+		fade.fade_out()

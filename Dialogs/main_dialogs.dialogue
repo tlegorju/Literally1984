@@ -1,60 +1,57 @@
 ~ step_1
 if GameManager.corrected_word==false
-	The pale figure lays in front of you motionless.
-	It turns to you and says: 
-	[{{GameManager.dialog_word1}}] are you ?
+	[i][color=GRAY]The pale figure lays in front of you motionless.[/color][/i]
+	It turns to you and says: [{{GameManager.dialog_word1}}] are you ?
 	- Answer him
-		That's not the right question here, you need to focus on...
+		You say: That's not the right question here, you need to focus on...
 		do GameManager.start_alert()
-		Your words are rendered unintelligible by the sudden alarm.
+		[speed=10][b][color=RED][font_size=24]Your words are rendered unintelligible by the sudden alarm.[/font_size][/color][/b][/speed]
 		set GameManager.go_correct_word = true
 	- Leave
 else
 	[{{GameManager.dialog_word1}}] are you ?
 	- Answer him
 		You say: I'm fine, and I see you are too.
-		You're making progress, just a few more steps.
+			You're making progress, just a few more steps.
 		do GameManager.nextStep()
 	- Leave
 => END
 ~ step_2
 if GameManager.corrected_word==false
-	The figure starts to collect its thoughts.
-	It kindly whispers :
-	Can I [{{GameManager.dialog_word1}}] please ?
+	[i][color=WEB_GRAY]The figure starts to collect its thoughts.[/color][/i]
+	It kindly whispers: Can I [{{GameManager.dialog_word1}}] please ?
 	- Answer him
-		Another wrong anwser sadly, please be patient for...
+		You say: Another wrong anwser sadly, please be patient for...
 		do GameManager.start_alert()
-		Your words are rendered unintelligible by the sudden alarm.
+		[speed=10][b][color=RED][font_size=24]Your words are rendered unintelligible by the sudden alarm.[/font_size][/color][/b][/speed]
 		set GameManager.go_correct_word = true
 	- Leave
 else
-	The man looks calmer already.
-	Can I go to [{{GameManager.dialog_word1}}] please ?
+	[i][color=WEB_GRAY]The man looks calmer already.[/color][/i]
+	It speaks: Can I go to [{{GameManager.dialog_word1}}] please ?
 	- Answer him
 		You say: You're not quite ready yet... But soon.
-		I just need a few more tweaks to completely fix you.
+			I just need a few more tweaks to completely fix you.
 		do GameManager.nextStep()
 	- Leave
 => END
 ~ step_3
 if GameManager.corrected_word==false
-	You see a spark on the screen in front of you.
-	You don't know weither it's hope, anger or fascination.
-	It is to be cleanse nevertheless.
-	It speaks :
-	Are you trying to [{{GameManager.dialog_word1}}] me ?
+	[i][color=WEB_GRAY]You see a spark on the screen in front of you.[/color][/i]
+	[i][color=WEB_GRAY]You don't know weither it's hope, anger or fascination.[/color][/i]
+	[i][color=WEB_GRAY]It is to be cleanse nevertheless.[/color][/i]
+	It speaks: Are you trying to [{{GameManager.dialog_word1}}] me ?
 	- Answer him
-		In a sense, but that's not the question you should ask.
-		The individual is irrelevant to the mass.
-		You should ask yourself not what the state will do to you, but what you can do for the state.
+		You say: In a sense, but that's not the question you should ask.
+			The individual is irrelevant to the mass.
+			You should ask yourself not what the state will do to you, but what you can do for the state.
 		do GameManager.start_alert()
-		Your words are rendered unintelligible by the sudden alarm.
+		[speed=10][b][color=RED][font_size=24]Your words are rendered unintelligible by the sudden alarm.[/font_size][/color][/b][/speed]
 		set GameManager.go_correct_word = true
 	- Leave
 else
-	You can feel that the man starts to trust you.
-	Are you trying to [{{GameManager.dialog_word1}}] me ?
+	[i][color=WEB_GRAY]You can feel that the man starts to trust you.[/color][/i]
+	It speaks: Are you trying to [{{GameManager.dialog_word1}}] me ?
 	- Answer him
 		You say: Is it what you wish for ? If so, there might be hope for you after all.
 		do GameManager.nextStep()
@@ -62,24 +59,22 @@ else
 => END
 ~ step_4
 if GameManager.corrected_word==false
-	You need to go deeper. The subject is receptive to the treatment, but so far the result are superficial.
-	For a true, deep, change of heart, you need to dive into the depth of its programs.
+	[i][color=WEB_GRAY]You need to go deeper. The subject is receptive to the treatment, but so far the result are superficial.[/color][/i]
+	[i][color=WEB_GRAY]For a true, deep, change of heart, you need to dive into the depth of its programs.[/color][/i]
 	You say: What do you say we add a bit of our story into your screen ?
-	It speaks :
-	Is that the way to propagate [{{GameManager.dialog_word1}}] nowadays ?
-	You [{{GameManager.dialog_word2}}] people and brainwash them ?
+	It speaks: Is that the way to propagate [{{GameManager.dialog_word1}}] nowadays ?
+		You [{{GameManager.dialog_word2}}] people and brainwash them ?
 	- Answer him
-		I'm sadened to see you react like this, but don't worry, we still have time and ressources.
+		You say: I'm sadened to see you react like this, but don't worry, we still have time and ressources.
 		do GameManager.start_alert()
-		Your words are rendered unintelligible by the sudden alarm.
+		[speed=10][b][color=RED][font_size=24]Your words are rendered unintelligible by the sudden alarm.[/font_size][/color][/b][/speed]
 		set GameManager.go_correct_word = true
 	- Leave
 else
-	There is a little less resistance in the figure's eyes. It worked.
+	[i][color=WEB_GRAY]There is a little less resistance in the figure's eyes. It worked.[/color][/i]
 	You say: So again, what do you say we add a bit of our story into your screen ?
-	It speaks :
-	Is that the way to propagate [{{GameManager.dialog_word1}}] nowadays ?
-	You [{{GameManager.dialog_word2}}] in here ? Why the straps ?
+	It speaks: Is that the way to propagate [{{GameManager.dialog_word1}}] nowadays ?
+		You [{{GameManager.dialog_word2}}] in here ? Why the straps ?
 	- Answer him
 		You say: You won't understand everything here, but if you trust us you will be freed in the end.
 		do GameManager.nextStep()
@@ -87,24 +82,22 @@ else
 => END
 ~ step_5
 if GameManager.corrected_word==false
-	As its spirit crumbles under your programming, you feel you can go further.
-	You're halfway there, you have to keep deconstructing its mind to the bone.
-	It speaks :
-	Is this your idea of a life ? Living under and participating to a [{{GameManager.dialog_word1}}] ?
+	[i][color=WEB_GRAY]As its spirit crumbles under your programming, you feel you can go further.[/color][/i]
+	[i][color=WEB_GRAY]You're halfway there, you have to keep deconstructing its mind to the bone.[/color][/i]
+	It speaks: Is this your idea of a life ? Living under and participating to a [{{GameManager.dialog_word1}}] ?
 	You say: Do you hear yourself ? You people don't realize what it takes to run a society. We need rules and order.
 	It says: There's nothing more important than [{{GameManager.dialog_word2}}], and nothing worth sacrificing it for.
 	- Answer him
-		You're so childish I feel nothing but pity for you. But don't worry, I will fix you.
+		You say: You're so childish I feel nothing but pity for you. But don't worry, I will fix you.
 		do GameManager.start_alert()
-		Your words are rendered unintelligible by the sudden alarm.
+		[speed=10][b][color=RED][font_size=24]Your words are rendered unintelligible by the sudden alarm.[/font_size][/color][/b][/speed]
 		set GameManager.go_correct_word = true
 	- Leave
 else
-	Again, the rebellion in its eyes fade away. You're making progress.
+	[i][color=WEB_GRAY]Again, the rebellion in its eyes fade away. You're making progress.[/color][/i]
 	You say: What were you saying earlier ?
-	It speaks :
-	I don't understand it anymore... Why would I ever engage in [{{GameManager.dialog_word1}}] ?
-	It's insane to risk it all for so little. I almost through away the [{{GameManager.dialog_word2}}] of my people.
+	It speaks: I don't understand it anymore... Why would I ever engage in [{{GameManager.dialog_word1}}] ?
+		It's insane to risk it all for so little. I almost through away the [{{GameManager.dialog_word2}}] of my people.
 	- Answer him
 		You say: It's good to see you come back to your sense slowly.
 		do GameManager.nextStep()
@@ -112,52 +105,48 @@ else
 => END
 ~ step_6
 if GameManager.corrected_word==false
-	There's only dust remaining behind the screen in front of you.
-	You broke it to pieces, now is the time to rebuild it from it's own ashes.
-	It speaks :
-	So what's the expected [{{GameManager.dialog_word1}}] here ? Am I really [{{GameManager.dialog_word2}}] of all this time and ressources ?
+	[i][color=WEB_GRAY]There's only dust remaining behind the screen in front of you.[/color][/i]
+	[i][color=WEB_GRAY]You broke it to pieces, now is the time to rebuild it from it's own ashes.[/color][/i]
+	It speaks: So what's the expected [{{GameManager.dialog_word1}}] here ? Am I really [{{GameManager.dialog_word2}}] of all this time and ressources ?
 	- Answer him
-		See, you think to much, still. Self centered, individually obsessed, egotisticly monstruous.
-		We are not unique, we are all part of it. Part of the state. And we thrive through it.
+		You say: See, you think to much, still. Self centered, individually obsessed, egotisticly monstruous.
+			We are not unique, we are all part of it. Part of the state. And we thrive through it.
 		do GameManager.start_alert()
-		Your words are rendered unintelligible by the sudden alarm.
+		[speed=10][b][color=RED][font_size=24]Your words are rendered unintelligible by the sudden alarm.[/font_size][/color][/b][/speed]
 		set GameManager.go_correct_word = true
 	- Leave
 else
-	You now sense it's individually starts to fade into the grand homogeneity of Society.
-	It speaks :
-	How could I ever receive any [{{GameManager.dialog_word1}}]... 
-	I realize now, I am [{{GameManager.dialog_word2}}] even beyond salvation.
+	[i][color=WEB_GRAY]You now sense it's individually starts to fade into the grand homogeneity of Society.[/color][/i]
+	It speaks: How could I ever receive any [{{GameManager.dialog_word1}}]... 
+		I realize now, I am [{{GameManager.dialog_word2}}] even beyond salvation.
 	- Answer him
 		You say: All this time and resources, as you were mentionning, they are exactly for this.
-		You are nothing but a part, but any part is essential to the Machine.
+			You are nothing but a part, but any part is essential to the Machine.
 		do GameManager.nextStep()
 	- Leave
 => END
 ~ step_7
 if GameManager.corrected_word==false
-	You gaze upon the ashes of the mind you dismantled pieces by pieces.
-	Soon it will be reborn as a loyal subject of the state. A good worker, a perfect cog for the Machine.
-	It still manages to grasp its last bit of individuality...
-	It speaks :
-	What will be left of [{{GameManager.dialog_word1}}] once you are done ?
-	Do I really have to give up on everything making me... [{{GameManager.dialog_word1}}] ?
-	You don't know, you don't exists anymore.
-	We are just parts of the Machine you said, but you are wrong. We are [{{GameManager.dialog_word2}}], each of us, we matter.
-	Treating me as an [{{GameManager.dialog_word3}}] for my belief is a mistake that can't prevail.
+	[i][color=WEB_GRAY]You gaze upon the ashes of the mind you dismantled pieces by pieces.[/color][/i]
+	[i][color=WEB_GRAY]Soon it will be reborn as a loyal subject of the state. A good worker, a perfect cog for the Machine.[/color][/i]
+	[i][color=WEB_GRAY]It still manages to grasp its last bit of individuality...[/color][/i]
+	It speaks: What will be left of [{{GameManager.dialog_word1}}] once you are done ?
+		Do I really have to give up on everything making me... [{{GameManager.dialog_word1}}] ?
+		You don't know, you don't exists anymore.
+		We are just parts of the Machine you said, but you are wrong. We are [{{GameManager.dialog_word2}}], each of us, we matter.
+		Treating me as an [{{GameManager.dialog_word3}}] for my belief is a mistake that can't prevail.
 	- Answer him
-		Fear not my dear, for you will soon see the truth. None of us matter. Neither you or I.
-		There is only us, and what we can do for US.
+		You say: Fear not my dear, for you will soon see the truth. None of us matter. Neither you or I.
+			There is only us, and what we can do for US.
 		do GameManager.start_alert()
-		Your words are rendered unintelligible by the sudden alarm.
+		[speed=10][b][color=RED][font_size=24]Your words are rendered unintelligible by the sudden alarm.[/font_size][/color][/b][/speed]
 		set GameManager.go_correct_word = true
 	- Leave
 else
-	After what you have done to its mind, you can see the fear is gone when it watches you.
-	It speaks :
-	[{{GameManager.dialog_word1}}] are better working together. I was wrong, I see now.
-	The [{{GameManager.dialog_word2}}] is what guard us from falling into the abyss.
-	What keeps us from fighting, what makes us [{{GameManager.dialog_word3}}].
+	[i][color=WEB_GRAY]After what you have done to its mind, you can see the fear is gone when it watches you.[/color][/i]
+	It speaks: [{{GameManager.dialog_word1}}] are better working together. I was wrong, I see now.
+		The [{{GameManager.dialog_word2}}] is what guard us from falling into the abyss.
+		What keeps us from fighting, what makes us [{{GameManager.dialog_word3}}].
 	- Answer him
 		You say: You've come a long way, but now I see how you can become one of the best of us. One with us.
 		do GameManager.nextStep()
@@ -165,35 +154,32 @@ else
 => END
 ~ step_8
 if GameManager.corrected_word==false
-	Finally, one last step and you will be done with this one.
-	Its empty gaze shows clearly the therapy was a success.
-	It speaks :
-	Help me... I fear the regime will [{{GameManager.dialog_word1}}]. 
-	I have been [{{GameManager.dialog_word2}}] as so many other elements. Is there even any comeback from that ?
-	It feels like everything is on the verge of being [{{GameManager.dialog_word3}}] and all we do is pushing it down...
+	[i][color=WEB_GRAY]Finally, one last step and you will be done with this one.[/color][/i]
+	[i][color=WEB_GRAY]Its empty gaze shows clearly the therapy was a success.[/color][/i]
+	It speaks: Help me... I fear the regime will [{{GameManager.dialog_word1}}]. 
+		I have been [{{GameManager.dialog_word2}}] as so many other elements. Is there even any comeback from that ?
+		It feels like everything is on the verge of being [{{GameManager.dialog_word3}}] and all we do is pushing it down...
 	- Answer him
-		You have made so much progress since we began. I understand your fear, but all hope is not lost.
-		Leave it to me to show you the truth.
+		You say: You have made so much progress since we began. I understand your fear, but all hope is not lost.
+			Leave it to me to show you the truth.
 		do GameManager.start_alert()
-		Your words are rendered unintelligible by the sudden alarm.
+		[speed=10][b][color=RED][font_size=24]Your words are rendered unintelligible by the sudden alarm.[/font_size][/color][/b][/speed]
 		set GameManager.go_correct_word = true
 	- Leave
 else
-	The last step was a success. All that's left is to make sure you're work is done.
-	At first glance however, you see nothing but felicity on the screen lying there. 
-	You let them talk first.
-	It speaks:
-	I was blind then and now I see. The System now appears to me in all its [{{GameManager.dialog_word1}}]... 
-	I will be eternally graceful to you, to the State. I am now [{{GameManager.dialog_word2}}].
-	I am now part of the grand scheme of things. Part of the whole.
+	[i][color=WEB_GRAY]The last step was a success. All that's left is to make sure you're work is done.[/color][/i]
+	[i][color=WEB_GRAY]At first glance however, you see nothing but felicity on the screen lying there. [/color][/i]
+	[i][color=WEB_GRAY]You let them talk first.[/color][/i]
+	It speaks: I was blind then and now I see. The System now appears to me in all its [{{GameManager.dialog_word1}}]... 
+		I will be eternally graceful to you, to the State. I am now [{{GameManager.dialog_word2}}].
+		I am now part of the grand scheme of things. Part of the whole.
 	You say: I am glad to hear that, it has been a long process but seeing you like that makes it all worth it.
-	It speaks:
-	By all means, I am now in [{{GameManager.dialog_word3}}] of my life. And this [{{GameManager.dialog_word3}}] is everything now.
+	It speaks: By all means, I am now in [{{GameManager.dialog_word3}}] of my life. And this [{{GameManager.dialog_word3}}] is everything now.
 	- Answer him
 		You say: I did my part, and now that you are back with us, it is time to do yours.
-		I hope to never see you again.
+			I hope to never see you again.
 		do GameManager.nextStep()
 	- Leave
 ~ step_9
-	There's nothing more I can do with it.
+	[i][color=WEB_GRAY]There's nothing more I can do with it.[/color][/i]
 => END

@@ -1,6 +1,7 @@
-[gd_scene load_steps=66 format=4 uid="uid://cnlqiy1t1tlfa"]
+[gd_scene load_steps=68 format=4 uid="uid://cnlqiy1t1tlfa"]
 
 [ext_resource type="Script" uid="uid://uxtklgw6afd8" path="res://Scripts/camera_collider.gd" id="1_a2ia3"]
+[ext_resource type="PackedScene" uid="uid://cmjqvhatempkv" path="res://Scenes/PauseMenu.tscn" id="1_p5w27"]
 [ext_resource type="Material" uid="uid://6hyaudq2jro0" path="res://Assets/Materials/M_Window.tres" id="1_q2fht"]
 [ext_resource type="AudioStream" uid="uid://di7y62o7q8s8n" path="res://Assets/Audio/buzz-loop.mp3" id="2_bm8oi"]
 [ext_resource type="Material" uid="uid://3alykgpghls1" path="res://Assets/Materials/M_Door.tres" id="2_ikcpc"]
@@ -45,6 +46,7 @@
 [ext_resource type="PackedScene" uid="uid://gikpeoeqgu2h" path="res://Assets/Character/Character.gltf" id="41_5pa0w"]
 [ext_resource type="AudioStream" uid="uid://bvrqkkvhpwh38" path="res://Assets/Audio/heart-monitor.mp3" id="42_3loty"]
 [ext_resource type="Script" uid="uid://cqe16cx3av0p3" path="res://beep.gd" id="43_gmjuu"]
+[ext_resource type="Script" uid="uid://cxc8xruu3farg" path="res://Scripts/fade_to_black.gd" id="47_r6y0e"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5erdv"]
 size = Vector3(4.75, 3, 4.617)
@@ -117,6 +119,14 @@ shader = ExtResource("6_236hc")
 shader_parameter/noise_texture = ExtResource("7_lwkuy")
 
 [node name="MainLevel" type="Node3D"]
+
+[node name="PauseMenuScene" parent="." instance=ExtResource("1_p5w27")]
+visible = false
+
+[node name="Cop" parent="." groups=["Player"] instance=ExtResource("4_qbrl8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.70478, 0.124592, -3.27468)
+input_ray_pickable = false
+movement_speed = 1.5
 
 [node name="CameraSystem" type="Node3D" parent="."]
 visible = false
@@ -1005,11 +1015,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.76109, 0, 0)
 mesh = SubResource("BoxMesh_p5w27")
 skeleton = NodePath("../..")
 
-[node name="Cop" parent="." groups=["Player"] instance=ExtResource("4_qbrl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.70478, 0.124592, -3.27468)
-input_ray_pickable = false
-movement_speed = 1.5
-
 [node name="Post-Processing" type="Node" parent="."]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Post-Processing"]
@@ -1022,6 +1027,27 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+
+[node name="FadeToBlack" type="Control" parent="." groups=["Fade"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("47_r6y0e")
+
+[node name="ColorRect" type="ColorRect" parent="FadeToBlack"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
 
 [connection signal="body_entered" from="CameraSystem/CAM1/TriggerArea" to="CameraSystem/CAM1/TriggerArea" method="_on_body_entered"]
 [connection signal="body_entered" from="CameraSystem/CAM1/TriggerArea" to="CameraSystem/CAM1/ComputerScreen" method="on_enter"]

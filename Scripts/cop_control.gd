@@ -37,6 +37,8 @@ func set_movement_target(movement_target: Vector3):
 	navigation_agent.set_target_position(movement_target)
 	
 func set_character_rotation():
+	if velocity.length() < 0.1:
+		return
 	var target: Basis = Basis.looking_at(velocity.normalized());
 	basis = basis.slerp(target, 0.2);
 

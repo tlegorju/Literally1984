@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c4l1xbib40snd"]
+[gd_scene load_steps=18 format=3 uid="uid://c4l1xbib40snd"]
 
 [ext_resource type="Script" uid="uid://bcwcnit7dhv05" path="res://Scripts/fps_scene_control.gd" id="1_20jko"]
 [ext_resource type="Script" uid="uid://drey6hsglvnos" path="res://Scripts/fps_control.gd" id="1_38687"]
@@ -6,9 +6,12 @@
 [ext_resource type="Material" uid="uid://c21ctb8ihv1ay" path="res://Assets/Materials/FPS_Wall_Material.tres" id="4_20jko"]
 [ext_resource type="PackedScene" uid="uid://cilmqphwo3w6i" path="res://Scenes/exit_door.tscn" id="4_27wqy"]
 [ext_resource type="PackedScene" uid="uid://ca38yelop8t3l" path="res://Scenes/playfabs/inception_corridor_light.tscn" id="4_r41h3"]
+[ext_resource type="PackedScene" uid="uid://cmjqvhatempkv" path="res://Scenes/PauseMenu.tscn" id="5_7abwy"]
 [ext_resource type="Texture2D" uid="uid://c4ny0rxflcdrs" path="res://tmp_art/pickup.png" id="6_55t8s"]
 [ext_resource type="Texture2D" uid="uid://beivm1l7puaba" path="res://tmp_art/select.png" id="6_qs4p1"]
 [ext_resource type="Script" path="res://Scripts/reticule_control.gd" id="8_ojsxo"]
+[ext_resource type="Shader" uid="uid://d2xcewttt2h0r" path="res://Assets/Materials/Shaders/crt-effect.gdshader" id="11_p16r3"]
+[ext_resource type="Texture2D" uid="uid://bmgi4b7e8bjta" path="res://Assets/Textures/noise.png" id="12_88710"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_87rv1"]
 material = ExtResource("4_20jko")
@@ -22,12 +25,19 @@ size = Vector2(200, 200)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_27wqy"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2h506"]
+shader = ExtResource("11_p16r3")
+shader_parameter/noise_texture = ExtResource("12_88710")
+
 [node name="Root_FPS" type="Node3D" node_paths=PackedStringArray("fpsChar")]
 script = ExtResource("1_20jko")
 fpsChar = NodePath("FPSChar")
 RoomScene = ExtResource("2_55t8s")
 ExitDoorScene = ExtResource("4_27wqy")
 CorridorLight = ExtResource("4_r41h3")
+
+[node name="PauseMenuScene" parent="." instance=ExtResource("5_7abwy")]
+visible = false
 
 [node name="Floor" type="StaticBody3D" parent="."]
 
@@ -69,14 +79,31 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Panel" type="Panel" parent="CenterContainer"]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="TextureRect" type="TextureRect" parent="CenterContainer/Panel"]
 layout_mode = 2
 offset_right = 24.0
 offset_bottom = 24.0
 scale = Vector2(1.2, 1.2)
+mouse_filter = 2
 texture = ExtResource("6_qs4p1")
 script = ExtResource("8_ojsxo")
+
+[node name="Post-Processing" type="Node" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Post-Processing"]
+
+[node name="ColorRect" type="ColorRect" parent="Post-Processing/CanvasLayer"]
+process_mode = 4
+material = SubResource("ShaderMaterial_2h506")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
